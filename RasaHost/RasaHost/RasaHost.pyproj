@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d7efee9a-7a9c-4b05-81cd-f862b17edabf</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>RasaHost</Name>
+    <RootNamespace>RasaHost</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="RasaHost\controllers\home_controller.py" />
+    <Compile Include="RasaHost\controllers\stories_controller.py" />
+    <Compile Include="RasaHost\controllers\intents_controller.py" />
+    <Compile Include="RasaHost\controllers\__init__.py" />
+    <Compile Include="RasaHost\dialogues\stories_service.py" />
+    <Compile Include="RasaHost\dialogues\intents_service.py" />
+    <Compile Include="RasaHost\dialogues\__init__.py" />
+    <Compile Include="runserver.py" />
+    <Compile Include="RasaHost\__init__.py" />
+    <Compile Include="RasaHost\settings.py" />
+    <Compile Include="RasaHost\models\__init__.py" />
+    <Compile Include="RasaHost\models\azuretablestorage.py" />
+    <Compile Include="RasaHost\models\factory.py" />
+    <Compile Include="RasaHost\models\memory.py" />
+    <Compile Include="RasaHost\models\mongodb.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RasaHost\" />
+    <Folder Include="RasaHost\controllers\" />
+    <Folder Include="RasaHost\controllers\__pycache__\" />
+    <Folder Include="RasaHost\dialogues\" />
+    <Folder Include="RasaHost\dialogues\data\" />
+    <Folder Include="RasaHost\dialogues\data\domain\" />
+    <Folder Include="RasaHost\dialogues\data\intents\" />
+    <Folder Include="RasaHost\dialogues\data\stories\" />
+    <Folder Include="RasaHost\dialogues\__pycache__\" />
+    <Folder Include="RasaHost\models\" />
+    <Folder Include="RasaHost\static\" />
+    <Folder Include="RasaHost\static\content\" />
+    <Folder Include="RasaHost\static\fonts\" />
+    <Folder Include="RasaHost\static\libs\" />
+    <Folder Include="RasaHost\static\libs\autosize\" />
+    <Folder Include="RasaHost\static\libs\bootstrap\" />
+    <Folder Include="RasaHost\static\libs\bootstrap\css\" />
+    <Folder Include="RasaHost\static\libs\bootstrap\js\" />
+    <Folder Include="RasaHost\static\libs\jquery\" />
+    <Folder Include="RasaHost\static\libs\popper.js\" />
+    <Folder Include="RasaHost\static\libs\popper.js\esm\" />
+    <Folder Include="RasaHost\static\libs\popper.js\umd\" />
+    <Folder Include="RasaHost\static\images\" />
+    <Folder Include="RasaHost\static\scripts\" />
+    <Folder Include="RasaHost\templates\" />
+    <Folder Include="RasaHost\templates\home\" />
+    <Folder Include="C:\Projects\RasaHost\RasaHost\RasaHost\RasaHost\templates\intents\" />
+    <Folder Include="RasaHost\templates\stories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RasaHost\controllers\__pycache__\home_controller.cpython-36.pyc" />
+    <Content Include="RasaHost\controllers\__pycache__\intends_controller.cpython-36.pyc" />
+    <Content Include="RasaHost\controllers\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="RasaHost\dialogues\data\domain\stories.md" />
+    <Content Include="RasaHost\dialogues\data\intents\a.md" />
+    <Content Include="RasaHost\dialogues\data\intents\aa.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.acquaintance.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.age_a.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.annoying.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.answer_my_question.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.bad.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.beautiful.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.be_clever.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.birth_date.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.boring.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.boss.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.busy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.can_you_help.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.chatbot.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.clever.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.crazy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.fired.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.funny.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.good.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.happy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.hobby.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.hungry.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.marry_user.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.my_friend.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.occupation.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.origin.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.ready.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.real.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.residence.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.right.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.sure.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.talk_to_me.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.there.md" />
+    <Content Include="RasaHost\dialogues\data\intents\agent.what_can_do.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.bad.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.good.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.no_problem.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.thank_you.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.welcome.md" />
+    <Content Include="RasaHost\dialogues\data\intents\appraisal.well_done.md" />
+    <Content Include="RasaHost\dialogues\data\intents\confirmation.cancel.md" />
+    <Content Include="RasaHost\dialogues\data\intents\confirmation.no.md" />
+    <Content Include="RasaHost\dialogues\data\intents\confirmation.yes.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.hold_on.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.hug.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.i_do_not_care.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.sorry.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.what_do_you_mean.md" />
+    <Content Include="RasaHost\dialogues\data\intents\dialog.wrong.md" />
+    <Content Include="RasaHost\dialogues\data\intents\emotions.ha_ha.md" />
+    <Content Include="RasaHost\dialogues\data\intents\emotions.wow.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.bye.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.goodevening.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.goodmorning.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.goodnight.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.hello.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.how_are_you.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.nice_to_meet_you.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.nice_to_see_you.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.nice_to_talk_to_you.md" />
+    <Content Include="RasaHost\dialogues\data\intents\greetings.whatsup.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.angry.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.back.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.bored.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.busy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.can_not_sleep.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.does_not_want_to_talk.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.excited.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.going_to_bed.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.good.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.happy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.has_birthday.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.here.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.joking.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.likes_agent.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.lonely.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.looks_like.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.loves_agent.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.misses_agent.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.needs_advice.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.sad.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.sleepy.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.testing_agent.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.tired.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.waits.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.wants_to_see_agent_again.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.wants_to_talk.md" />
+    <Content Include="RasaHost\dialogues\data\intents\user.will_be_back.md" />
+    <Content Include="RasaHost\dialogues\data\stories\stories.md" />
+    <Content Include="RasaHost\dialogues\__pycache__\intents_service.cpython-36.pyc" />
+    <Content Include="RasaHost\dialogues\__pycache__\nlu_service.cpython-36.pyc" />
+    <Content Include="RasaHost\dialogues\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="RasaHost\static\libs\autosize\autosize.js" />
+    <Content Include="RasaHost\static\libs\autosize\autosize.min.js" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="RasaHost\static\libs\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.js" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.js.map" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="RasaHost\static\libs\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="RasaHost\static\libs\jquery\core.js" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.js" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.min.js" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.min.map" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.slim.js" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.slim.min.js" />
+    <Content Include="RasaHost\static\libs\jquery\jquery.slim.min.map" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper-utils.js" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper-utils.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper-utils.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper-utils.min.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper.js" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\esm\popper.min.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\popper-utils.js" />
+    <Content Include="RasaHost\static\libs\popper.js\popper-utils.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\popper-utils.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\popper-utils.min.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\popper.js" />
+    <Content Include="RasaHost\static\libs\popper.js\popper.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\popper.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\popper.min.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper-utils.js" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper-utils.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper-utils.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper-utils.min.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper.js" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper.js.map" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js" />
+    <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js.map" />
+    <Content Include="RasaHost\static\scripts\intends.js" />
+    <Content Include="RasaHost\templates\home\about.html" />
+    <Content Include="RasaHost\templates\home\contact.html" />
+    <Content Include="RasaHost\templates\home\index.html" />
+    <Content Include="RasaHost\templates\intents\intent.html" />
+    <Content Include="RasaHost\templates\intents\intents.html" />
+    <Content Include="RasaHost\templates\stories\story.html" />
+    <Content Include="RasaHost\templates\stories\stories.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="RasaHost\models\samples.json" />
+    <Content Include="RasaHost\static\content\bootstrap.css" />
+    <Content Include="RasaHost\static\content\bootstrap.min.css" />
+    <Content Include="RasaHost\static\content\site.css" />
+    <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="RasaHost\static\scripts\bootstrap.js" />
+    <Content Include="RasaHost\static\scripts\bootstrap.min.js" />
+    <Content Include="RasaHost\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="RasaHost\static\scripts\jquery-1.10.2.js" />
+    <Content Include="RasaHost\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="RasaHost\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="RasaHost\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="RasaHost\static\scripts\jquery.validate.js" />
+    <Content Include="RasaHost\static\scripts\jquery.validate.min.js" />
+    <Content Include="RasaHost\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="RasaHost\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="RasaHost\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="RasaHost\static\scripts\respond.js" />
+    <Content Include="RasaHost\static\scripts\respond.min.js" />
+    <Content Include="RasaHost\static\scripts\_references.js" />
+    <Content Include="RasaHost\templates\layout.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

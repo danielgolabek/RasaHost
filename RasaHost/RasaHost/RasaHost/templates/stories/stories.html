@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+{% raw %}
+<div id="app" v-cloak>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h4">Stories</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="input-group">
+                <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
+                <div class="input-group-append">
+                    <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isSearching" class="loader"></div></button>
+                </div>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <a href="/stories/create" class="btn btn-sm btn-outline-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                Create Story
+            </a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <div v-if="isSearching">
+            <i>Searching...</i>
+        </div>
+        <div v-if="noResults">
+            No stories found.
+        </div>
+        <div v-if="error">
+            {{error}}
+        </div>
+        <table v-if="!noResults" class="table table-condensed table-sm table-console">
+            <thead>
+                <tr>
+                    <th class="border-top-0 border-bottom-0">Name</th>
+                    <th class="border-top-0 border-bottom-0">Text</th>
+                    <th class="border-top-0 border-bottom-0"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in results">
+                    <td class="font-black">
+                        <a v-bind:href="'/stories/edit/' + entry.name"><pre>{{entry.name}}</pre></a>
+                    </td>
+                    <td class="w-100-precent font-black">
+                        <pre class="h-40 my-0 py-0 inl inline-block">{{entry.text}}</pre>
+                    </td>
+                    <td>
+                        <a href="#" class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                        </a>
+                        <a href="#" class="icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                        </a>
+                        <a href="#" class="icon">
+                            <svg width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endraw %}
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            query: '',
+            results: [],
+            noResults: false,
+            isSearching: false,
+            error: ''
+        },
+        created: function () {
+            this.search();
+        },
+        methods: {
+            search: function () {
+                this.isSearching = true;
+                this.error = '';
+                fetch(`/api/stories?q=${encodeURIComponent(this.query)}`)
+                    .then(res => res.json())
+                    .then(res => {
+                        this.isSearching = false;
+                        this.results = res;
+                        this.noResults = this.results.length === 0;
+                    })
+                    .catch(error => {
+                        this.isSearching = false;
+                        this.results = [];
+                        this.noResults = false;
+                        this.error = "Error while connection to the server. " + error.message;
+                    });
+            }
+        }
+    });
+</script>
+
+
+{% endblock %}

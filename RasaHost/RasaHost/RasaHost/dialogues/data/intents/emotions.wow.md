@@ -1,0 +1,13 @@
+## intent:emotions.wow
+- wow
+- wow wow
+- wow wow wow
+- wooow
+- woah
+- woaah
+- amazing
+- wow man
+- whoah
+- woow
+- wow!!
+- wheey

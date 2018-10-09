@@ -1,0 +1,17 @@
+## intent:dialog.hug
+- wanna hug
+- hug you
+- do you want a hug
+- may I hug you
+- could you give me a hug
+- I want a hug
+- hug
+- hug me
+- hugged
+- you hugged
+- hugging
+- hugging me
+- hugged me
+- want a hug
+- a hug
+- I want hug you
