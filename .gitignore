@@ -260,8 +260,8 @@ paket-files/
 __pycache__/
 *.pyc
 
-RasaHost/RasaHost/env/Scripts/
+src/RasaHost/env/Scripts/
 
 
-RasaHost/RasaHost/env/Lib/
+src/RasaHost/env/Lib/
 
