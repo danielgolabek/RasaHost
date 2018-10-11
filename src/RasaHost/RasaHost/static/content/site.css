@@ -90,6 +90,12 @@ body {
     font-size: 15px;
 }
 
+input, textarea {
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+
 .table-console tbody td,
 .table-console tbody td pre {
     font-family: 'Inconsolata', 'Lucida Console';
@@ -140,4 +146,9 @@ body {
 
 .inline-block {
     display: inline-block;
+}
+
+.sticky-top.content-header {
+    top: 34px;
+    background-color: white;
 }

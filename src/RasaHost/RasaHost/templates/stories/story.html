@@ -7,23 +7,21 @@
 
 {% raw %}
 <div id="app" v-cloak>
-    <div class="">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h4">Story</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-                <button v-on:click="save" class="btn btn-sm btn-outline-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
-                    Save
-                    <div v-if="isSaving" class="loader"></div>
-                </button>
-            </div>
-        </div>
-        <div v-if="error" class="alert alert-danger alert-dismissible fade show py-1 my-1" role="alert">
-            {{error}}
-            <button type="button" class="close py-0 my-0" data-dismiss="alert" v-on:click="error = null">
-                <span aria-hidden="true">&times;</span>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1 sticky-top content-header">
+        <h1 class="h4">Story</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button v-on:click="save" class="btn btn-sm btn-outline-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                Save
+                <div v-if="isSaving" class="loader"></div>
             </button>
         </div>
+    </div>
+    <div v-if="error" class="alert alert-danger alert-dismissible fade show py-1 my-1" role="alert">
+        {{error}}
+        <button type="button" class="close py-0 my-0" data-dismiss="alert" v-on:click="error = null">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <form>
         <div class="form-group">

@@ -69,7 +69,8 @@
     <Folder Include="RasaHost\static\scripts\" />
     <Folder Include="RasaHost\templates\" />
     <Folder Include="RasaHost\templates\home\" />
-    <Folder Include="C:\Projects\RasaHost\RasaHost\RasaHost\RasaHost\templates\intents\" />
+    <Folder Include="RasaHost\templates\intents\" />
+    <Folder Include="RasaHost\templates\domain\" />
     <Folder Include="RasaHost\templates\stories\" />
   </ItemGroup>
   <ItemGroup>
