@@ -27,9 +27,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="RasaHost\controllers\home_controller.py" />
+    <Compile Include="RasaHost\controllers\domain_controller.py" />
     <Compile Include="RasaHost\controllers\stories_controller.py" />
     <Compile Include="RasaHost\controllers\intents_controller.py" />
     <Compile Include="RasaHost\controllers\__init__.py" />
+    <Compile Include="RasaHost\dialogues\domain_service.py" />
     <Compile Include="RasaHost\dialogues\stories_service.py" />
     <Compile Include="RasaHost\dialogues\intents_service.py" />
     <Compile Include="RasaHost\dialogues\__init__.py" />
@@ -48,7 +50,6 @@
     <Folder Include="RasaHost\controllers\__pycache__\" />
     <Folder Include="RasaHost\dialogues\" />
     <Folder Include="RasaHost\dialogues\data\" />
-    <Folder Include="RasaHost\dialogues\data\domain\" />
     <Folder Include="RasaHost\dialogues\data\intents\" />
     <Folder Include="RasaHost\dialogues\data\stories\" />
     <Folder Include="RasaHost\dialogues\__pycache__\" />
@@ -77,7 +78,7 @@
     <Content Include="RasaHost\controllers\__pycache__\home_controller.cpython-36.pyc" />
     <Content Include="RasaHost\controllers\__pycache__\intends_controller.cpython-36.pyc" />
     <Content Include="RasaHost\controllers\__pycache__\__init__.cpython-36.pyc" />
-    <Content Include="RasaHost\dialogues\data\domain\stories.md" />
+    <Content Include="RasaHost\dialogues\data\domain.yml" />
     <Content Include="RasaHost\dialogues\data\intents\a.md" />
     <Content Include="RasaHost\dialogues\data\intents\aa.md" />
     <Content Include="RasaHost\dialogues\data\intents\agent.acquaintance.md" />
@@ -225,6 +226,8 @@
     <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js" />
     <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js.map" />
     <Content Include="RasaHost\static\scripts\intends.js" />
+    <Content Include="RasaHost\templates\domain\edit.html" />
+    <Content Include="RasaHost\templates\domain\domain.html" />
     <Content Include="RasaHost\templates\home\about.html" />
     <Content Include="RasaHost\templates\home\contact.html" />
     <Content Include="RasaHost\templates\home\index.html" />

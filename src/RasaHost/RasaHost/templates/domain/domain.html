@@ -5,78 +5,22 @@
 <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 <script src="/static/libs/autosize/autosize.min.js"></script>
 
-{% raw %}
 <div id="app" v-cloak>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1 sticky-top content-header">
-        <h1 class="h4">Intent</h1>
+        <h1 class="h4">Domain</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <button v-on:click="save" class="btn btn-sm btn-outline-secondary">
+            <a href="/domain/edit" class="btn btn-sm btn-outline-secondary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
-                Save
-                <div v-if="isSaving" class="loader"></div>
-            </button>
+                Edit
+            </a>
         </div>
-    </div>
-    <div v-if="error" class="alert alert-danger alert-dismissible fade show py-1 my-1" role="alert">
-        {{error}}
-        <button type="button" class="close py-0 my-0" data-dismiss="alert" v-on:click="error = null">
-            <span aria-hidden="true">&times;</span>
-        </button>
     </div>
     <form>
         <div class="form-group">
-            <label for="name">Name</label>
-            <input v-model="intent.name" class="form-control form-control-console"  id="name" autofocus>
-        </div>
-        <div class="form-group">
             <label for="text">Text</label>
-            <textarea v-model="intent.text" class="form-control  form-control-console" id="text" rows="10"></textarea>
+            <pre>{{model.text}}</pre>
         </div>
     </form>
 </div>
-{% endraw %}
-<script>
-    const app = new Vue({
-        el: '#app',
-        data: {
-            intent: {{ intent_json| safe }},
-            error: null,
-            isSaving: false
-        },
-        created: function () {
-            this.orginal_name = this.intent.name;
-        },
-        methods: {
-            save: function (event) {
-                app.isSaving = true;
-                app.error = '';
-                fetch(`/api/intents/${encodeURIComponent(this.orginal_name || this.intent.name)}`, {
-                    method: this.orginal_name ? "POST" : "PUT",
-                    headers: { "Content-Type": "application/json; charset=utf-8" },
-                    body: JSON.stringify({ intent: this.intent}),
-                })
-                    .then(res => res.json())
-                    .then(json => {
-                        app.isSaving = false;
-                        if (json.error) {
-                            app.error = json.error;
-                            return;
-                        }
-                        if (!app.orginal_name || app.orginal_name.toUpperCase() != json.intent.name.toUpperCase()) {
-                            window.location.href = `/intents/edit/${encodeURIComponent(json.intent.name)}`;
-                        }
-                    })
-                    .catch(error => {
-                        app.isSaving = false;
-                        app.error = "Error while connection to the server. " + error.message;
-                    });
-            }
-        }
-    });
-
-    (function ($) {
-        autosize($('textarea'));
-    }(jQuery));
-</script>
 
 {% endblock %}

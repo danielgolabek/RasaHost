@@ -26,11 +26,11 @@
     <form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input v-model="intent.name" class="form-control form-control-console"  id="name" autofocus>
+            <input v-model="model.name" class="form-control form-control-console"  id="name" autofocus>
         </div>
         <div class="form-group">
             <label for="text">Text</label>
-            <textarea v-model="intent.text" class="form-control  form-control-console" id="text" rows="10"></textarea>
+            <textarea v-model="model.text" class="form-control  form-control-console" id="text" rows="10"></textarea>
         </div>
     </form>
 </div>
@@ -39,21 +39,21 @@
     const app = new Vue({
         el: '#app',
         data: {
-            intent: {{ intent_json| safe }},
+            model: {{ model_json| safe }},
             error: null,
             isSaving: false
         },
         created: function () {
-            this.orginal_name = this.intent.name;
+            this.orginal_name = this.model.name;
         },
         methods: {
             save: function (event) {
                 app.isSaving = true;
                 app.error = '';
-                fetch(`/api/intents/${encodeURIComponent(this.orginal_name || this.intent.name)}`, {
+                fetch(`/api/intents/${encodeURIComponent(this.orginal_name || this.model.name)}`, {
                     method: this.orginal_name ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
-                    body: JSON.stringify({ intent: this.intent}),
+                    body: JSON.stringify(this.model),
                 })
                     .then(res => res.json())
                     .then(json => {
@@ -62,8 +62,8 @@
                             app.error = json.error;
                             return;
                         }
-                        if (!app.orginal_name || app.orginal_name.toUpperCase() != json.intent.name.toUpperCase()) {
-                            window.location.href = `/intents/edit/${encodeURIComponent(json.intent.name)}`;
+                        if (!app.orginal_name || app.orginal_name.toUpperCase() != json.result.name.toUpperCase()) {
+                            window.location.href = `/intents/edit/${encodeURIComponent(json.result.name)}`;
                         }
                     })
                     .catch(error => {

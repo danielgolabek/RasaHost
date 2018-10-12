@@ -13,16 +13,16 @@ from RasaHost.dialogues import *
 def stories_list():
     return render_template(
         'stories/stories.html',
-        title='stories',
+        title='Stories',
     )
 
 @app.route('/stories/create')
 def stories_create():
     return render_template(
         'stories/story.html',
-        title='story',
-        story={'name': '', 'text': ''},
-        story_json=json.dumps({'name': '', 'text': ''})
+        title='Story',
+        model={'name': '', 'text': ''},
+        model_json=json.dumps({'name': '', 'text': ''})
     )
 
 @app.route('/stories/edit/<name>', methods=['GET'])
@@ -30,9 +30,9 @@ def stories_edit(name):
     story = StoriesService().get_by_name(name)
     return render_template(
         'stories/story.html',
-        title='story',
-        story=story,
-        story_json=json.dumps(story)
+        title='Story',
+        model=story,
+        model_json=json.dumps(story)
     )
 
 @app.route('/api/stories', methods=['GET'])
@@ -48,14 +48,14 @@ def api_stories_get(name):
 
 @app.route('/api/stories/<name>', methods=['POST'])
 def api_stories_post(name):
-    updated_story = request.json['story']
+    updated_story = request.json
     if name.lower() != updated_story['name'].lower():
         existing_story = StoriesService().get_by_name(name)
         if existing_story:
             return jsonify({'error': 'Story with the name already exits.'})
     
     StoriesService().update(name, updated_story)
-    return jsonify({'story': updated_story})
+    return jsonify({'result': updated_story})
 
 @app.route('/api/stories/<name>', methods=['PUT'])
 def api_stories_put(name):
@@ -63,6 +63,6 @@ def api_stories_put(name):
     if existing_story:
         return jsonify({'error': 'Story with the name already exits.'})
 
-    new_story = request.json['story']
+    new_story = request.json
     StoriesService().update(name, new_story)
-    return jsonify({'story': new_story})
+    return jsonify({'result': new_story})
