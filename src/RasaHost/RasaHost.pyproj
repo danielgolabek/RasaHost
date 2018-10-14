@@ -71,6 +71,11 @@
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\__pycache__\" />
     <Folder Include="RasaHost\models\" />
     <Folder Include="RasaHost\database\" />
+    <Folder Include="RasaHost\services\" />
+    <Folder Include="RasaHost\services\data\" />
+    <Folder Include="RasaHost\services\data\intents\" />
+    <Folder Include="RasaHost\services\data\stories\" />
+    <Folder Include="RasaHost\services\__pycache__\" />
     <Folder Include="RasaHost\static\" />
     <Folder Include="RasaHost\static\content\" />
     <Folder Include="RasaHost\static\fonts\" />
@@ -251,6 +256,7 @@
     <Content Include="RasaHost\templates\home\index.html" />
     <Content Include="RasaHost\templates\intents\intent.html" />
     <Content Include="RasaHost\templates\intents\intents.html" />
+    <Content Include="RasaHost\templates\logs\console.html" />
     <Content Include="RasaHost\templates\logs\history.html" />
     <Content Include="RasaHost\templates\stories\story.html" />
     <Content Include="RasaHost\templates\stories\stories.html" />

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% raw %}
+<div id="app" v-cloak>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1 sticky-top content-header">
+        <h1 class="h4">Logs - Console</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="input-group">
+                <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
+                <div class="input-group-append">
+                    <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isSearching" class="loader"></div></button>
+                </div>
+            </div>
+        </div>
+        <!--<div class="btn-toolbar mb-2 mb-md-0">
+            <a href="/intents/create" class="btn btn-sm btn-outline-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                Create Intent
+            </a>
+        </div>-->
+    </div>
+    <div class="table-responsive">
+        <table class="table table-condensed table-sm table-console">
+            <thead>
+                <tr>
+                    <th class="border-top-0 border-bottom-0">Created</th>
+                    <th class="border-top-0 border-bottom-0">LogLevel</th>
+                    <th class="border-top-0 border-bottom-0">SenderId</th>
+                    <th class="border-top-0 border-bottom-0">Message</th>
+                    <th class="border-top-0 border-bottom-0">Name</th>
+                    <th class="border-top-0 border-bottom-0">Module</th>
+                    <th class="border-top-0 border-bottom-0">File</th>
+                    <th class="border-top-0 border-bottom-0"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(entry, index) in results">
+                    <td class="font-black"><pre>{{entry.created}}</pre></td>
+                    <td class="font-black"><pre>{{entry.log_level}}</pre></td>
+                    <td class="font-black"><pre>{{entry.sender_id}}</pre></td>
+                    <td class="font-black"><pre>{{entry.message}}</pre><pre>{{entry.exception}}</pre></td>
+                    <td class="font-black"><pre>{{entry.name}}</pre></td>
+                    <td class="font-black"><pre>{{entry.module}}</pre></td>
+                    <td class="font-black"><pre>{{entry.filename}}:{{entry.line_no}}</pre></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endraw %}
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            query: '',
+            results: []
+        },
+        created: function () {
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+            socket.on('console', function (data) {
+                app.results.push(data);
+            });
+        },
+        methods: {
+            search: function () {
+
+            }
+        }
+    });
+</script>
+
+{% endblock %}

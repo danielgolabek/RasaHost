@@ -17,7 +17,7 @@ class LoggingDbHandler(StreamHandler):
             filename = record.filename,
             line_no = record.lineno,
             log_level = record.levelname,
-            message = record.message,
+            message = record.getMessage(),
             exception = traceback.print_exception(*record.exc_info) if record.exc_info else None,
             created = datetime.datetime.fromtimestamp(record.created),
             sender_id = record.sender_id
@@ -25,6 +25,19 @@ class LoggingDbHandler(StreamHandler):
         domainContext = DbContext()
         domainContext.logs.save(log)
         domainContext.commit()
+
+class LoggingSocketioHandler(StreamHandler):
+    def __init__(self):
+        StreamHandler.__init__(self)
+    def emit(self, record):
+        from RasaHost import socketio
+        import sys
+        try:
+             socketio.emit('console', {'log_level': record.levelname, 'message': record.getMessage()})
+        except: # catch *all* exceptions
+            e = sys.exc_info()[0]
+            print(e)
+       
 
 
 class LoggingSenderIdFilter(logging.Filter):
@@ -42,6 +55,7 @@ class LoggingService:
         self.log_level = 'DEBUG'
     def initialize(self):
         #coloredlogs
+
         field_styles = coloredlogs.DEFAULT_FIELD_STYLES.copy()
         field_styles['asctime'] = {}
         level_styles = coloredlogs.DEFAULT_LEVEL_STYLES.copy()
@@ -56,6 +70,8 @@ class LoggingService:
         dbHandler = LoggingDbHandler()
         dbHandler.setLevel(self.log_level)
         logging.getLogger().addHandler(dbHandler)
+        #socketio logging
+        logging.getLogger().addHandler(LoggingSocketioHandler())
         #file logging
         logging.getLogger().addHandler(logging.FileHandler("logs.txt"))
         
@@ -65,6 +81,9 @@ class LoggingService:
             handler.addFilter(LoggingSenderIdFilter())
             #handler.setFormatter(logging.Formatter("[%(sender_id)s] [%(asctime)s] [%(name)s] %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
 
+        logging.getLogger('socketio').setLevel(logging.ERROR)
+        logging.getLogger('engineio').setLevel(logging.ERROR)
+        logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
     def set_log_level(self, log_level):
         self.log_level = log_level

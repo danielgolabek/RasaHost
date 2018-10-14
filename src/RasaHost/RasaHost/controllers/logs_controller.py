@@ -17,6 +17,14 @@ def logs_history():
         title='Logs - history',
     )
 
+@app.route('/logs/console')
+def logs_console():
+    return render_template(
+        'logs/console.html',
+        title='Logs - console',
+    )
+
+
 @app.route('/api/logs/history', methods=['GET'])
 def api_logs_history():
     q = request.args.get('q')
