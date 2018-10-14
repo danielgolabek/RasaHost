@@ -265,3 +265,5 @@ src/RasaHost/env/Scripts/
 
 src/RasaHost/env/Lib/
 
+src/RasaHost/db.sqlite
+src/RasaHost/logs.txt

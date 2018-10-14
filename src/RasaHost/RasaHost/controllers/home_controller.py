@@ -10,7 +10,7 @@ from RasaHost import app
 from RasaHost.models import PollNotFound
 from RasaHost.models.factory import create_repository
 from RasaHost.settings import REPOSITORY_NAME, REPOSITORY_SETTINGS
-from RasaHost.dialogues import *
+from RasaHost.services import *
 
 
 repository = create_repository(REPOSITORY_NAME, REPOSITORY_SETTINGS)

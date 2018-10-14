@@ -7,7 +7,7 @@ from flask import render_template, redirect, request, jsonify
 import json
 
 from RasaHost import app
-from RasaHost.dialogues import *
+from RasaHost.services import *
 
 @app.route('/intents')
 def intents_list():
