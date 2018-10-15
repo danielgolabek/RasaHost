@@ -3,23 +3,34 @@ The flask application package.
 """
 
 from os import environ
-HOST = environ.get('SERVER_HOST', 'localhost')
-try:
-    PORT = int(environ.get('SERVER_PORT', '5555'))
-except ValueError:
-    PORT = 5555
-
+import os
 from flask import Flask
-app = Flask(__name__)
-
 from flask_socketio import SocketIO
-socketio = SocketIO(app)
 
-from RasaHost.services import LoggingService
-LoggingService().initialize()
+class RasaHost:
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    intents_path = os.path.join(current_dir, "data/intents/")
+    stories_path = os.path.join(current_dir, "data/stories/")
+    domain_path = os.path.join(current_dir, "data/domain.yml")
+    host = environ.get('SERVER_HOST', 'localhost')
+    try:
+        port = int(environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        port = 5555
 
-import RasaHost.controllers
+    def __init__(self):
+        self.flask = Flask(__name__)
+        self.socketio = SocketIO(self.flask)
 
-def run():
-    socketio.run(app,HOST, PORT)
+    def set_data_path(self, data_dir):
+        self.intents_path = os.path.join(data_dir, "intents/")
+        self.stories_path = os.path.join(data_dir, "stories/")
+        self.domain_path = os.path.join(data_dir, "domain.yml")
 
+    def run(self):
+        import RasaHost.controllers
+        from RasaHost.services import LoggingService
+        LoggingService().initialize()
+        self.socketio.run(self.flask,self.host, self.port)
+
+host = RasaHost()

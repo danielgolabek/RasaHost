@@ -1,11 +1,9 @@
 import os
+from RasaHost import host
 
 class DomainService(object):
     
-    current_dir = os.path.dirname(os.path.realpath(__file__))
-    data_dir = os.path.join(current_dir, "data")
-    domain_dir = data_dir #os.path.join(data_dir, 'domain')
-    domain_path = os.path.join(domain_dir, "domain.yml")
+    domain_path = host.domain_path
 
     def get_text(self):
         with open(self.domain_path, "r") as f:

@@ -6,14 +6,9 @@ from datetime import datetime
 from flask import render_template, redirect, request, jsonify
 import json
 
-from RasaHost import app
-from RasaHost.models import PollNotFound
-from RasaHost.models.factory import create_repository
-from RasaHost.settings import REPOSITORY_NAME, REPOSITORY_SETTINGS
 from RasaHost.services import *
-
-
-repository = create_repository(REPOSITORY_NAME, REPOSITORY_SETTINGS)
+from RasaHost import host
+app = host.flask
 
 @app.route('/')
 @app.route('/home')
@@ -23,7 +18,6 @@ def home():
         'home/index.html',
         title='Home',
         year=datetime.now().year,
-        polls=repository.get_polls(),
     )
 
 @app.route('/contact')
@@ -42,10 +36,9 @@ def about():
         'home/about.html',
         title='About',
         year=datetime.now().year,
-        repository_name=repository.name,
     )
 
-@app.errorhandler(PollNotFound)
-def page_not_found(error):
-    """Renders error page."""
-    return 'Page does not exist.', 404
+#@app.errorhandler(PollNotFound)
+#def page_not_found(error):
+#    """Renders error page."""
+#    return 'Page does not exist.', 404

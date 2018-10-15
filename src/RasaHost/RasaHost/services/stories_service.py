@@ -1,15 +1,14 @@
 import os
+from RasaHost import host
 
 class StoriesService(object):
     
-    current_dir = os.path.dirname(os.path.realpath(__file__))
-    data_dir = os.path.join(current_dir, "data")
-    stories_dir = os.path.join(data_dir, 'stories')
+    stories_path = host.stories_path
     
     def get_all(self):
         model = []
-        for fileName in os.listdir(self.stories_dir):
-            with open(os.path.join(self.stories_dir, fileName), "r") as f:
+        for fileName in os.listdir(self.stories_path):
+            with open(os.path.join(self.stories_path, fileName), "r") as f:
                 text = f.read()
                 model.append({
                     'name': os.path.splitext(fileName)[0],
@@ -27,7 +26,7 @@ class StoriesService(object):
         return next(iter([x for x in stories if x['name'].lower() == name.lower()]), None)
 
     def update(self, name, model):
-        with open(os.path.join(self.stories_dir, name  + ".md"), "w") as f:
+        with open(os.path.join(self.stories_path, name  + ".md"), "w") as f:
             f.write(model['text'])
-        os.rename(os.path.join(self.stories_dir, name  + ".md"), os.path.join(self.stories_dir, model['name']  + ".md"))
+        os.rename(os.path.join(self.stories_path, name  + ".md"), os.path.join(self.stories_path, model['name']  + ".md"))
         return

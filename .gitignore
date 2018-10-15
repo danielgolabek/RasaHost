@@ -266,4 +266,11 @@ src/RasaHost/env/Scripts/
 src/RasaHost/env/Lib/
 
 src/RasaHost/db.sqlite
+
 src/RasaHost/logs.txt
+
+src/RasaHost/env/share/doc/
+
+src/RasaHost/env/Include/
+
+src/RasaHost/env/man/man1/

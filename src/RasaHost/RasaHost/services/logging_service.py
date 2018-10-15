@@ -30,15 +30,13 @@ class LoggingSocketioHandler(StreamHandler):
     def __init__(self):
         StreamHandler.__init__(self)
     def emit(self, record):
-        from RasaHost import socketio
         import sys
+        from RasaHost import host
         try:
-             socketio.emit('console', {'log_level': record.levelname, 'message': record.getMessage()})
+            host.socketio.emit('console', {'log_level': record.levelname, 'message': record.getMessage()})
         except: # catch *all* exceptions
             e = sys.exc_info()[0]
             print(e)
-       
-
 
 class LoggingSenderIdFilter(logging.Filter):
     def filter(self, record):

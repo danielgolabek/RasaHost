@@ -1,17 +1,14 @@
 import os
+from RasaHost import host
 
 class IntentsService(object):
     
-    current_dir = os.path.dirname(os.path.realpath(__file__))
-    data_dir = os.path.join(current_dir, "data")
-    intents_dir = os.path.join(data_dir, 'intents')
-    stories_dir = os.path.join(data_dir, 'stories')
-    domain_dir = os.path.join(data_dir, 'domain')
-    
+    intents_path = host.intents_path
+
     def get_all(self):
         model = []
-        for fileName in os.listdir(self.intents_dir):
-            with open(os.path.join(self.intents_dir, fileName), "r") as f:
+        for fileName in os.listdir(self.intents_path):
+            with open(os.path.join(self.intents_path, fileName), "r") as f:
                 text = f.read()
                 model.append({
                     'name': os.path.splitext(fileName)[0],
@@ -29,7 +26,7 @@ class IntentsService(object):
         return next(iter([x for x in intents if x['name'].lower() == name.lower()]), None)
 
     def update(self, name, model):
-        with open(os.path.join(self.intents_dir, name  + ".md"), "w") as f:
+        with open(os.path.join(self.intents_path, name  + ".md"), "w") as f:
             f.write(model['text'])
-        os.rename(os.path.join(self.intents_dir, name  + ".md"), os.path.join(self.intents_dir, model['name']  + ".md"))
+        os.rename(os.path.join(self.intents_path, name  + ".md"), os.path.join(self.intents_path, model['name']  + ".md"))
         return
