@@ -30,3 +30,6 @@ class StoriesService(object):
             f.write(model['text'])
         os.rename(os.path.join(self.stories_path, name  + ".md"), os.path.join(self.stories_path, model['name']  + ".md"))
         return
+
+    def delete(self, name):
+        os.remove(os.path.join(self.stories_path, name  + ".md"))

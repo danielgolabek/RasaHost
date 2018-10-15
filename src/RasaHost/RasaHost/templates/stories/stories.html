@@ -55,7 +55,7 @@
                         <a v-bind:href="'/stories/edit/' + entry.name"class="icon">
                             <svg width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                         </a>
-                        <a href="#" class="icon">
+                        <a  v-on:click.stop="deleteItem(entry, index)" href="#" class="icon">
                             <svg width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
                         </a>
                     </td>
@@ -100,7 +100,22 @@
             expandContent: function (entry, index) {
                 entry.expended = !entry.expended;
                 this.$set(this.results, index, entry)
-            }
+            },
+            deleteItem: function (entry, index) {
+                if (!confirm("Do you want to delete: " + entry.name))
+                    return;
+                fetch(`/api/stories/${encodeURIComponent(entry.name)}`, {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json; charset=utf-8" }
+                })
+                    .then(res => res.json())
+                    .then(json => {
+                        this.$delete(this.results, index)
+                    })
+                    .catch(error => {
+                        this.error = "Error while connection to the server. " + error.message;
+                    });
+            },
         }
     });
 </script>

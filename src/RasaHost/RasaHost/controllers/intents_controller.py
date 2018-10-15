@@ -67,3 +67,8 @@ def api_intents_put(name):
     new_intent = request.json
     IntentsService().update(name, new_intent)
     return jsonify({'result': new_intent})
+
+@app.route('/api/intents/<name>', methods=['DELETE'])
+def api_intents_delete(name):
+    IntentsService().delete(name)
+    return jsonify({'result': 'ok'})

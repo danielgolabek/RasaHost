@@ -67,3 +67,8 @@ def api_stories_put(name):
     new_story = request.json
     StoriesService().update(name, new_story)
     return jsonify({'result': new_story})
+
+@app.route('/api/stories/<name>', methods=['DELETE'])
+def api_stories_delete(name):
+    StoriesService().delete(name)
+    return jsonify({'result': 'ok'})
