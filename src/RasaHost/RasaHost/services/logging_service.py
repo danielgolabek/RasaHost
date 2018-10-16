@@ -79,9 +79,9 @@ class LoggingService:
             handler.addFilter(LoggingSenderIdFilter())
             #handler.setFormatter(logging.Formatter("[%(sender_id)s] [%(asctime)s] [%(name)s] %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
 
-        logging.getLogger('socketio').setLevel(logging.ERROR)
-        logging.getLogger('engineio').setLevel(logging.ERROR)
-        logging.getLogger('werkzeug').setLevel(logging.ERROR)
+        logging.getLogger('socketio').setLevel(logging.INFO)
+        logging.getLogger('engineio').setLevel(logging.INFO)
+        logging.getLogger('werkzeug').setLevel(logging.INFO)
 
     def set_log_level(self, log_level):
         self.log_level = log_level
