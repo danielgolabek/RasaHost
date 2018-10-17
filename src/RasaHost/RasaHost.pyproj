@@ -26,6 +26,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="RasaHost.Tests\services\domain_service_tests.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RasaHost\controllers\rasa_controller.py" />
     <Compile Include="RasaHost\controllers\logs_controller.py" />
     <Compile Include="RasaHost\controllers\home_controller.py" />
@@ -62,6 +65,8 @@
     <Compile Include="RasaHost\models\mongodb.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="RasaHost.Tests\" />
+    <Folder Include="RasaHost.Tests\services\" />
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
     <Folder Include="RasaHost\controllers\__pycache__\" />
@@ -99,6 +104,7 @@
     <Folder Include="RasaHost\templates\stories\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RasaHost.Tests\services\domain.yml" />
     <Content Include="sample\nlu_config.yml" />
     <Content Include="RasaHost\controllers\__pycache__\home_controller.cpython-36.pyc" />
     <Content Include="RasaHost\controllers\__pycache__\intends_controller.cpython-36.pyc" />
