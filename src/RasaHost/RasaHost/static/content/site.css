@@ -14,7 +14,7 @@ body {
  */
 
 .sidebar {
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     bottom: 0;
     left: 0;
@@ -25,7 +25,7 @@ body {
 
 .sidebar-sticky {
     position: -webkit-sticky;
-    position: sticky;
+    /*position: sticky;*/
     top: 30px; /* Height of navbar */
     height: calc(100vh - 48px);
     padding-top: .5rem;
@@ -149,8 +149,7 @@ input, textarea {
 }
 
 .sticky-top.content-header {
-    top: 34px;
-    background-color: white;
+    background-color: #fff;
 }
 
 .parent:hover .child-hover-visible {

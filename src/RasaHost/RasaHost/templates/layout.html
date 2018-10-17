@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0">
         <div class="col-3 col-sm-3 col-md-2 mr-0">
             <a href="/" class="navbar-brand border-0 py-1">
                 <span>
@@ -123,10 +123,10 @@
                     </ul>
                 </div>
             </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                {% block content %}{% endblock %}
+            </main>
         </div>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            {% block content %}{% endblock %}
-        </main>
     </div>
     {% block scripts %}{% endblock %}
 </body>
