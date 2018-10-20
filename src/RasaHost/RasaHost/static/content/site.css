@@ -14,7 +14,7 @@ body {
  */
 
 .sidebar {
-    /*position: fixed;*/
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -25,7 +25,7 @@ body {
 
 .sidebar-sticky {
     position: -webkit-sticky;
-    /*position: sticky;*/
+    position: sticky;
     top: 30px; /* Height of navbar */
     height: calc(100vh - 48px);
     padding-top: .5rem;
@@ -57,10 +57,43 @@ body {
     text-transform: uppercase;
 }
 
-/*
+.sticky-top-2 {
+    position: sticky;
+    top: 34px;
+}
+
+.sidebar-sticky-2 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 34px; /* Height of navbar */
+    height: calc(100vh - 34px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.ul-items {
+    list-style: none;
+    padding: 0px;
+}
+
+    .ul-items .nav-link {
+        padding: 0px;
+        color: #212529;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        x-border-top: 1px solid #dee2e6;
+    }
+
+    .ul-items .nav-link:hover,
+    .ul-items .nav-link.active {
+        background-color: #f7f7f9;
+    }
+        
+        /*
  * Navbar
  */
-.navbar-brand {
+        .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
@@ -158,4 +191,11 @@ input, textarea {
 
 .child-hover-visible {
     visibility: hidden;
+}
+
+.anyClass {
+    position: sticky;
+    top: 4rem;
+    z-index: 1000;
+    height: calc(100vh - 4rem);
 }
