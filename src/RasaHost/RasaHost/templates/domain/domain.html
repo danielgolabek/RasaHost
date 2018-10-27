@@ -2,25 +2,68 @@
 
 {% block content %}
 
-<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-<script src="/static/libs/autosize/autosize.min.js"></script>
-
+{% raw %}
 <div id="app" v-cloak>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1 sticky-top content-header">
-        <h1 class="h4">Domain</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="/domain/edit" class="btn btn-sm btn-outline-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
-                Edit
-            </a>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="sticky-top-2 bg-white pb-3">
+                <div class="d-flex">
+                    <div>
+                        <a v-on:click.stop="save()" href="#" class="icon text-muted ml-3">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            Save
+                            <div v-if="isSaving" class="loader"></div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    {{error}}
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="text">Text</label>
+                    <text-editor v-model="model.text"></text-editor>
+                </div>
+            </form>
         </div>
     </div>
-    <form>
-        <div class="form-group">
-            <label for="text">Text</label>
-            <pre>{{model.text}}</pre>
-        </div>
-    </form>
-</div>
+ </div>
+{% endraw %}
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            model: {{ model_json| safe }},
+            error: null,
+            isSaving: false
+        },
+        created: function () {
+        },
+        methods: {
+            save: function (event) {
+                app.isSaving = true;
+                app.error = '';
+                fetch(`/api/domain`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json; charset=utf-8" },
+                    body: JSON.stringify(this.model),
+                })
+                    .then(res => res.json())
+                    .then(json => {
+                        app.isSaving = false;
+                        if (json.error) {
+                            app.error = json.error;
+                            return;
+                        }
+                    })
+                    .catch(error => {
+                        app.isSaving = false;
+                        app.error = "Error while connection to the server. " + error.message;
+                    });
+            }
+        }
+    });
+</script>
 
 {% endblock %}

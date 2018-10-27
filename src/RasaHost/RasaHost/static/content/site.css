@@ -181,21 +181,6 @@ input, textarea {
     display: inline-block;
 }
 
-.sticky-top.content-header {
-    background-color: #fff;
-}
-
-.parent:hover .child-hover-visible {
-    visibility: visible;
-}
-
-.child-hover-visible {
-    visibility: hidden;
-}
-
-.anyClass {
-    position: sticky;
-    top: 4rem;
-    z-index: 1000;
-    height: calc(100vh - 4rem);
+.CodeMirror {
+    z-index: 0;
 }

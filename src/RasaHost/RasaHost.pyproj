@@ -262,11 +262,9 @@
     <Content Include="RasaHost\templates\home\about.html" />
     <Content Include="RasaHost\templates\home\contact.html" />
     <Content Include="RasaHost\templates\home\index.html" />
-    <Content Include="RasaHost\templates\intents\intent.html" />
     <Content Include="RasaHost\templates\intents\intents.html" />
     <Content Include="RasaHost\templates\logs\console.html" />
     <Content Include="RasaHost\templates\logs\history.html" />
-    <Content Include="RasaHost\templates\stories\story.html" />
     <Content Include="RasaHost\templates\stories\stories.html" />
     <Content Include="requirements.txt" />
     <Content Include="RasaHost\models\samples.json" />
