@@ -92,6 +92,7 @@
     <Folder Include="RasaHost\static\libs\bootstrap\js\" />
     <Folder Include="RasaHost\static\libs\jquery\" />
     <Folder Include="RasaHost\static\libs\codemirror\" />
+    <Folder Include="RasaHost\static\libs\vue\" />
     <Folder Include="RasaHost\static\libs\popper.js\" />
     <Folder Include="RasaHost\static\libs\popper.js\esm\" />
     <Folder Include="RasaHost\static\libs\popper.js\umd\" />
@@ -106,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RasaHost.Tests\services\domain.yml" />
+    <Content Include="RasaHost\static\libs\vue\vue.js" />
     <Content Include="sample\nlu_config.yml" />
     <Content Include="RasaHost\controllers\__pycache__\home_controller.cpython-36.pyc" />
     <Content Include="RasaHost\controllers\__pycache__\intends_controller.cpython-36.pyc" />
@@ -254,7 +256,7 @@
     <Content Include="RasaHost\static\libs\popper.js\umd\popper.js.map" />
     <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js" />
     <Content Include="RasaHost\static\libs\popper.js\umd\popper.min.js.map" />
-    <Content Include="RasaHost\static\scripts\intends.js" />
+    <Content Include="RasaHost\static\scripts\vue-components.js" />
     <Content Include="RasaHost\templates\domain\edit.html" />
     <Content Include="RasaHost\templates\domain\domain.html" />
     <Content Include="RasaHost\templates\home\about.html" />
@@ -275,21 +277,9 @@
     <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="RasaHost\static\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="RasaHost\static\scripts\bootstrap.js" />
-    <Content Include="RasaHost\static\scripts\bootstrap.min.js" />
-    <Content Include="RasaHost\static\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="RasaHost\static\scripts\jquery-1.10.2.js" />
-    <Content Include="RasaHost\static\scripts\jquery-1.10.2.min.js" />
-    <Content Include="RasaHost\static\scripts\jquery-1.10.2.min.map" />
-    <Content Include="RasaHost\static\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="RasaHost\static\scripts\jquery.validate.js" />
-    <Content Include="RasaHost\static\scripts\jquery.validate.min.js" />
-    <Content Include="RasaHost\static\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="RasaHost\static\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="RasaHost\static\scripts\modernizr-2.6.2.js" />
-    <Content Include="RasaHost\static\scripts\respond.js" />
-    <Content Include="RasaHost\static\scripts\respond.min.js" />
-    <Content Include="RasaHost\static\scripts\_references.js" />
+    <Content Include="RasaHost\static\libs\modernizr-2.6.2.js" />
+    <Content Include="RasaHost\static\libs\respond.js" />
+    <Content Include="RasaHost\static\libs\respond.min.js" />
     <Content Include="RasaHost\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
