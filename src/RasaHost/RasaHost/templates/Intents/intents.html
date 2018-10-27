@@ -4,7 +4,11 @@
 
 {% raw %}
 
-<script src="/static/libs/autosize/autosize.min.js"></script>
+<!--<script src="/static/libs/autosize/autosize.min.js"></script>-->
+<script src="../../static/libs/codemirror/codemirror.js"></script>
+<link href="../../static/libs/codemirror/codemirror.css" rel="stylesheet" />
+
+
 
 <div id="app" v-cloak>
     <div class="row">
@@ -26,28 +30,28 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div v-if="selectedItem" class="sticky-top-2 bg-white pb-3">
+            <div class="sticky-top-2 bg-white pb-3">
                 <div class="d-flex">
-                    <div>
+                    <div v-if="selectedItem">
                         <a v-on:click.stop="cancelItem()" href="#" class="icon text-muted">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Cancel
                         </a>
                     </div>
-                    <div>
+                    <div v-if="selectedItem">
                         <a v-on:click.stop="saveItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Save
                             <div v-if="selectedItem.isSaving" class="loader"></div>
                         </a>
                     </div>
-                    <div class="ml-auto">
+                    <div v-if="selectedItem" class="ml-auto">
                         <a v-on:click.stop="resetItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Reset
                         </a>
                     </div>
-                    <div v-if="selectedItem.name">
+                    <div v-if="selectedItem && selectedItem.name">
                         <a v-on:click.stop="deleteItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
                             Delete
@@ -61,28 +65,53 @@
                         </a>
                     </div>
                 </div>
-                <div v-if="selectedItem.error">
+                <div v-if="selectedItem && selectedItem.error">
                     {{selectedItem.error}}
                 </div>
             </div>
-            <form  v-if="selectedItem">
+            <form v-if="selectedItem">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input v-model="selectedItem.name_editing" class="form-control form-control-console" autofocus>
                 </div>
-                    <div class="form-group">
+                <div class="form-group">
                     <label for="text">Text</label>
-                    <textarea v-model="selectedItem.text_editing" class="form-control  form-control-console" rows="10" autofocus onfocus="autosize($(this));"></textarea>
+                    <text-editor v-model="selectedItem.text_editing"></text-editor>
                 </div>
+
+
             </form>
         </div>
     </div>
-   
 
 </div>
 {% endraw %}
 
 <script>
+    Vue.component('text-editor', {
+        props: ['value'],
+        watch: {
+            value: function (val) {
+                if (val != this.textEditor.getValue()) {
+                    this.textEditor.setValue(val ? val : '');
+                }
+            },
+        },
+        mounted: function () {
+            var scope = this;
+            this.textEditor = CodeMirror.fromTextArea(document.getElementById('text_editor'), {
+                lineNumbers: true
+            });
+            this.textEditor.on('change', function (cm) {
+                scope.textEditor.save();
+                scope.$emit('input', cm.getValue())
+            });
+            this.textEditor.setValue(this.value);
+            this.textEditor.setSize("100%", "100%");
+        },
+        template: '<textarea id="text_editor"></textarea>'
+    })
+
     const app = new Vue({
         el: '#app',
         data: {
@@ -114,7 +143,7 @@
                         this.error = "Error while connection to the server. " + error.message;
                     });
             },
-            newItem: function() {
+            newItem: function () {
                 this.selectedItem = {
                     name: null,
                     name_editing: null,

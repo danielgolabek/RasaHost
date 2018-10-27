@@ -91,6 +91,7 @@
     <Folder Include="RasaHost\static\libs\bootstrap\css\" />
     <Folder Include="RasaHost\static\libs\bootstrap\js\" />
     <Folder Include="RasaHost\static\libs\jquery\" />
+    <Folder Include="RasaHost\static\libs\codemirror\" />
     <Folder Include="RasaHost\static\libs\popper.js\" />
     <Folder Include="RasaHost\static\libs\popper.js\esm\" />
     <Folder Include="RasaHost\static\libs\popper.js\umd\" />
