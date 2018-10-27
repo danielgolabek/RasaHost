@@ -51,7 +51,7 @@ def api_intents_get(name):
 def api_intents_post(name):
     updated_intent = request.json
     if name.lower() != updated_intent['name'].lower():
-        existing_intned = IntentsService().get_by_name(name)
+        existing_intned = IntentsService().get_by_name(updated_intent['name'].lower())
         if existing_intned:
             return jsonify({'error': 'Intent with the name already exits.'})
     

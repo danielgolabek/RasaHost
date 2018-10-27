@@ -51,7 +51,7 @@ def api_stories_get(name):
 def api_stories_post(name):
     updated_story = request.json
     if name.lower() != updated_story['name'].lower():
-        existing_story = StoriesService().get_by_name(name)
+        existing_story = StoriesService().get_by_name(updated_story['name'].lower())
         if existing_story:
             return jsonify({'error': 'Story with the name already exits.'})
     
