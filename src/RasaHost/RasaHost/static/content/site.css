@@ -60,6 +60,7 @@ body {
 .sticky-top-2 {
     position: sticky;
     top: 34px;
+    z-index: 100;
 }
 
 .sidebar-sticky-2 {
@@ -179,8 +180,4 @@ input, textarea {
 
 .inline-block {
     display: inline-block;
-}
-
-.CodeMirror {
-    z-index: 0;
 }
