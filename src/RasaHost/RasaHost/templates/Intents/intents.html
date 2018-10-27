@@ -4,9 +4,6 @@
 
 {% raw %}
 
-<!--<script src="/static/libs/autosize/autosize.min.js"></script>-->
-<script src="../../static/libs/codemirror/codemirror.js"></script>
-<link href="../../static/libs/codemirror/codemirror.css" rel="stylesheet" />
 
 
 
@@ -78,12 +75,9 @@
                     <label for="text">Text</label>
                     <text-editor v-model="selectedItem.text_editing"></text-editor>
                 </div>
-
-
             </form>
         </div>
     </div>
-
 </div>
 {% endraw %}
 
@@ -137,7 +131,8 @@
             resetItem: function () {
                 this.selectedItem.text_editing = this.selectedItem.text;
                 this.selectedItem.name_editing = this.selectedItem.name;
-                this.$set(this.results, this.selectedItemIndex, this.selectedItem)
+                debugger;
+                this.refreshItem(this.selectedItemIndex, this.selectedItem)
             },
             cancelItem: function () {
                 this.selectedItem = null;
@@ -162,7 +157,6 @@
                     .then(res => res.json())
                     .then(json => {
                         if (json.error) {
-                            debugger;
                             item.isSaving = false;
                             item.error = json.error;
                             this.refreshItem(item, index);

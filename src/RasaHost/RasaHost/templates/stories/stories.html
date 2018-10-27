@@ -5,82 +5,77 @@
 
 {% raw %}
 
-<script src="/static/libs/autosize/autosize.min.js"></script>
 
 <div id="app" v-cloak>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1 sticky-top content-header">
-        <h1 class="h4">Stories</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="input-group">
-                <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
-                <div class="input-group-append">
-                    <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isSearching" class="loader"></div></button>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sticky-top-2">
+                <div class="sidebar-sticky-2">
+                    <div class="input-group">
+                        <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
+                        <div class="input-group-append">
+                            <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isSearching" class="loader"></div></button>
+                        </div>
+                    </div>
+                    <ul class="ul-items">
+                        <li v-for="(item, index) in results" @click="selectItem(item, index)">
+                            <a v-bind:class="{'active': item == selectedItem}" class="nav-link" href="#">{{item.name}}</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="/stories/create" class="btn btn-sm btn-outline-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" color="#384047" data-reactid="486"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
-                Create Story
-            </a>
+        <div class="col-md-9">
+            <div class="sticky-top-2 bg-white pb-3">
+                <div class="d-flex">
+                    <div v-if="selectedItem">
+                        <a v-on:click.stop="cancelItem()" href="#" class="icon text-muted">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            Cancel
+                        </a>
+                    </div>
+                    <div v-if="selectedItem">
+                        <a v-on:click.stop="saveItem()" href="#" class="icon text-muted ml-3">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            Save
+                            <div v-if="selectedItem.isSaving" class="loader"></div>
+                        </a>
+                    </div>
+                    <div v-if="selectedItem" class="ml-auto">
+                        <a v-on:click.stop="resetItem()" href="#" class="icon text-muted ml-3">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            Reset
+                        </a>
+                    </div>
+                    <div v-if="selectedItem && selectedItem.name">
+                        <a v-on:click.stop="deleteItem()" href="#" class="icon text-muted ml-3">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
+                            Delete
+                            <div v-if="selectedItem.isDeleting" class="loader"></div>
+                        </a>
+                    </div>
+                    <div>
+                        <a v-on:click.stop="newItem()" href="#" class="icon text-muted ml-4">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            New story
+                        </a>
+                    </div>
+                </div>
+                <div v-if="selectedItem && selectedItem.error">
+                    {{selectedItem.error}}
+                </div>
+            </div>
+            <form v-if="selectedItem">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input v-model="selectedItem.name_editing" class="form-control form-control-console" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="text">Text</label>
+                    <text-editor v-model="selectedItem.text_editing"></text-editor>
+                </div>
+            </form>
         </div>
-    </div>
-    <div class="table-responsive">
-        <div v-if="isSearching">
-            <i>Searching...</i>
-        </div>
-        <div v-if="noResults">
-            No stories found.
-        </div>
-        <div v-if="error">
-            {{error}}
-        </div>
-        <table v-if="!noResults" class="table table-condensed table-sm table-console">
-            <thead>
-                <tr>
-                    <th class="border-top-0 border-bottom-0">Name</th>
-                    <th class="border-top-0 border-bottom-0">Text</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(entry, index) in results" class="parent">
-                    <td class="font-black">
-                        <a v-bind:href="'/stories/edit/' + entry.name"><pre>{{entry.name}}</pre></a>
-                    </td>
-                    <td class="w-100-precent font-black">
-                        <div v-bind:class="{'d-block':entry.editing}" class="d-none">
-                            <textarea v-model="entry.text_editing" class="form-control form-control-console" autofocus onfocus="autosize($(this));"> </textarea>
-                            <a v-on:click.stop="cancelItem(entry, index)" href="#" class="icon text-muted small">
-                                <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                                Cancel
-                            </a>
-                            <a v-on:click.stop="saveItem(entry, index)" href="#" class="icon text-muted small">
-                                <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                                Save
-                            </a>
-                        </div>
-                        <div v-bind:class="{'d-none':entry.editing}">
-                            <pre v-bind:class="{ 'h-40': !entry.expended}" class="my-0 py-0 inl inline-block">{{entry.text}}</pre>
-                            <div class="child-hover-visible">
-                                <a v-on:click.stop="expandItem(entry, index)" href="#" class="icon text-muted small">
-                                    <svg width="12" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=""><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-                                    {{entry.expended ? 'Colapse' : 'Expand'}}
-                                </a>
-                                <a v-on:click.stop="editItem(entry, index)" href="#" class="icon text-muted small">
-                                    <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                                    Edit
-                                </a>
-                                <a v-on:click.stop="deleteItem(entry, index)" href="#" class="icon text-muted small">
-                                    <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
-                                    Delete
-                                </a>
-                            </div>
-                        </div>
-                        <div>{{entry.error}}</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>
 {% endraw %}
@@ -93,7 +88,8 @@
             results: [],
             noResults: false,
             isSearching: false,
-            error: ''
+            error: '',
+            selectedItem: null
         },
         created: function () {
             this.search();
@@ -116,54 +112,87 @@
                         this.error = "Error while connection to the server. " + error.message;
                     });
             },
-            expandItem: function (entry, index) {
-                entry.expended = !entry.expended;
-                this.$set(this.results, index, entry)
+            newItem: function () {
+                this.selectedItem = {
+                    name: null,
+                    name_editing: null,
+                    text: null,
+                    text_editing: null,
+                }
+                this.selectedItemIndex = null;
             },
-            deleteItem: function (entry, index) {
-                if (!confirm("Do you want to delete: " + entry.name))
+            selectItem: function (item, index) {
+                this.selectedItem = item;
+                this.selectedItem.text_editing = this.selectedItem.text;
+                this.selectedItem.name_editing = this.selectedItem.name;
+                this.selectedItemIndex = index;
+            },
+            resetItem: function () {
+                this.selectedItem.text_editing = this.selectedItem.text;
+                this.selectedItem.name_editing = this.selectedItem.name;
+                this.refreshItem(this.selectedItemIndex, this.selectedItem);
+            },
+            cancelItem: function () {
+                this.selectedItem = null;
+                this.selectedItemIndex = null;
+            },
+            refreshItem: function (item, index) {
+                if (index != null)
+                    this.$set(this.results, index, item);
+                else
+                    this.$forceUpdate();
+            },
+            saveItem: function () {
+                item = this.selectedItem;
+                index = this.selectedItemIndex;
+                item.isSaving = true;
+                this.refreshItem(item, index);
+                fetch(`/api/stories/${encodeURIComponent(item.name || item.name_editing)}`, {
+                    method: item.name ? "POST" : "PUT",
+                    headers: { "Content-Type": "application/json; charset=utf-8" },
+                    body: JSON.stringify({ name: item.name_editing, text: item.text_editing }),
+                })
+                    .then(res => res.json())
+                    .then(json => {
+                        if (json.error) {
+                            item.isSaving = false;
+                            item.error = json.error;
+                            this.refreshItem(item, index);
+                            return;
+                        }
+                        item.name = json.result.name;
+                        item.text = json.result.text;
+                        item.isSaving = false;
+                        item.error = null;
+                        this.refreshItem(item, index);
+                    })
+                    .catch(error => {
+                        item.isSaving = false;
+                        item.error = "Error while connection to the server. " + error.message;
+                        this.refreshItem(item, index);
+                    });
+            },
+            deleteItem: function () {
+                item = this.selectedItem;
+                index = this.selectedItemIndex;
+                if (!confirm("Do you want to delete: " + item.name))
                     return;
-                fetch(`/api/stories/${encodeURIComponent(entry.name)}`, {
+                item.isDeleting = true;
+                this.$set(this.results, index, item)
+                fetch(`/api/stories/${encodeURIComponent(item.name)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
                     .then(res => res.json())
                     .then(json => {
                         this.$delete(this.results, index)
+                        this.selectedItem = null;
+                        this.selectedItemIndex = null;
                     })
                     .catch(error => {
-                        this.error = "Error while connection to the server. " + error.message;
-                    });
-            },
-            editItem: function (entry, index) {
-                entry.editing = !entry.editing;
-                entry.text_editing = entry.text;
-                entry.error = null;
-                this.$set(this.results, index, entry)
-            },
-            cancelItem: function (entry, index) {
-                entry.editing = !entry.editing;
-                this.$set(this.results, index, entry)
-            },
-            saveItem: function (entry, index) {
-                fetch(`/api/stories/${encodeURIComponent(entry.name)}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json; charset=utf-8" },
-                    body: JSON.stringify({ name: entry.name, text: entry.text_editing }),
-                })
-                    .then(res => res.json())
-                    .then(json => {
-                        if (json.error) {
-                            entry.error = json.error;
-                            return;
-                        }
-                        entry.editing = false;
-                        entry.text = json.result.text;
-                        this.$set(this.results, index, entry)
-                    })
-                    .catch(error => {
-                        entry.error = "Error while connection to the server. " + error.message;
-                        this.$set(this.results, index, entry)
+                        item.isDeleting = false;
+                        item.error = "Error while connection to the server. " + error.message;
+                        this.$set(this.results, index, item)
                     });
             },
         }

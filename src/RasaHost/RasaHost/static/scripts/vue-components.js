@@ -16,7 +16,7 @@ Vue.component('text-editor', {
             scope.textEditor.save();
             scope.$emit('input', cm.getValue())
         });
-        this.textEditor.setValue(this.value);
+        this.textEditor.setValue(this.value ? this.value : '');
         this.textEditor.setSize("100%", "100%");
     },
     template: '<textarea id="text_editor"></textarea>'
