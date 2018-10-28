@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: rasa-host
+Version: 0.0.1
+Summary: UI for Rasa
+Home-page: https://github.com/danielgolabek/RasaHost
+Author: Daniel Golabek
+Author-email: daniel.golabek@gmail.com
+License: UNKNOWN
+Description: # Rasa-Host
+        
+        UI for Rasa
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
