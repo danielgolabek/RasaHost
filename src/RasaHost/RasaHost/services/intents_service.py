@@ -1,13 +1,10 @@
 import os
+import re
 from RasaHost import host
 
 class IntentsService(object):
     
     intents_path = host.intents_path
-
-    def __init__(self, *args, **kwargs):
-        if not os.path.exists(self.intents_path):
-            os.makedirs(self.intents_path)
 
     def get_all(self):
         model = []
@@ -37,3 +34,42 @@ class IntentsService(object):
 
     def delete(self, name):
         os.remove(os.path.join(self.intents_path, name  + ".md"))
+
+    def get_model(self):
+        model = []
+        for file in self.get_all():
+            fileModel = FileModel(name = file["name"])
+            for index, line in enumerate(file["text"].splitlines()):
+                section_type = next(iter(re.findall("\\s*##\\s*(.*?)\s*:", line)), None)
+                section_name = next(iter(re.findall("\\s*##\\s*.*\s*:(.*)", line)), None)
+                if section_type == "intent":
+                    intent = IntnetModel(name = section_name, line_text = line, line_index = index)
+                    fileModel.intents.append(intent)
+                    continue
+            model.append(fileModel)
+        return model
+
+class FileModel(object):
+    name = None
+    intents = [] 
+    def __init__(self, name = None):
+        self.name = name
+        self.intents = [] 
+
+class IntnetModel(object):
+    name = None
+    line_text = None
+    line_index = None
+    lines = []
+    def __init__(self, name = None, line_text = None, line_index = None):
+        self.name = name
+        self.line_text = line_text
+        self.line_index = line_index
+        self.lines = []
+
+class IntnetLineModel(object):
+    line_text = None
+    line_index = None
+    def __init__(self, line_text = None, line_index = None):
+        self.line_text = line_text
+        self.line_index = line_index

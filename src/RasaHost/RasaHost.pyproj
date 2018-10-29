@@ -72,9 +72,13 @@
     <Folder Include="RasaHost.Tests\" />
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost.Tests\services\intents\" />
     <Folder Include="RasaHost.Tests\services\" />
+    <Folder Include="RasaHost.Tests\services\intents\" />
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
     <Folder Include="RasaHost\controllers\__pycache__\" />
+    <Folder Include="RasaHost\src\" />
+    <Folder Include="RasaHost\src\RasaHost\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\" />
     <Folder Include="RasaHost\src\RasaHost\RasaHost\services\" />
     <Folder Include="RasaHost\src\RasaHost\RasaHost\services\data\" />
     <Folder Include="RasaHost\src\RasaHost\RasaHost\services\data\intents\" />
@@ -83,15 +87,9 @@
     <Folder Include="RasaHost\models\" />
     <Folder Include="RasaHost\database\" />
     <Folder Include="RasaHost\services\" />
-<<<<<<< HEAD
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\intents\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\stories\" />
-=======
     <Folder Include="RasaHost\src\RasaHost\sample\" />
     <Folder Include="RasaHost\src\RasaHost\sample\intents\" />
     <Folder Include="RasaHost\src\RasaHost\sample\stories\" />
->>>>>>> c46a718e1bde14eb37917ecb3175d40756d23276
     <Folder Include="RasaHost\services\data\" />
     <Folder Include="RasaHost\services\data\intents\" />
     <Folder Include="RasaHost\services\data\stories\" />
