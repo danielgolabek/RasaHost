@@ -148,7 +148,7 @@
                 index = this.selectedItemIndex;
                 item.isSaving = true;
                 this.refreshItem(item, index);
-                fetch(`/api/intents/${encodeURIComponent(item.name || item.name_editing)}`, {
+                fetch(`/api/intent/${encodeURIComponent(item.name || item.name_editing)}`, {
                     method: item.name ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ name: item.name_editing, text: item.text_editing }),
@@ -180,7 +180,7 @@
                     return;
                 item.isDeleting = true;
                 this.$set(this.results, index, item)
-                fetch(`/api/intents/${encodeURIComponent(item.name)}`, {
+                fetch(`/api/intent/${encodeURIComponent(item.name)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })

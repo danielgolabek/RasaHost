@@ -1,0 +1,3 @@
+## intent:greet
+- Hi
+- Hello

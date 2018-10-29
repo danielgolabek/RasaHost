@@ -26,6 +26,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="RasaHost.Tests\services\intents_service_tests.py" />
     <Compile Include="RasaHost.Tests\services\domain_service_tests.py">
       <SubType>Code</SubType>
     </Compile>
@@ -69,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RasaHost.Tests\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost.Tests\services\intents\" />
     <Folder Include="RasaHost.Tests\services\" />
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
@@ -84,6 +86,9 @@
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\" />
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\intents\" />
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\stories\" />
+    <Folder Include="RasaHost\services\data\" />
+    <Folder Include="RasaHost\services\data\intents\" />
+    <Folder Include="RasaHost\services\data\stories\" />
     <Folder Include="RasaHost\services\__pycache__\" />
     <Folder Include="RasaHost\static\" />
     <Folder Include="RasaHost\static\content\" />
@@ -107,11 +112,16 @@
     <Folder Include="RasaHost\templates\domain\" />
     <Folder Include="RasaHost\templates\logs\" />
     <Folder Include="RasaHost\templates\stories\" />
+    <Folder Include="sample\" />
+    <Folder Include="sample\intents\" />
+    <Folder Include="sample\stories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />
     <Content Include="Package.bat" />
     <Content Include="RasaHost.Tests\services\domain.yml" />
+    <Content Include="RasaHost.Tests\services\intents\greet.md" />
+    <Content Include="RasaHost.Tests\services\intents\goodbye.md" />
     <Content Include="RasaHost\static\libs\vue\vue.js" />
     <Content Include="README.md" />
     <Content Include="sample\nlu_config.yml" />
