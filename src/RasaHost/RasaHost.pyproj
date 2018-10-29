@@ -15,7 +15,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>RasaHost</Name>
     <RootNamespace>RasaHost</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,17 +75,23 @@
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
     <Folder Include="RasaHost\controllers\__pycache__\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\data\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\data\intents\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\data\stories\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\services\__pycache__\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\services\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\services\data\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\services\data\intents\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\services\data\stories\" />
+    <Folder Include="RasaHost\src\RasaHost\RasaHost\services\__pycache__\" />
     <Folder Include="RasaHost\models\" />
     <Folder Include="RasaHost\database\" />
     <Folder Include="RasaHost\services\" />
+<<<<<<< HEAD
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\" />
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\intents\" />
     <Folder Include="C:\Projects\RasaHost\src\RasaHost\sample\stories\" />
+=======
+    <Folder Include="RasaHost\src\RasaHost\sample\" />
+    <Folder Include="RasaHost\src\RasaHost\sample\intents\" />
+    <Folder Include="RasaHost\src\RasaHost\sample\stories\" />
+>>>>>>> c46a718e1bde14eb37917ecb3175d40756d23276
     <Folder Include="RasaHost\services\data\" />
     <Folder Include="RasaHost\services\data\intents\" />
     <Folder Include="RasaHost\services\data\stories\" />
@@ -297,6 +303,15 @@
     <Content Include="RasaHost\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env2\">
+      <Id>env2</Id>
+      <Version>3.6</Version>
+      <Description>env2 (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.6</Version>

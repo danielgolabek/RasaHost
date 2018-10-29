@@ -5,6 +5,10 @@ class IntentsService(object):
     
     intents_path = host.intents_path
 
+    def __init__(self, *args, **kwargs):
+        if not os.path.exists(self.intents_path):
+            os.makedirs(self.intents_path)
+
     def get_all(self):
         model = []
         for fileName in os.listdir(self.intents_path):

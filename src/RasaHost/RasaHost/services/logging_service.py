@@ -41,9 +41,9 @@ class LoggingSocketioHandler(StreamHandler):
 class LoggingSenderIdFilter(logging.Filter):
     def filter(self, record):
         if has_request_context():
-            record.sender_id = request.view_args['sender_id'] if 'sender_id' in request.view_args else None
+            record.sender_id = request.view_args['sender_id'] if request.view_args and 'sender_id' in request.view_args else None
             if not record.sender_id:
-                record.sender_id = request.json['sender_id'] if 'sender_id' in request.json else None
+                record.sender_id = request.json['sender_id'] if request.json  and 'sender_id' in request.json else None
         else:
             record.sender_id = None
         return True
