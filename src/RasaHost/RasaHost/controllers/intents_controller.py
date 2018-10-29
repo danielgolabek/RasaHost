@@ -54,11 +54,15 @@ def api_intents_delete(name):
     IntentsService().delete(name)
     return jsonify({'result': 'ok'})
 
-intents_warnings = []
-domain_model = DomainService().get_model()
-intents_model = IntentsService().get_model()
-for file in intents_model:
-    for intent in file.intents:
-        existe_in_domain = any([x for x in domain_model.intents if x.name == intent.name])
-        if not existe_in_domain:
-            intents_warnings.append("")
+@app.route('/api/intents/analyze', methods=['GET'])
+def api_intents_analyze():
+    intents_missing_in_domain = []
+    domain_model = DomainService().get_model()
+    intents_model = IntentsService().get_model()
+    for file in intents_model:
+        for intent in file.intents:
+            existe_in_domain = any([x for x in domain_model.intents if x.name == intent.name])
+            if not existe_in_domain:
+                intents_missing_in_domain.append({'name': intent.name, 'file': file.name})
+    return jsonify({'intents_missing_in_domain': intents_missing_in_domain})
+

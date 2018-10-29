@@ -2,31 +2,6 @@ import os
 import re
 from RasaHost import host
 
-class DomainIntnetModel(object):
-    name = None
-    line_text = None
-    line_index = None
-    def __init__(self, name = None, line_text = None, line_index = None):
-        self.name = name
-        self.line_text = line_text
-        self.line_index = line_index
-
-
-class DomainActionModel(object):
-    name = None
-    line_text = None
-    line_index = None
-    def __init__(self, name = None, line_text = None, line_index = None):
-        self.name = name
-        self.line_text = line_text
-        self.line_index = line_index
-
-
-class DomainModel(object):
-    intents = [] 
-    actions = []
-
-
 class DomainService(object):
     
     domain_path = host.domain_path
@@ -83,3 +58,27 @@ class DomainService(object):
                 elif line:
                     in_actions_section = False
         return model
+
+class DomainIntnetModel(object):
+    name = None
+    line_text = None
+    line_index = None
+    def __init__(self, name = None, line_text = None, line_index = None):
+        self.name = name
+        self.line_text = line_text
+        self.line_index = line_index
+
+
+class DomainActionModel(object):
+    name = None
+    line_text = None
+    line_index = None
+    def __init__(self, name = None, line_text = None, line_index = None):
+        self.name = name
+        self.line_text = line_text
+        self.line_index = line_index
+
+
+class DomainModel(object):
+    intents = [] 
+    actions = []

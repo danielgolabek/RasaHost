@@ -4,9 +4,6 @@
 
 {% raw %}
 
-
-
-
 <div id="app" v-cloak>
     <div class="row">
         <div class="col-md-3">
@@ -61,6 +58,13 @@
                             New intent
                         </a>
                     </div>
+                    <div v-if="!selectedItem" class="ml-auto">
+                        <a v-on:click.stop="analyzeIntents()" href="#" class="icon text-muted ml-4">
+                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
+                            Refresh
+                            <div v-if="isAnalyzing" class="loader"></div>
+                        </a>
+                    </div>
                 </div>
                 <div v-if="selectedItem && selectedItem.error">
                     {{selectedItem.error}}
@@ -76,12 +80,20 @@
                     <text-editor v-model="selectedItem.text_editing"></text-editor>
                 </div>
             </form>
+            <div v-if="!selectedItem">
+                <ul v-if="analyze">
+                    <li v-for="(item, index) in analyze.intents_missing_in_domain">
+                        {{item.name}} is missing in domain
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 {% endraw %}
 
 <script>
+
     const app = new Vue({
         el: '#app',
         data: {
@@ -89,11 +101,14 @@
             results: [],
             noResults: false,
             isSearching: false,
+            isAnalyzing: false,
             error: '',
-            selectedItem: null
+            selectedItem: null,
+            analyze: null,
         },
         created: function () {
             this.search();
+            this.analyzeIntents();
         },
         methods: {
             search: function () {
@@ -155,8 +170,8 @@
                 })
                     .then(res => res.json())
                     .then(json => {
+                        item.isSaving = false;
                         if (json.error) {
-                            item.isSaving = false;
                             item.error = json.error;
                             this.refreshItem(item, index);
                             return;
@@ -196,6 +211,23 @@
                         this.$set(this.results, index, item)
                     });
             },
+            analyzeIntents: function () {
+                this.isAnalyzing = true;
+                fetch(`/api/intents/analyze`)
+                    .then(res => res.json())
+                    .then(json => {
+                        this.isAnalyzing = false;
+                        if (json.error) {
+                            this.error = json.error;
+                            return;
+                        }
+                        this.analyze = json;
+                    })
+                    .catch(error => {
+                        this.isAnalyzing = false;
+                        this.error = "Error while connection to the server. " + error.message;
+                    });
+            }
         }
     });
 </script>
