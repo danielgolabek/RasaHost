@@ -31,6 +31,14 @@ class DomainService(object):
     
     domain_path = host.domain_path
 
+    def __init__(self, *args, **kwargs):
+        if not os.path.exists(self.domain_path):
+            if not os.path.exists(os.path.dirname(self.domain_path)):
+                os.makedirs(os.path.dirname(self.domain_path))
+            if not os.path.exists(self.domain_path):
+                with open(self.domain_path, "w") as f:
+                    f.write('')
+
     def get_text(self):
         with open(self.domain_path, "r") as f:
             return f.read()

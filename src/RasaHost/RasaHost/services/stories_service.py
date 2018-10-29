@@ -5,6 +5,10 @@ class StoriesService(object):
     
     stories_path = host.stories_path
     
+    def __init__(self, *args, **kwargs):
+        if not os.path.exists(self.stories_path):
+            os.makedirs(self.stories_path)
+
     def get_all(self):
         model = []
         for fileName in os.listdir(self.stories_path):

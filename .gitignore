@@ -276,3 +276,5 @@ src/RasaHost/env/Include/
 src/RasaHost/env/man/man1/
 
 src/RasaHost/build
+
+src/RasaHost/env2
