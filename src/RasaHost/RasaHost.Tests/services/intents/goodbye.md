@@ -1,2 +1,0 @@
-## intent:goodbey
-- Bye

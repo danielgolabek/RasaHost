@@ -9,7 +9,7 @@ from flask_socketio import SocketIO
 
 class RasaHost:
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    intents_path = os.path.join(current_dir, "data/intents/")
+    nlu_path = os.path.join(current_dir, "data/intents/")
     stories_path = os.path.join(current_dir, "data/stories/")
     domain_path = os.path.join(current_dir, "data/domain.yml")
     host = environ.get('SERVER_HOST', 'localhost')
@@ -20,10 +20,10 @@ class RasaHost:
 
     def __init__(self):
         self.flask = Flask(__name__)
-        self.socketio = SocketIO(self.flask)
+        #self.socketio = SocketIO(self.flask)
 
     def set_data_path(self, data_dir):
-        self.intents_path = os.path.join(data_dir, "intents/")
+        self.nlu_path = os.path.join(data_dir, "intents/")
         self.stories_path = os.path.join(data_dir, "stories/")
         self.domain_path = os.path.join(data_dir, "domain.yml")
 
@@ -31,6 +31,7 @@ class RasaHost:
         import RasaHost.controllers
         from RasaHost.services import LoggingService
         LoggingService().initialize()
-        self.socketio.run(self.flask,self.host, self.port)
+        #self.socketio.run(self.flask,self.host, self.port)
+        self.flask.run(self.host, self.port)
 
 host = RasaHost()

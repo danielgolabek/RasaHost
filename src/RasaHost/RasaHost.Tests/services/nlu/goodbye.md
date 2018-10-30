@@ -1,0 +1,2 @@
+## intent:goodbye
+- Bye

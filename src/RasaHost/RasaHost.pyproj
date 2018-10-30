@@ -15,7 +15,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>RasaHost</Name>
     <RootNamespace>RasaHost</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,16 +26,18 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="RasaHost.Tests\services\intents_service_tests.py" />
     <Compile Include="RasaHost.Tests\services\domain_service_tests.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost.Tests\services\analyze_service_tests.py" />
+    <Compile Include="RasaHost.Tests\services\stories_service_tests.py" />
+    <Compile Include="RasaHost.Tests\services\nlu_service_tests.py" />
     <Compile Include="RasaHost\controllers\rasa_controller.py" />
     <Compile Include="RasaHost\controllers\logs_controller.py" />
     <Compile Include="RasaHost\controllers\home_controller.py" />
     <Compile Include="RasaHost\controllers\domain_controller.py" />
     <Compile Include="RasaHost\controllers\stories_controller.py" />
-    <Compile Include="RasaHost\controllers\intents_controller.py" />
+    <Compile Include="RasaHost\controllers\nlu_controller.py" />
     <Compile Include="RasaHost\controllers\__init__.py" />
     <Compile Include="RasaHost\database\db_context.py">
       <SubType>Code</SubType>
@@ -53,8 +55,9 @@
     <Compile Include="RasaHost\services\logging_service.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\services\analyze_service.py" />
     <Compile Include="RasaHost\services\stories_service.py" />
-    <Compile Include="RasaHost\services\intents_service.py" />
+    <Compile Include="RasaHost\services\nlu_service.py" />
     <Compile Include="RasaHost\services\__init__.py" />
     <Compile Include="runserver.py" />
     <Compile Include="RasaHost\__init__.py" />
@@ -70,9 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RasaHost.Tests\" />
-    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost.Tests\services\intents\" />
     <Folder Include="RasaHost.Tests\services\" />
-    <Folder Include="RasaHost.Tests\services\intents\" />
+    <Folder Include="RasaHost.Tests\services\nlu\" />
+    <Folder Include="RasaHost.Tests\services\stories\" />
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
     <Folder Include="RasaHost\controllers\__pycache__\" />
@@ -124,8 +127,11 @@
     <Content Include="LICENSE.txt" />
     <Content Include="Package.bat" />
     <Content Include="RasaHost.Tests\services\domain.yml" />
-    <Content Include="RasaHost.Tests\services\intents\greet.md" />
-    <Content Include="RasaHost.Tests\services\intents\goodbye.md" />
+    <Content Include="RasaHost.Tests\services\nlu\goodbye.md" />
+    <Content Include="RasaHost.Tests\services\nlu\age.md" />
+    <Content Include="RasaHost.Tests\services\nlu\greet.md" />
+    <Content Include="RasaHost.Tests\services\stories\goodbye.md" />
+    <Content Include="RasaHost.Tests\services\stories\greet.md" />
     <Content Include="RasaHost\static\libs\vue\vue.js" />
     <Content Include="README.md" />
     <Content Include="sample\nlu_config.yml" />

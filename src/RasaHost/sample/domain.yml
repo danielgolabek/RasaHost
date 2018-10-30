@@ -1,4 +1,10 @@
+
 intents:
+  - agent.boss
+- agent.clever
+- agent.boring
+- agent.birth_date
+- agent.be_clever
   - greet
   - goodbye
   - mood_affirm
