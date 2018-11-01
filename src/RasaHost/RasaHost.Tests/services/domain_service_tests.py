@@ -42,5 +42,35 @@ class DomainServiceTests(unittest.TestCase):
         self.assertEqual("intents",  model.lines[0]["name"])
         self.assertEqual("section", model.lines[0]["type"])
 
+    def test_add_action_to_existing(self):
+        model = self.domain_service.get_model()
+        self.assertTrue("new action" not in model.get_actions())
+        model.add_action("new action")
+        self.assertTrue("new action" in model.get_actions())
+
+    def test_add_action_to_new(self):
+        model = self.domain_service.get_model()
+        model.lines = []
+        self.assertTrue("new action" not in model.get_actions())
+        model.add_action("new action")
+        self.assertTrue("new action" in model.get_actions())
+        self.assertEqual("actions",  model.lines[0]["name"])
+        self.assertEqual("section", model.lines[0]["type"])
+
+    def test_add_utter_to_existing(self):
+        model = self.domain_service.get_model()
+        self.assertTrue("new utter" not in model.get_utters())
+        model.add_utter("new utter")
+        self.assertTrue("new utter" in model.get_utters())
+
+    def test_add_utter_to_new(self):
+        model = self.domain_service.get_model()
+        model.lines = []
+        self.assertTrue("new utter" not in model.get_utters())
+        model.add_utter("new utter")
+        self.assertTrue("new utter" in model.get_utters())
+        self.assertEqual("templates",  model.lines[0]["name"])
+        self.assertEqual("section", model.lines[0]["type"])
+
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,7 @@ __all__ = ['home_controller', 'nlu_controller', 'stories_controller', 'domain_co
 from RasaHost.controllers import nlu_controller
 from RasaHost.controllers import stories_controller
 from RasaHost.controllers import domain_controller
+from RasaHost.controllers import analyze_controller
 from RasaHost.controllers import logs_controller
 from RasaHost.controllers import home_controller
 from RasaHost.controllers import rasa_controller

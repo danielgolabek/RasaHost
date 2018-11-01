@@ -14,17 +14,7 @@ from RasaHost.services import *
 def domain():
     model={'text': DomainService().get_text()}
     return render_template(
-        'domain/domain.html',
-        title='Domain',
-        model=model,
-        model_json=json.dumps(model)
-    )
-
-@app.route('/domain/edit')
-def domain_edit():
-    model={'text': DomainService().get_text()}
-    return render_template(
-        'domain/edit.html',
+        'domain/index.html',
         title='Domain',
         model=model,
         model_json=json.dumps(model)
@@ -40,3 +30,9 @@ def api_domain_post():
     text = request.json['text']
     DomainService().update_text(text)
     return jsonify({'result': {'text': text}})
+
+@app.route('/api/domain/intent', methods=['PUT'])
+def api_domain_add_intent():
+    intent = request.json['name']
+    domainModel = DomainService().add_intent(intent)
+    return jsonify({'result': 'ok'})

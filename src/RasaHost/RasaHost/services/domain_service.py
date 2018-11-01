@@ -19,67 +19,112 @@ class DomainService(object):
 
     def update_text(self, text):
         with open(self.domain_path, "w") as f:
-            f.write(text)
+            f.write(text or '')
         pass
 
     def get_model(self):
-        model = DomainModel()
-        lastSection = None
-        for index, text in enumerate(self.get_text().splitlines()):
-            line = {"text" : text, "type" : None, "name": None}
-            model.lines.append(line)
-           
-            text_striped = text.strip()
-            section_name = next(iter(re.findall("(.*):", text_striped)), None)
-            if section_name:
-                line["type"] = "section"
-                line["name"] = section_name
-                lastSection = section_name
-                continue
-                      
-            if lastSection == "intents":
-                if text_striped.startswith("-"):
-                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
-                    line["type"] = "intent"
-                    continue
-
-            if lastSection == "actions":
-                if text_striped.startswith("-"):
-                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
-                    line["type"] = "action"
-                    continue
-
-        return model
+        return DomainModel(text = self.get_text())
 
     def save_model(self, model):
-        lines = [line["text"] for line in model.lines]
-        text = "\n".join(lines)
-        self.update_text(text)
+        self.update_text(model.to_text())
 
+    def add_intent(self, name):
+        domain = self.get_model()
+        domain.add_intent(name)
+        self.save_model(domain)
+
+    def add_utter(self, name):
+        domain = self.get_model()
+        domain.add_utter(name)
+        self.save_model(domain)
+
+    def add_action(self, name):
+        domain = self.get_model()
+        domain.add_action(name)
+        self.save_model(domain)
+        
 
 class DomainModel(object):
 
     def __init__(self, *args, **kwargs):
         self.lines = []
+        if "text" in kwargs:
+            self.from_text(kwargs["text"])
 
     def get_intents(self):
         return [x["name"] for x in self.lines if x["type"] == "intent"]
 
-    def get_actions(self):
-        return [x["name"] for x in self.lines if x["type"] == "action"]
-
     def add_intent(self, name):
         if name in self.get_intents():
             return
+        section_index = self.ensure_section("intents")
+        self.lines.insert(section_index + 1, {"text" : "  - " + name, "type" : "intent", "name": name})
 
-        intents_section_index = None
+    def get_actions(self):
+        return [x["name"] for x in self.lines if x["type"] == "action"]
+
+    def add_action(self, name):
+        if name in self.get_actions():
+            return
+        section_index = self.ensure_section("actions")
+        self.lines.insert(section_index + 1, {"text" : "  - " + name, "type" : "action", "name": name})
+
+    def get_utters(self):
+        return [x["name"] for x in self.lines if x["type"] == "utter"]
+
+    def add_utter(self, name):
+        if name in self.get_utters():
+            return
+        section_index = self.ensure_section("templates")
+        self.lines.insert(section_index + 1, {"text" : "  " + name + ":", "type" : "utter", "name": name})
+        self.lines.insert(section_index + 2, {"text" : "  " + "- text: \"" + name + "\"", "type": None, "name": None})
+        self.lines.insert(section_index + 2, {"text" : "", "type": None, "name": None})
+
+    def ensure_section(self, name):
+        section_index = None
         for index, line in enumerate(self.lines):
-            if line["type"] == "section" and line["name"] == "intents":
-                intents_section_index = index
+            if line["type"] == "section" and line["name"] == name:
+                section_index = index
                 break
+        if section_index is None:
+            self.lines.insert(0, {"text" : name + ":", "type" : "section", "name": name})
+            section_index = 0
+        return section_index
 
-        if intents_section_index is None:
-            self.lines.insert(0, {"text" : "intents:", "type" : "section", "name": "intents"})
-            intents_section_index = 0
+    def from_text(self, text):
+        last_section = None
+        for index, text in enumerate(text.splitlines()):
+            line = {"text" : text, "type" : None, "name": None}
+            self.lines.append(line)
+           
+            text_striped = text.strip()
+            section_name = next(iter(re.findall("(.*):", text_striped)), None)
+            if section_name == "intents" or section_name == "actions" or section_name == "templates":
+                line["type"] = "section"
+                line["name"] = section_name
+                last_section = section_name
+                continue
+                      
+            if last_section == "intents":
+                if text_striped.startswith("-"):
+                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
+                    line["type"] = "intent"
+                    continue
 
-        self.lines.insert(intents_section_index + 1, {"text" : "  - " + name, "type" : "intent", "name": name})
+            if last_section == "actions":
+                if text_striped.startswith("-"):
+                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
+                    line["type"] = "action"
+                    continue
+
+            if last_section == "templates":
+                if text_striped.startswith("utter_"):
+                    utter_name = next(iter(re.findall("(.*):", text_striped)), None)
+                    line["name"] = utter_name
+                    line["type"] = "utter"
+                    continue
+        return self;
+
+    def to_text(self):
+        lines = [line["text"] for line in self.lines]
+        return "\n".join(lines)

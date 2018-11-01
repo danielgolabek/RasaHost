@@ -1,4 +1,4 @@
-## intent:agent.what_can_do
+## intent:agent.what_can_doo
 - what can you do?
 - what can do?
 - what is your ability?

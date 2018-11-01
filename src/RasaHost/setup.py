@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="rasa-host",
-    version="0.0.1",
+    version="0.0.2",
     author="Daniel Golabek",
     author_email="daniel.golabek@gmail.com",
     description="UI for Rasa",
@@ -13,9 +13,18 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/danielgolabek/RasaHost",
     packages=setuptools.find_packages(),
+    include_package_data=True,
+    zip_safe=False,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        "Flask",
+        "Flask-SocketIO",
+        "SQLAlchemy",
+        "urllib3",
+        "coloredlogs",
+    ]
 )

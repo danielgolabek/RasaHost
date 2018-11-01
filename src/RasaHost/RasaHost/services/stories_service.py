@@ -30,25 +30,26 @@ class StoriesService(object):
         stories = selft.get_all()
         return next(iter([x for x in stories if x['name'].lower() == name.lower()]), None)
 
+    def get_text_by_name(selft, name):
+        story = selft.get_by_name(name)
+        if story:
+            return story["text"]
+        return None
+
     def update(self, name, model):
         with open(os.path.join(self.stories_path, name  + ".md"), "w") as f:
-            f.write(model['text'])
+            f.write(model['text'] or '')
         os.rename(os.path.join(self.stories_path, name  + ".md"), os.path.join(self.stories_path, model['name']  + ".md"))
         return
 
     def update_text(self, name, text):
         with open(os.path.join(self.stories_path, name  + ".md"), "w") as f:
-            f.write(text)
+            f.write(text or '')
         return
 
     def delete(self, name):
         if os.path.exists(os.path.join(self.stories_path, name  + ".md")):
             os.remove(os.path.join(self.stories_path, name  + ".md"))
-
-    def create_default(self, name):
-        story = StoriesFileModel().create_default(name)
-        self.save_model(story)
-        return story
 
     def save_model(self, model):
         if isinstance(model, StoriesFileModel):
@@ -64,6 +65,8 @@ class StoriesService(object):
 
     def get_model_by_name(self, name):
         story = self.get_by_name(name)
+        if not story:
+            return None
         model = StoriesFileModel()
         model.name = story["name"]
         model.text = story["text"]
@@ -87,6 +90,13 @@ class StoriesService(object):
                 line["name"] = action_name
                 continue
         return model
+
+    def add_story(self, intent, utter):
+        story = self.get_model_by_name(intent) or StoriesFileModel()
+        story.name = story.name or intent
+        story.add_story(intent, utter)
+        self.save_model(story)
+        return story
 
 
 class StoriesFileListModel(object):
@@ -113,6 +123,10 @@ class StoriesFileModel(object):
     def get_all_intents(self):
         return [x for x in self.lines if x["type"] == "intent"]
 
+    def add_empty_line(self, name):
+        self.lines.append({"text" : "" + name, "type" : None, "name" : None, "file" : self.name})
+        return self
+
     def add_title(self, name):
         self.lines.append({"text" : "## "+ name, "type" : "story", "name" : name, "file" : self.name})
         return self
@@ -125,9 +139,10 @@ class StoriesFileModel(object):
         self.lines.append({"text" : "-"+ name, "type" : "utter", "name" : name, "file" : self.name})
         return self
 
-    def create_default(self, name):
-        self.name = name;
-        self.add_title(name)
-        self.add_intent(name)
-        self.add_utter("utter_" + name)
+    def add_story(self, intent, utter):
+        if (len(self.lines) > 0):
+            self.add_empty_line(intent)
+        self.add_title(intent)
+        self.add_intent(intent)
+        self.add_utter(utter)
         return self

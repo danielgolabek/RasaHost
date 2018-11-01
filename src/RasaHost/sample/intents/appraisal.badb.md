@@ -1,4 +1,4 @@
-## intent:appraisal.bad
+## intent:appraisal.badb
 - pretty bad
 - not good enough
 - that was lame

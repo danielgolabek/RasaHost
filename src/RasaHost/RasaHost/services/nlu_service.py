@@ -1,5 +1,6 @@
 import os
 import re
+import glob
 import itertools
 from RasaHost import host
 
@@ -12,11 +13,15 @@ class NluService(object):
 
     def get_all(self):
         model = []
-        for fileName in os.listdir(self.nlu_path):
-            with open(os.path.join(self.nlu_path, fileName), "r") as f:
+        recursivePath = os.path.join(self.nlu_path, '**/**/*.md')
+        for filePath in glob.iglob(recursivePath, recursive=True):
+        #for fileName in os.listdir(self.nlu_path):
+            fileName = os.path.basename(filePath)
+            with open(filePath, "r") as f:
                 text = f.read()
                 model.append({
                     'name': os.path.splitext(fileName)[0],
+                    'path': filePath,
                     'text': text
                 })
         return model;
@@ -30,46 +35,37 @@ class NluService(object):
         intents = selft.get_all()
         return next(iter([x for x in intents if x['name'].lower() == name.lower()]), None)
 
-    def update(self, name, model):
-        with open(os.path.join(self.nlu_path, name  + ".md"), "w") as f:
-            f.write(model['text'])
-        os.rename(os.path.join(self.nlu_path, name  + ".md"), os.path.join(self.nlu_path, model['name']  + ".md"))
+    def get_by_path(selft, path):
+        intents = selft.get_all()
+        return next(iter([x for x in intents if x['path'].lower() == path.lower()]), None)
+
+    def update(self, path, model):
+        with open(path, "w") as f:
+            f.write(model['text'] or '')
+        newPath = os.path.join(os.path.dirname(path), model['name']  + ".md")
+        os.rename(path, newPath)
         return
 
-    def delete(self, name):
-        os.remove(os.path.join(self.nlu_path, name  + ".md"))
+    def create(self, model):
+        path = os.path.join(self.nlu_path, model['name']  + ".md")
+        with open(path, "w") as f:
+            f.write(model['text'] or '')
+
+    def delete(self, path):
+        os.remove(path)
 
     def get_model(self):
-        model = NluListModel()
+        model = NluFileListModel()
         for intent in self.get_all():
             model.intents.append(self.get_model_by_name(intent["name"]))
         return model
 
-    def get_model_by_name(self, name):
-        intent = self.get_by_name(name)
-        model = NluModel()
-        model.name = intent["name"]
-        model.text = intent["text"]
-            
-        for index, text in enumerate(intent["text"].splitlines()):
-            line = {"text" : text, "type" : None, "name" : None, "nlu" : name}
-            model.lines.append(line)
-            section_type = next(iter(re.findall("\\s*##\\s*(.*?)\s*:", text)), None)
-            section_name = next(iter(re.findall("\\s*##\\s*.*\s*:(.*)", text)), None)
-            if section_type and section_name:
-                line["type"] = section_type
-                line["name"] = section_name
-                continue
+    def get_model_by_name(self, path):
+        file = self.get_by_path(path)
+        return NluFileModel(name = file["name"], path = file["path"], text = file["text"])
 
-        return model
 
-    def analyze(self):
-        domain_intents = DomainService().get_model().get_intents()
-        nlu_intents = self.get_model().get_intents()
-        intents_missing_in_domain = [x for x in nlu_intent if x["name"] not in domain_intents]
-        return {'intents_missing_in_domain': intents_missing_in_domain}
-
-class NluListModel(object):
+class NluFileListModel(object):
     
     def __init__(self, *args, **kwargs):
         self.intents = []
@@ -77,12 +73,32 @@ class NluListModel(object):
     def get_intents(self):
         return list(itertools.chain(*[x.get_intents() for x in self.intents]))
 
-class NluModel(object):
+class NluFileModel(object):
 
     def __init__(self, *args, **kwargs):
         self.lines = []
-        self.name = None
-        self.text = None
+        self.name = kwargs["name"] if "name" in kwargs else None
+        self.path = kwargs["path"] if "path" in kwargs else None
+        if "text" in kwargs:
+            self.from_text(kwargs["text"])
 
     def get_intents(self):
         return [x for x in self.lines if x["type"] == "intent"]
+
+    def from_text(self, text):
+        self.text = text
+        for index, text in enumerate(text.splitlines()):
+            line = {"text" : text, "type" : None, "name" : None, "file" : self.name}
+            self.lines.append(line)
+            section_type = next(iter(re.findall("\\s*##\\s*(.*?)\s*:", text)), None)
+            section_name = next(iter(re.findall("\\s*##\\s*.*\s*:(.*)", text)), None)
+            if section_type and section_name:
+                line["type"] = section_type
+                line["name"] = section_name
+                continue
+
+        return self
+
+    def to_text(self):
+        lines = [line["text"] for line in self.lines]
+        return "\n".join(lines)

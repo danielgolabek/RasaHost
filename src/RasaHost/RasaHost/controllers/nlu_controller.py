@@ -13,8 +13,8 @@ from RasaHost.services import *
 @app.route('/nlu')
 def nlu_list():
     return render_template(
-        'intents/intents.html',
-        title='Intents',
+        'nlu/index.html',
+        title='Nlu',
     )
 
 @app.route('/api/nlu', methods=['GET'])
@@ -23,48 +23,36 @@ def api_nlu_list():
     intents = NluService().find_all(q)
     return jsonify(intents)
 
-@app.route('/api/nlu/item/<name>', methods=['GET'])
+@app.route('/api/nlu/file/<path>', methods=['GET'])
 def api_nlu_get(name):
-    intent = NluService().get_by_name(name)
+    intent = NluService().get_by_path(path)
     return jsonify(intent)
 
-@app.route('/api/nlu/item/<name>', methods=['POST'])
-def api_nlu_post(name):
-    updated_intent = request.json
-    if name.lower() != updated_intent['name'].lower():
-        existing_intned = NluService().get_by_name(updated_intent['name'].lower())
-        if existing_intned:
-            return jsonify({'error': 'Intent with the name already exits.'})
-    
-    NluService().update(name, updated_intent)
-    return jsonify({'result': updated_intent})
+@app.route('/api/nlu/file/<path>', methods=['POST'])
+def api_nlu_post(path):
+    #if name.lower() != updated_intent['name'].lower():
+        #existing_intned = NluService().get_by_name(updated_intent['name'].lower())
+        #if existing_intned:
+        #    return jsonify({'error': 'Intent with the name already exits.'})
+    if not request.json["name"]:
+        return jsonify({'error': 'Name is required'})
+    NluService().update(path, request.json)
+    return jsonify({'result': request.json})
 
-@app.route('/api/nlu/item/<name>', methods=['PUT'])
-def api_nlu_put(name):
-    existing_intned = NluService().get_by_name(name)
-    if existing_intned:
-        return jsonify({'error': 'Intent with the name already exits.'})
+@app.route('/api/nlu/file/', methods=['PUT'])
+def api_nlu_put():
+    #existing_intned = NluService().get_by_name(name)
+    #if existing_intned:
+    #    return jsonify({'error': 'Intent with the name already exits.'})
 
-    new_intent = request.json
-    NluService().update(name, new_intent)
-    return jsonify({'result': new_intent})
+    if not request.json["name"]:
+        return jsonify({'error': 'Name is required'})
+    NluService().create(request.json)
+    return jsonify({'result': request.json})
 
-@app.route('/api/nlu/item/<name>', methods=['DELETE'])
-def api_nlu_delete(name):
-    NluService().delete(name)
-    return jsonify({'result': 'ok'})
-
-@app.route('/api/nlu/addIntentToDomain', methods=['POST'])
-def api_nlu_add_intent_to_domain():
-    intent = request.json['name']
-    domainModel = DomainService().get_model()
-    domainModel.add_intent(intent)
-    DomainService().save_model(domainModel)
-    return jsonify({'result': 'ok'})
-
-@app.route('/api/nlu/addStoryWithUtter', methods=['POST'])
-def api_nlu_add_intent_to_domain():
-    intent = request.json['name']
+@app.route('/api/nlu/file/<path>', methods=['DELETE'])
+def api_nlu_delete(path):
+    NluService().delete(path)
     return jsonify({'result': 'ok'})
 
 @app.route('/api/nlu/analyze', methods=['GET'])

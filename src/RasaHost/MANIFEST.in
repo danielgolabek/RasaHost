@@ -1,0 +1,3 @@
+graft RasaHost/static
+graft RasaHost/templates
+global-exclude *.pyc

@@ -38,6 +38,7 @@ class LoggingSocketioHandler(StreamHandler):
             e = sys.exc_info()[0]
             print(e)
 
+
 class LoggingSenderIdFilter(logging.Filter):
     def filter(self, record):
         if has_request_context():

@@ -18,14 +18,14 @@ class StoriesServiceTests(unittest.TestCase):
         self.assertEqual("goodbye 01", stories[0]["name"])
         self.assertEqual("greet 01", stories[1]["name"])
 
-    def test_create_default(self):
+    def test_add_story_with_intent_and_utter(self):
         self.stories_service.delete("test_story")
-        self.stories_service.create_default("test_story")
+        self.stories_service.add_story("test_story", "utter_test_story")
         story = self.stories_service.get_model_by_name("test_story")
         self.assertEqual("## test_story", story.lines[0]["text"])
         self.assertEqual("*test_story", story.lines[1]["text"])
         self.assertEqual("-utter_test_story", story.lines[2]["text"])
-
+        self.stories_service.delete("test_story")
 
 if __name__ == '__main__':
     unittest.main()

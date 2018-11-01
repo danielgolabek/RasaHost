@@ -2,26 +2,14 @@
 
 {% block content %}
 
-
 {% raw %}
-
 
 <div id="app" v-cloak>
     <div class="row">
         <div class="col-md-3">
             <div class="sticky-top-2">
                 <div class="sidebar-sticky-2">
-                    <div class="input-group">
-                        <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isSearching" class="loader"></div></button>
-                        </div>
-                    </div>
-                    <ul class="ul-items">
-                        <li v-for="(item, index) in results" @click="selectItem(item, index)">
-                            <a v-bind:class="{'active': item == selectedItem}" class="nav-link" href="#">{{item.name}}</a>
-                        </li>
-                    </ul>
+                    <intents-search url="/api/nlu" ref="intentsSearch" v-on:select-item="selectItem($event.item, $event.index)"></intents-search>
                 </div>
             </div>
         </div>
@@ -38,31 +26,25 @@
                         <a v-on:click.stop="saveItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Save
-                            <div v-if="selectedItem.isSaving" class="loader"></div>
+                            <div v-if="isSaving" class="loader"></div>
                         </a>
                     </div>
-                    <div v-if="selectedItem" class="ml-auto">
-                        <a v-on:click.stop="resetItem()" href="#" class="icon text-muted ml-3">
-                            <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                            Reset
-                        </a>
-                    </div>
-                    <div v-if="selectedItem && selectedItem.name">
+                    <div v-if="selectedItem && selectedItem.name" class="ml-auto">
                         <a v-on:click.stop="deleteItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
                             Delete
-                            <div v-if="selectedItem.isDeleting" class="loader"></div>
+                            <div v-if="isDeleting" class="loader"></div>
                         </a>
                     </div>
                     <div>
                         <a v-on:click.stop="newItem()" href="#" class="icon text-muted ml-4">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                            New story
+                            New intent
                         </a>
                     </div>
                 </div>
-                <div v-if="selectedItem && selectedItem.error">
-                    {{selectedItem.error}}
+                <div v-if="error">
+                    {{error}}
                 </div>
             </div>
             <form v-if="selectedItem">
@@ -78,42 +60,28 @@
         </div>
     </div>
 </div>
-{% endraw %}
+
 
 <script>
+
     const app = new Vue({
         el: '#app',
+        components: {
+            'intents-search': ListWithSearchComponent
+        },
         data: {
-            query: '',
-            results: [],
-            noResults: false,
-            isSearching: false,
             error: '',
-            selectedItem: null
+            selectedItem: null,
+            selectedItemIndex: null,
+            isDeleting: false,
+            isSaving: false
         },
         created: function () {
-            this.search();
         },
         methods: {
-            search: function () {
-                this.isSearching = true;
-                this.error = '';
-                fetch(`/api/stories?q=${encodeURIComponent(this.query)}`)
-                    .then(res => res.json())
-                    .then(res => {
-                        this.isSearching = false;
-                        this.results = res;
-                        this.noResults = this.results.length === 0;
-                    })
-                    .catch(error => {
-                        this.isSearching = false;
-                        this.results = [];
-                        this.noResults = false;
-                        this.error = "Error while connection to the server. " + error.message;
-                    });
-            },
             newItem: function () {
                 this.selectedItem = {
+                    path: null,
                     name: null,
                     name_editing: null,
                     text: null,
@@ -127,49 +95,33 @@
                 this.selectedItem.name_editing = this.selectedItem.name;
                 this.selectedItemIndex = index;
             },
-            resetItem: function () {
-                this.selectedItem.text_editing = this.selectedItem.text;
-                this.selectedItem.name_editing = this.selectedItem.name;
-                this.refreshItem(this.selectedItemIndex, this.selectedItem);
-            },
             cancelItem: function () {
                 this.selectedItem = null;
                 this.selectedItemIndex = null;
             },
-            refreshItem: function (item, index) {
-                if (index != null)
-                    this.$set(this.results, index, item);
-                else
-                    this.$forceUpdate();
-            },
             saveItem: function () {
                 item = this.selectedItem;
                 index = this.selectedItemIndex;
-                item.isSaving = true;
-                this.refreshItem(item, index);
-                fetch(`/api/stories/${encodeURIComponent(item.name || item.name_editing)}`, {
-                    method: item.name ? "POST" : "PUT",
+                this.isSaving = true;
+                fetch(`/api/nlu/file/${encodeURIComponent(item.path || '')}`, {
+                    method: item.path ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
-                    body: JSON.stringify({ name: item.name_editing, text: item.text_editing }),
+                    body: JSON.stringify({ path: item.path, name: item.name_editing, text: item.text_editing }),
                 })
                     .then(res => res.json())
                     .then(json => {
+                        this.isSaving = false;
                         if (json.error) {
-                            item.isSaving = false;
-                            item.error = json.error;
-                            this.refreshItem(item, index);
+                            this.error = json.error;
                             return;
                         }
                         item.name = json.result.name;
                         item.text = json.result.text;
-                        item.isSaving = false;
-                        item.error = null;
-                        this.refreshItem(item, index);
+                        this.error = null;
                     })
                     .catch(error => {
-                        item.isSaving = false;
-                        item.error = "Error while connection to the server. " + error.message;
-                        this.refreshItem(item, index);
+                        this.isSaving = false;
+                        this.error = "Error while connection to the server. " + error.message;
                     });
             },
             deleteItem: function () {
@@ -177,27 +129,28 @@
                 index = this.selectedItemIndex;
                 if (!confirm("Do you want to delete: " + item.name))
                     return;
-                item.isDeleting = true;
-                this.$set(this.results, index, item)
-                fetch(`/api/stories/${encodeURIComponent(item.name)}`, {
+                this.isDeleting = true;
+                fetch(`/api/nlu/file/${encodeURIComponent(item.path)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
                     .then(res => res.json())
                     .then(json => {
-                        this.$delete(this.results, index)
+                        this.isDeleting = false;
+                        this.$refs.intentsSearch.delete(index, item);
                         this.selectedItem = null;
                         this.selectedItemIndex = null;
                     })
                     .catch(error => {
-                        item.isDeleting = false;
-                        item.error = "Error while connection to the server. " + error.message;
-                        this.$set(this.results, index, item)
+                        this.isDeleting = false;
+                        this.error = "Error while connection to the server. " + error.message;
                     });
-            },
+            }
         }
     });
 </script>
 
+
+{% endraw %}
 
 {% endblock %}
