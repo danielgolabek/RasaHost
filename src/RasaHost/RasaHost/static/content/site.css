@@ -136,6 +136,11 @@ input, textarea {
     font-size: 14px;
 }
 
+.w-max-100 {
+    max-width: 100px;
+    overflow: hidden;
+}
+
 .w-100-precent {
     width: 100%;
 }
@@ -180,4 +185,8 @@ input, textarea {
 
 .inline-block {
     display: inline-block;
+}
+
+.text-break-word {
+    word-wrap: break-word;
 }

@@ -99,8 +99,8 @@ RasaHost/templates/domain/index.html
 RasaHost/templates/home/about.html
 RasaHost/templates/home/contact.html
 RasaHost/templates/home/index.html
+RasaHost/templates/logs/all.html
 RasaHost/templates/logs/console.html
-RasaHost/templates/logs/history.html
 RasaHost/templates/nlu/index.html
 RasaHost/templates/stories/index.html
 rasa_host.egg-info/PKG-INFO

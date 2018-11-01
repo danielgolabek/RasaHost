@@ -30,23 +30,24 @@ def api_nlu_get(name):
 
 @app.route('/api/nlu/file/<path>', methods=['POST'])
 def api_nlu_post(path):
-    #if name.lower() != updated_intent['name'].lower():
-        #existing_intned = NluService().get_by_name(updated_intent['name'].lower())
-        #if existing_intned:
-        #    return jsonify({'error': 'Intent with the name already exits.'})
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
+
+    newPath = os.path.join(os.path.dirname(path), request.json["name"]  + ".md")
+    if newPath != path and NluService().get_by_path(newPath):
+        return jsonify({'error': 'File with the name already exits.'})
+
     NluService().update(path, request.json)
     return jsonify({'result': request.json})
 
 @app.route('/api/nlu/file/', methods=['PUT'])
 def api_nlu_put():
-    #existing_intned = NluService().get_by_name(name)
-    #if existing_intned:
-    #    return jsonify({'error': 'Intent with the name already exits.'})
-
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
+
+    if NluService().get_by_name(request.json["name"]):
+        return jsonify({'error': 'File with the name already exits.'})
+
     NluService().create(request.json)
     return jsonify({'result': request.json})
 

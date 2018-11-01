@@ -13,6 +13,10 @@ class RasaHost:
     stories_path = os.path.join(current_dir, "data/stories/")
     domain_path = os.path.join(current_dir, "data/domain.yml")
     host = environ.get('SERVER_HOST', 'localhost')
+    port = 5555
+    agent = None
+    actionExecutor = None
+
     try:
         port = int(environ.get('SERVER_PORT', '5555'))
     except ValueError:
@@ -23,7 +27,7 @@ class RasaHost:
         #self.socketio = SocketIO(self.flask)
 
     def set_data_path(self, data_dir):
-        self.nlu_path = os.path.join(data_dir, "intents/")
+        self.nlu_path = os.path.join(data_dir, "nlu/")
         self.stories_path = os.path.join(data_dir, "stories/")
         self.domain_path = os.path.join(data_dir, "domain.yml")
 
