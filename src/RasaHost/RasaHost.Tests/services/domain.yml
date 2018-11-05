@@ -1,5 +1,5 @@
 intents:
-  - greet
+  - greet: {use_entities: false}
   - goodbye
   - mood_affirm
   - mood_deny

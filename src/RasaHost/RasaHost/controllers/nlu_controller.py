@@ -33,9 +33,9 @@ def api_nlu_post(path):
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
 
-    newPath = os.path.join(os.path.dirname(path), request.json["name"]  + ".md")
-    if newPath != path and NluService().get_by_path(newPath):
-        return jsonify({'error': 'File with the name already exits.'})
+    #newPath = os.path.join(os.path.dirname(path), request.json["name"]  + ".md")
+    #if newPath != path and NluService().get_by_path(newPath):
+    #    return jsonify({'error': 'File with the name already exits.'})
 
     NluService().update(path, request.json)
     return jsonify({'result': request.json})

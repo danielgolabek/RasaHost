@@ -107,13 +107,15 @@ class DomainModel(object):
                       
             if last_section == "intents":
                 if text_striped.startswith("-"):
-                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
+                    name = next(iter(re.findall("\\s*-\\s*(.*)", text)), None)
+                    line["name"] = name.split(':', 1)[0].strip()
                     line["type"] = "intent"
                     continue
 
             if last_section == "actions":
                 if text_striped.startswith("-"):
-                    line["name"] = next(iter(re.findall("\\s*-\\s*(.*?)$|\\s|:", text)), None)
+                    name = next(iter(re.findall("\\s*-\\s*(.*)", text)), None)
+                    line["name"] = name.split(':', 1)[0].strip()
                     line["type"] = "action"
                     continue
 

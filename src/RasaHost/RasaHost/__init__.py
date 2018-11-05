@@ -6,6 +6,7 @@ from os import environ
 import os
 from flask import Flask
 from flask_socketio import SocketIO
+from RasaHost.logging import enable
 
 class RasaHost:
     current_dir = os.path.dirname(os.path.realpath(__file__))
@@ -31,10 +32,13 @@ class RasaHost:
         self.stories_path = os.path.join(data_dir, "stories/")
         self.domain_path = os.path.join(data_dir, "domain.yml")
 
+    def enable_logging(self):
+        enable()
+
     def run(self):
         import RasaHost.controllers
         from RasaHost.services import LoggingService
-        LoggingService().initialize()
+        self.enable_logging()
         #self.socketio.run(self.flask,self.host, self.port)
         self.flask.run(self.host, self.port)
 

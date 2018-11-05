@@ -56,11 +56,11 @@ class NluService(object):
 
     def get_model(self):
         model = NluFileListModel()
-        for intent in self.get_all():
-            model.intents.append(self.get_model_by_name(intent["name"]))
+        for file in self.get_all():
+            model.intents.append(NluFileModel(name = file["name"], path = file["path"], text = file["text"]))
         return model
 
-    def get_model_by_name(self, path):
+    def get_model_by_path(self, path):
         file = self.get_by_path(path)
         return NluFileModel(name = file["name"], path = file["path"], text = file["text"])
 

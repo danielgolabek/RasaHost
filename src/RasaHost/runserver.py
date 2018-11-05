@@ -5,6 +5,7 @@ This script runs the RasaHost application using a development server.
 import os
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
+
 def train_core():
     from rasa_core.policies.fallback import FallbackPolicy
     from rasa_core.policies.keras_policy import KerasPolicy
@@ -38,6 +39,23 @@ def train_nlu():
     nlu_training_data = load_data(os.path.join(current_dir, "sample/intents"))
     nlu_trainer.train(nlu_training_data)
     nlu_trainer.persist(os.path.join(current_dir, "sample/models/current/nlu"))
+
+def get_agent():
+    from rasa_nlu import utils, config
+    from rasa_core.policies.fallback import FallbackPolicy
+    from rasa_core.policies.keras_policy import KerasPolicy
+    from rasa_core.interpreter import RasaNLUInterpreter
+    from rasa_core.agent import Agent
+    interpreter = RasaNLUInterpreter('sample/models/current/nlu')
+    action_endpoint_conf = utils.read_endpoint_config("core_endpoints.yml", endpoint_type="action_endpoint")
+    agent = Agent.load("sample/models/current/dialogue", interpreter=interpreter, action_endpoint=action_endpoint_conf)
+    return agent
+
+def get_action_executor():
+    executor = ActionExecutor()
+    #executor.register_package('actions')
+    print('register actions')
+    executor.register_package('actions')
 
 from RasaHost import host
 host.set_data_path(os.path.join(current_dir, "sample"))

@@ -52,6 +52,18 @@
     <Compile Include="RasaHost\database\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\logging\db_handler.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RasaHost\logging\senderid_filter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RasaHost\logging\socketio_handler.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RasaHost\logging\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RasaHost\services\domain_service.py" />
     <Compile Include="RasaHost\services\logging_service.py">
       <SubType>Code</SubType>
@@ -68,6 +80,9 @@
     <Compile Include="RasaHost\models\factory.py" />
     <Compile Include="RasaHost\models\memory.py" />
     <Compile Include="RasaHost\models\mongodb.py" />
+    <Compile Include="sample\actions\what_time.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="setup.py">
       <SubType>Code</SubType>
     </Compile>
@@ -80,6 +95,7 @@
     <Folder Include="RasaHost\" />
     <Folder Include="RasaHost\controllers\" />
     <Folder Include="RasaHost\controllers\__pycache__\" />
+    <Folder Include="RasaHost\logging\" />
     <Folder Include="RasaHost\src\" />
     <Folder Include="RasaHost\src\RasaHost\" />
     <Folder Include="RasaHost\src\RasaHost\RasaHost\" />
@@ -122,6 +138,7 @@
     <Folder Include="RasaHost\templates\logs\" />
     <Folder Include="RasaHost\templates\stories\" />
     <Folder Include="sample\" />
+    <Folder Include="sample\actions\" />
     <Folder Include="sample\nlu\" />
     <Folder Include="sample\nlu\agent\" />
     <Folder Include="sample\stories\" />

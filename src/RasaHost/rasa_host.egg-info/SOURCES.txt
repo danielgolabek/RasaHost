@@ -15,6 +15,10 @@ RasaHost/database/__init__.py
 RasaHost/database/db_context.py
 RasaHost/database/logs.py
 RasaHost/database/metadata.py
+RasaHost/logging/__init__.py
+RasaHost/logging/db_handler.py
+RasaHost/logging/senderid_filter.py
+RasaHost/logging/socketio_handler.py
 RasaHost/models/__init__.py
 RasaHost/models/azuretablestorage.py
 RasaHost/models/factory.py
@@ -101,6 +105,7 @@ RasaHost/templates/home/contact.html
 RasaHost/templates/home/index.html
 RasaHost/templates/logs/all.html
 RasaHost/templates/logs/console.html
+RasaHost/templates/logs/conversations.html
 RasaHost/templates/nlu/index.html
 RasaHost/templates/stories/index.html
 rasa_host.egg-info/PKG-INFO
