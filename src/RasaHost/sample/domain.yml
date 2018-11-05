@@ -1,10 +1,5 @@
-
 intents:
-  - agent.boss
-- agent.clever
-- agent.boring
-- agent.birth_date
-- agent.be_clever
+  - what_time
   - greet
   - goodbye
   - mood_affirm
@@ -12,9 +7,8 @@ intents:
   - mood_great
   - mood_unhappy
 
-
-
 actions:
+- action_what_time
 - utter_greet
 - utter_cheer_up
 - utter_did_that_help

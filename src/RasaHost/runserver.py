@@ -26,7 +26,7 @@ def train_core():
                               nlu_threshold=0.3)])
     data = agent.load_data(os.path.join(current_dir, "sample/stories"))
     agent.train(data)
-    agent.persist(os.path.join(current_dir, "sample/domain.yml"))
+    agent.persist(os.path.join(current_dir, "sample/models/current/dialogue"))
 
 
 def train_nlu():
@@ -36,7 +36,7 @@ def train_nlu():
     from rasa_nlu.config import RasaNLUModelConfig
     nlu_config = config.load(os.path.join(current_dir, "sample/nlu_config.yml"))
     nlu_trainer = Trainer(nlu_config)
-    nlu_training_data = load_data(os.path.join(current_dir, "sample/intents"))
+    nlu_training_data = load_data(os.path.join(current_dir, "sample/nlu"))
     nlu_trainer.train(nlu_training_data)
     nlu_trainer.persist(os.path.join(current_dir, "sample/models/current/nlu"))
 
@@ -46,8 +46,8 @@ def get_agent():
     from rasa_core.policies.keras_policy import KerasPolicy
     from rasa_core.interpreter import RasaNLUInterpreter
     from rasa_core.agent import Agent
-    interpreter = RasaNLUInterpreter('sample/models/current/nlu')
-    action_endpoint_conf = utils.read_endpoint_config("core_endpoints.yml", endpoint_type="action_endpoint")
+    interpreter = RasaNLUInterpreter('sample/models/current/nlu/default/model_20181105-230636')
+    action_endpoint_conf = utils.read_endpoint_config(os.path.join(current_dir, "sample/core_config.yml"), endpoint_type="action_endpoint")
     agent = Agent.load("sample/models/current/dialogue", interpreter=interpreter, action_endpoint=action_endpoint_conf)
     return agent
 
@@ -59,6 +59,10 @@ def get_action_executor():
 
 from RasaHost import host
 host.set_data_path(os.path.join(current_dir, "sample"))
+host.enable_logging()
+host.agent = get_agent()
+#train_core()
+#train_nlu()
 
 if __name__ == '__main__':    
     host.run()

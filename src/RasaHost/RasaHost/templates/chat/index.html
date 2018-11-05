@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% raw %}
+<div id="app" v-cloak>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="h-100-precent">
+                <ul class="list">
+                    <li v-for="message in messages" class="list-group">
+                        {{ message.text }}
+                    </li>
+                </ul>
+                <form v-on:submit.prevent="onSend">
+                    <div class="input-group mb-3">
+                        <div>{{error}}</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" v-model="text" placeholder="Message..." aria-label="Message..." aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <input name="send" class="btn btn-outline-secondary" type="submit" value="Send" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endraw %}
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            error: null,
+            isSending: false,
+            messages: [],
+            text:''
+        },
+        created: function () {
+        },
+        methods: {
+            onSend: function (event) {
+                this.isSending = true;
+                var message = { 'text': this.text };
+                this.messages.push(message);
+                fetch(`/conversations/default/respond?q=${encodeURIComponent(this.text || '')}`, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json; charset=utf-8" }
+                })
+                    .then(res => res.json())
+                    .then(json => {
+                        this.isSending = false;
+                        this.messages.push(json);
+                        
+                    })
+                    .catch(error => {
+                        this.isSending = false;
+                        message.error = "Error while connection to the server. " + error.message;
+                    });
+                this.text = '';
+            }
+        }
+    });
+</script>
+
+{% endblock %}

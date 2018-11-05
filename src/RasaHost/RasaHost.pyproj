@@ -15,7 +15,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>RasaHost</Name>
     <RootNamespace>RasaHost</RootNamespace>
-    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +33,7 @@
     <Compile Include="RasaHost.Tests\services\stories_service_tests.py" />
     <Compile Include="RasaHost.Tests\services\nlu_service_tests.py" />
     <Compile Include="RasaHost\controllers\analyze_controller.py" />
+    <Compile Include="RasaHost\controllers\chat_controller.py" />
     <Compile Include="RasaHost\controllers\rasa_controller.py" />
     <Compile Include="RasaHost\controllers\logs_controller.py" />
     <Compile Include="RasaHost\controllers\home_controller.py" />
@@ -130,13 +131,14 @@
     <Folder Include="RasaHost\static\libs\popper.js\umd\" />
     <Folder Include="RasaHost\static\images\" />
     <Folder Include="RasaHost\static\scripts\" />
-    <Folder Include="RasaHost\templates\" />
-    <Folder Include="RasaHost\templates\home\" />
-    <Folder Include="RasaHost\templates\analyze\" />
-    <Folder Include="RasaHost\templates\nlu\" />
-    <Folder Include="RasaHost\templates\domain\" />
-    <Folder Include="RasaHost\templates\logs\" />
-    <Folder Include="RasaHost\templates\stories\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\home\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\analyze\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\chat\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\nlu\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\domain\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\logs\" />
+    <Folder Include="C:\Projects\RasaHost\src\RasaHost\RasaHost\templates\stories\" />
     <Folder Include="sample\" />
     <Folder Include="sample\actions\" />
     <Folder Include="sample\nlu\" />
@@ -154,9 +156,11 @@
     <Content Include="RasaHost.Tests\services\stories\greet.md" />
     <Content Include="RasaHost\static\libs\vue\vue.js" />
     <Content Include="RasaHost\templates\analyze\index.html" />
+    <Content Include="RasaHost\templates\chat\index.html" />
     <Content Include="RasaHost\templates\logs\conversations.html" />
     <Content Include="README.md" />
     <Content Include="MANIFEST.in" />
+    <Content Include="sample\core_config.yml" />
     <Content Include="sample\nlu_config.yml" />
     <Content Include="RasaHost\controllers\__pycache__\home_controller.cpython-36.pyc" />
     <Content Include="RasaHost\controllers\__pycache__\intends_controller.cpython-36.pyc" />
