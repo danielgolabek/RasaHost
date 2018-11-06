@@ -3,13 +3,13 @@
     "action_listen": {
       "slots": []
     },
-    "utter_greet": {
-      "slots": []
-    },
     "action_what_time": {
       "slots": []
     },
     "utter_goodbye": {
+      "slots": []
+    },
+    "utter_greet": {
       "slots": []
     }
   },
@@ -17,10 +17,12 @@
   "python": "3.6.3",
   "max_histories": [
     5,
+    5,
     null
   ],
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.keras_policy.KerasPolicy",
     "rasa_core.policies.fallback.FallbackPolicy"
   ]

@@ -1,4 +1,4 @@
-## intent:greetings.bye
+## intent:goodbye
 - okay see you later
 - hope to see you later
 - bye for now

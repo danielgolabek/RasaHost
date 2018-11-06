@@ -1,4 +1,4 @@
-## intent:greetings.hello
+## intent:greet
 - long time no see
 - hello
 - hi

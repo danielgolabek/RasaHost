@@ -3,6 +3,10 @@ body {
     width: 100%;
 }
 
+html, body {
+    height: 100%;
+}
+
 .feather {
     width: 16px;
     height: 16px;
@@ -156,8 +160,14 @@ input, textarea {
 }
 
 .h-100-precent {
-    height: 100vh;
-    max-height: 100vh;
+    min-height: 100%;
+    height: auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+.fixed-row-bottom {
+    position: fixed;
+    bottom: 0;
 }
 
 .font-black {

@@ -198,7 +198,6 @@
     <Content Include="sample\nlu\agent\agent.talk_to_me.md" />
     <Content Include="sample\nlu\agent\agent.there.md" />
     <Content Include="sample\nlu\agent\agent.what_can_do.md" />
-    <Content Include="sample\nlu\appraisal.bad.md" />
     <Content Include="sample\nlu\appraisal.good.md" />
     <Content Include="sample\nlu\appraisal.no_problem.md" />
     <Content Include="sample\nlu\appraisal.thank_you.md" />

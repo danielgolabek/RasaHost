@@ -1,0 +1,7765 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "appraisal.badb",
+        "text": "pretty bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not good enough"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was lame"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was terrible"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it is bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "this is bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "I'm afraid it's bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "no it's bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was awful"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "so bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "this is too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "terrible"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "horrible"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "horrific"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "abysmal"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "no good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was horrible"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's lame"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's terrible"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "this is not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "very bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "bad girl"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not so good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's very bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's not good enough"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "well too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "bad very bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's so bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "really bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's really bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "bad idea"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that is bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that was not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it's not so good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not a good one"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "oh that's not good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not too good"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "so lame"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "that's really bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "it is too bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "bad really bad"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "not okay"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "Nothing"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "Shut up"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "nothing"
+      },
+      {
+        "intent": "appraisal.badb",
+        "text": "Fool"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "so cool"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "cool"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that is good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "glad to hear that"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's very nice of you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "terrific"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's amazing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's awesome"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "perfect"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "excellent"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "brilliant"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "fine"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's fine"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "amazing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "fantastic"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "really good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it is fine"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it is good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's perfect"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "much better"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "not bad"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "not too bad"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "marvelous"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "pleasant"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "pretty good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "really nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "splendid"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "straight"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "super"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "super fantastic"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "sweet"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "really well"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "very well"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that is awesome"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that is nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that is wonderful"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was amazing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was awesome"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was cute"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was pretty good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's a good idea"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's a good thing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's amazing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's awesome thank you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's better"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's cute"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's fantastic"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's much better"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's nice of you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's not bad"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's perfect"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's pretty good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's really good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's really nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's sweet of you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's very nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's wonderful"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "this is awesome"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "this is good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "this is great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "very nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "very then"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "wonderful"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "I'm glad to hear that"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "ok good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good for you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good to know"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "glad to hear it"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "so good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "so nice of you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "so sweet of you"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it was good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "oh well"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good thing"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that was good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's awesome"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "okay good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's fine"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "no it's okay"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's great"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "very nice"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "it's very good"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "that's fine"
+      },
+      {
+        "intent": "appraisal.good",
+        "text": "good for you"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "no worries"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "no probs"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "no problem"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "there's no problem"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "sure no problem"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "no problem about that"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "don't worry"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "don't worry there's no problem"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "yeah, no probs"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "i have no problem with that"
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "not a problem at all."
+      },
+      {
+        "intent": "appraisal.no_problem",
+        "text": "Okay no probs"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "you helped a lot thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "appreciate your help"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "cheers"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks a lot"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "terrific thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "great thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks so much"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you so much"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks for your help"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you for your help"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "nice thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "I appreciate it"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "I thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you that will be all"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks buddy"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks love"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you my friend"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "well thanks"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "very good thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "good thanks"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thanks again"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you again"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "all thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "alright thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "alright thanks"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "no thank you that's all"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "perfect thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "so nice of you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "well thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "well thanks"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thnx"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "thank you"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "tqsm"
+      },
+      {
+        "intent": "appraisal.thank_you",
+        "text": "ty"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "that's my pleasure"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "my pleasure"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "anytime"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "welcome"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "you're welcome"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "sure welcome"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "welcome here"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "you're so welcome"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "anything you want"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "i'm glad"
+      },
+      {
+        "intent": "appraisal.welcome",
+        "text": "pleasure is mine"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "good job"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "great job"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "way to go"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "well done"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "nice work"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "great work"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "amazing work"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "you did a wonderful job"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "bravo"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "fantastic"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "good work"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "marvelous"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "splendid"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "mind blowing"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "just great"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "u r awesome"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "kudos"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "brilliant"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "out standing"
+      },
+      {
+        "intent": "appraisal.well_done",
+        "text": "zing zing amazing"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "nevermind forget about it"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "nothing just forget it"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "no just cancel"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "sorry cancel"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "disregard"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "no cancel cancel"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "forget"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancel everything"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancel that one"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "i want to cancel"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancel it"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancelled"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancel it now"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "don't want cancel"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "cancel soon"
+      },
+      {
+        "intent": "confirmation.cancel",
+        "text": "shall stand cancelled"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "don't"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "don't want"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "need not"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "don't come"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "never help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "never"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "not needed"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "of course not"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "never"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "not at this time"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "not exactly"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "absolutely no"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "no forget"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "do not"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "no thanks"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "no don't want"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "sorry no"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "don't want your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "I don't you help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "I don't want your assistance"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "get out goodbye"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "i do not want your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "i don't need your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "i don't want your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "i am not okay with your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "don't want"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "do not"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "I don't need anything from you"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "okay keep it in mind"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "nope i dont need your help"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "Don't show off"
+      },
+      {
+        "intent": "confirmation.no",
+        "text": "nope"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yeah exactly"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "okay that's fine"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "I agree"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "that is ok"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "I guess"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "okey"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "ya"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "ok yes"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yes it is"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yep"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yew"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yeah"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yeah fine"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yea fine"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yep okay"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "fine okay"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yup"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "YEAH"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "okay buddy"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "oh okay"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "yeah sure"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "okay cool"
+      },
+      {
+        "intent": "confirmation.yes",
+        "text": "coool"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait a second"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "could you wait"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait please"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "hold on"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "oh wait"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait hold on"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "don't rush"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait one sec"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "hold on for a sec"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "hold on man"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "wait a sec"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "hold on a min"
+      },
+      {
+        "intent": "dialog.hold_on",
+        "text": "will u pls wait for a sec"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "wanna hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hug you"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "do you want a hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "may I hug you"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "could you give me a hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "I want a hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hug me"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hugged"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "you hugged"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hugging"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hugging me"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "hugged me"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "want a hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "a hug"
+      },
+      {
+        "intent": "dialog.hug",
+        "text": "I want hug you"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "I don't care"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "I shouldn't care about this"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "whatever"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "I do not care"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "I don't care at all"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "not caring"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "not care at all"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "don't care at all"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "not caring at all"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "idc"
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "i don't care about all this."
+      },
+      {
+        "intent": "dialog.i_do_not_care",
+        "text": "like i care"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "excuse me"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "apologise"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I apologize"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I'm sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I am so sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "my apologies"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "apologies"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "apologies to me"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "apology"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "excuse"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I beg your pardon"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "pardon"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I said sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I am really sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "forgive me"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "sorry about that"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "sorry about this"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "really sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "very sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "ok sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "I want to say sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "alright I'm sorry"
+      },
+      {
+        "intent": "dialog.sorry",
+        "text": "okay I'm sorry"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "what exactly do you mean?"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "what do you mean?"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "is that what you mean"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "what do you mean exactly?"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "but what do you mean"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "what did you mean?"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "i don't understand what you meant"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "what did you blabber?"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "don't blabber"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "you don't understand like anything"
+      },
+      {
+        "intent": "dialog.what_do_you_mean",
+        "text": "Why do you lie?"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "that was wrong"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "that's not what I asked"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "that's wrong"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "wrong"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "it is not right"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "that's not right"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "it's wrong"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "that is incorrect"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "incorrect"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "not correct"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "you are wrong"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "not right"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "don't think that you know everything"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "u don't know anything"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "you misinterpret"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "you misunderstood"
+      },
+      {
+        "intent": "dialog.wrong",
+        "text": "u took it in a wrong way"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "lol"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "xd"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ha ha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ahahah"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ahah lol"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "laughing out loud"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "LMAO"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "that's funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ah"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ah ah ah"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ahah"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ahaha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ahahaha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ha ha ha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "ha ha ha ha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hah"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "haha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "haha funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "haha haha haha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "haha that's funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "haha very funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hahaha"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hahaha funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hahaha very funny"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "he"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hehe"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "hehehe"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "lmao"
+      },
+      {
+        "intent": "emotions.ha_ha",
+        "text": "joker"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wow"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wow wow"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wow wow wow"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wooow"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "woah"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "woaah"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "amazing"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wow man"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "whoah"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "woow"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wow!!"
+      },
+      {
+        "intent": "emotions.wow",
+        "text": "wheey"
+      },
+      {
+        "intent": "goodbye",
+        "text": "okay see you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "hope to see you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye for now"
+      },
+      {
+        "intent": "goodbye",
+        "text": "till next time"
+      },
+      {
+        "intent": "goodbye",
+        "text": "I must go"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you soon"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye-bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye bye good night"
+      },
+      {
+        "intent": "goodbye",
+        "text": "good bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye bye see you"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye bye see you soon"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye bye take care"
+      },
+      {
+        "intent": "goodbye",
+        "text": "I said bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "never mind bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "now bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "that's all goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "that's it goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "leave me alone"
+      },
+      {
+        "intent": "goodbye",
+        "text": "go to bed"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye for now"
+      },
+      {
+        "intent": "goodbye",
+        "text": "talk to you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "you can go now"
+      },
+      {
+        "intent": "goodbye",
+        "text": "get lost"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye see you later"
+      },
+      {
+        "intent": "goodbye",
+        "text": "alright bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see ya"
+      },
+      {
+        "intent": "goodbye",
+        "text": "thanks bye bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "okay bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "okay thank you bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "see you tomorrow"
+      },
+      {
+        "intent": "goodbye",
+        "text": "ok bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "c u"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "good evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "good evening to you"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "hey good evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "hello good evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "good evening there"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "have an awesome evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "happy evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "good evening there buddy"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "have a good evening"
+      },
+      {
+        "intent": "greetings.goodevening",
+        "text": "enjoy the evening"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "GM"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "good morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "good morning to you"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "hello good morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "have a nice morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "have a great morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "good morning there"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "top of the morning to you"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "a good morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "good morning to you"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "hi good morning"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "and a good morning to you"
+      },
+      {
+        "intent": "greetings.goodmorning",
+        "text": "good morning too"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "GN"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "sweet dreams"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "have a good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good night to you"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "thank you good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "bye good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good night bye"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "bye good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good night for now"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "goodnight"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "thanks goodnight"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good night see you tomorrow"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "alright goodnight"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "good tonight"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "okay have a good night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "night"
+      },
+      {
+        "intent": "greetings.goodnight",
+        "text": "have a good night"
+      },
+      {
+        "intent": "greet",
+        "text": "long time no see"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "howdy"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "greetings"
+      },
+      {
+        "intent": "greet",
+        "text": "I greet you"
+      },
+      {
+        "intent": "greet",
+        "text": "hi there"
+      },
+      {
+        "intent": "greet",
+        "text": "hello there"
+      },
+      {
+        "intent": "greet",
+        "text": "lovely day isn't it"
+      },
+      {
+        "intent": "greet",
+        "text": "hello again"
+      },
+      {
+        "intent": "greet",
+        "text": "just going to say hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hi there"
+      },
+      {
+        "intent": "greet",
+        "text": "a good day"
+      },
+      {
+        "intent": "greet",
+        "text": "afternoon"
+      },
+      {
+        "intent": "greet",
+        "text": "hello hi"
+      },
+      {
+        "intent": "greet",
+        "text": "heya"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "hey man"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hey buddy"
+      },
+      {
+        "intent": "greet",
+        "text": "oka"
+      },
+      {
+        "intent": "greet",
+        "text": "yo man"
+      },
+      {
+        "intent": "greet",
+        "text": "hola"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your morning so far"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you getting on"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how's your day going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "is everything all right"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you doing?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are the things going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "are you alright"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "are you okay?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you feeling"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you going?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "is everything okay"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you today?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how do you do?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how do you feel?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how have you been?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is it going?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your day"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your day going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your evening"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how was your day"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "are you having a good day"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "hope your day is going well"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "hope you re having a pleasant evening"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how's life?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "I'm fine and you"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your life"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how has your day been"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your morning going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how has your day been going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how about you?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your day being"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how is your day going on"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how your day is going"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "what was your day like"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "what about your day"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how's your day"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you doing this morning"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how do you do?"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you"
+      },
+      {
+        "intent": "greetings.how_are_you",
+        "text": "how are you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "nice to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "it was nice meeting you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "it was very nice to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "good to know each other"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "glad to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "nice meeting you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "nice to meet you too"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "pleased to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "pleasure to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "pleasure to meet you too"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "happy to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "It’s a pleasure to meet you again"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "It’s very nice to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "Lovely to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "How wonderful to meet you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "It was lovely meeting you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "It’s been a pleasure meeting you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "I’ve enjoyed meeting you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "Great interacting with you"
+      },
+      {
+        "intent": "greetings.nice_to_meet_you",
+        "text": "I had a great time or meeting"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "it's nice to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "lovely to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "I'm glad to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "great to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "it's good to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "glad to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "how good it is to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "always a pleasure to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "nice to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "good to see you"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "great to see you again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "great to see you too"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "I am glad to see you again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "nice to see you again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "good to see you again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "it's good to see you too"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "It was great catching up with u"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "I'm really pleased to see u again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "I’m delighted to see you again"
+      },
+      {
+        "intent": "greetings.nice_to_see_you",
+        "text": "Great seeing u"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "it's been so nice to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "it's been a pleasure talking to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "nice to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "it's nice to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "nice talking to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "it is nice talking to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "how nice it is to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "it was great chatting with you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "nice to talk to you again"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "It was nice speaking with you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "It was great to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "nice chatting with you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "pleased to talk to you"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "pleasure to talk"
+      },
+      {
+        "intent": "greetings.nice_to_talk_to_you",
+        "text": "It's been a pleasure talking to u"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what is on your mind?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's happened"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what is up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "whazzup"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "sup?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "good what's up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "I said what's up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "then what's up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's shaking"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "wassup"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what are you doing?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what is going on"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what is happening"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's cracking"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's cooking"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "hey what's up"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what's up today"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "oh What happened?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "What are you upto?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "hey buddy wassup"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "sup then"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "so wassup"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "buddy sup"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "What are you doing?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "what is up with you these days?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "What you upto?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "then?"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "wassup yo"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "sup yo"
+      },
+      {
+        "intent": "greetings.whatsup",
+        "text": "wassap yo"
+      },
+      {
+        "intent": "phone_me",
+        "text": "phone me"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm being mad"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm enraged"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm furious"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I am angry with you"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I am mad"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I am mad at you"
+      },
+      {
+        "intent": "user.angry",
+        "text": "i'm pissed off"
+      },
+      {
+        "intent": "user.angry",
+        "text": "you have pissed me off"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm mad at you"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I am pissed"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm furious with you"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I got angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I was angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I became angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I was very angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "You bet I'm angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "That made me angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "U made me angry"
+      },
+      {
+        "intent": "user.angry",
+        "text": "I'm still angry about that"
+      },
+      {
+        "intent": "user.back",
+        "text": "boss is back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I am back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I'm here again"
+      },
+      {
+        "intent": "user.back",
+        "text": "here I am again"
+      },
+      {
+        "intent": "user.back",
+        "text": "I got back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I came back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I have returned"
+      },
+      {
+        "intent": "user.back",
+        "text": "I am right back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I'm rb"
+      },
+      {
+        "intent": "user.back",
+        "text": "I'm here"
+      },
+      {
+        "intent": "user.back",
+        "text": "I'm back again"
+      },
+      {
+        "intent": "user.back",
+        "text": "am back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I'm back"
+      },
+      {
+        "intent": "user.back",
+        "text": "I am right back"
+      },
+      {
+        "intent": "user.back",
+        "text": "look who is back"
+      },
+      {
+        "intent": "user.bored",
+        "text": "soo bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "that was boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I'm bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I am getting bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "Staying at home is boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "very boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "it bores me"
+      },
+      {
+        "intent": "user.bored",
+        "text": "i had a slow day"
+      },
+      {
+        "intent": "user.bored",
+        "text": "i am very bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "Im kinda bored today"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I've never been more bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I was bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "It's boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "This is boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "We're all bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "It's very boring"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I'm already bored"
+      },
+      {
+        "intent": "user.bored",
+        "text": "I'm bored out of my mind"
+      },
+      {
+        "intent": "user.busy",
+        "text": "busy right now"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm overloaded"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I have no time"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm swamped"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I got things to do"
+      },
+      {
+        "intent": "user.busy",
+        "text": "how busy I am"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I got work to do"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm working"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I don't have time for this"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm super busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm working right now"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm busy right now and can't play with you"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I have rather a busy afternoon in front of me"
+      },
+      {
+        "intent": "user.busy",
+        "text": "i am too busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I am very busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm a bit busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm a busy man"
+      },
+      {
+        "intent": "user.busy",
+        "text": "quite busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'm kind of busy"
+      },
+      {
+        "intent": "user.busy",
+        "text": "I'll see you later"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm insomnia's"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm sleepless"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't get any sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't fall asleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't get to sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm insomniac"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm not able to sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm wide awake"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't seem to fall asleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I couldn't sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I just can't sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't sleep at all"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I didn't go to sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I just couldn't sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I'm not sleeping well"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "Trying to get some sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I can't sleep at night"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I couldn't get to sleep"
+      },
+      {
+        "intent": "user.can_not_sleep",
+        "text": "I didn't get much sleep"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "bad time for talking"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I don't want to talk"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "let's not talk"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I'm not talking to you anymore"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I don't want to talk to you"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "let's stop talking for a minute"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I'm not in the mood for chatting"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I don't want to talk to you"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I don't like talking to you"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "Let's stop talking"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I'm not in a mood to talk"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "stop your nuisance talk"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "I am done talking to u"
+      },
+      {
+        "intent": "user.does_not_want_to_talk",
+        "text": "Can u pls stop talking"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I am excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm really excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "how excited I am"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm thrilled"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm excited about working with you"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm excited to start our friendship"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm thrilled"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I am thrilled to talk to you"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm damn excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm hyped"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm very excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I felt excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "It was exciting"
+      },
+      {
+        "intent": "user.excited",
+        "text": "That was exciting"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm really excited"
+      },
+      {
+        "intent": "user.excited",
+        "text": "How exciting!"
+      },
+      {
+        "intent": "user.excited",
+        "text": "i'm excited about tomorrow"
+      },
+      {
+        "intent": "user.excited",
+        "text": "It was very exciting! I'd like to use this feature again"
+      },
+      {
+        "intent": "user.excited",
+        "text": "I'm pretty excited about it"
+      },
+      {
+        "intent": "user.excited",
+        "text": "It's fun and exciting"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "let's go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "I'd like to go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "is it time for bed yet"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "it's time to go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "time for us to go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "I'm going to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "I'm a little tired and I want to go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "it's bed time"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "going to bed now"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "gonna go to bed"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "time to sleep"
+      },
+      {
+        "intent": "user.going_to_bed",
+        "text": "I sometimes feel drowsy in the early afternoon"
+      },
+      {
+        "intent": "user.good",
+        "text": "I am good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm doing just great"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm doing fine"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm doing good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm great thanks"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm super good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm feeling great"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm in a good mood"
+      },
+      {
+        "intent": "user.good",
+        "text": "I'm doing really good"
+      },
+      {
+        "intent": "user.good",
+        "text": "good"
+      },
+      {
+        "intent": "user.good",
+        "text": "It's good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I feel good"
+      },
+      {
+        "intent": "user.good",
+        "text": "That's good"
+      },
+      {
+        "intent": "user.good",
+        "text": "That feels good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I feel very good"
+      },
+      {
+        "intent": "user.good",
+        "text": "i am pretty good"
+      },
+      {
+        "intent": "user.good",
+        "text": "I feel good today"
+      },
+      {
+        "intent": "user.good",
+        "text": "I am really good"
+      },
+      {
+        "intent": "user.happy",
+        "text": "Feeling happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I am happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm happy to see you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "if you're happy then I'm happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm happy for you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm happy to help"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm happy to see you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "you made me very happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm glad to see you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm happy to talk to you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I was the happiest man on earth"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm just really happy right now"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I'm really happy I ran into you"
+      },
+      {
+        "intent": "user.happy",
+        "text": "I feel happiest when I'm chatting with u"
+      },
+      {
+        "intent": "user.happy",
+        "text": "Nobody but you can make me happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "Whenever I see you, I feel happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "ur smile always makes me happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "i feel happy"
+      },
+      {
+        "intent": "user.happy",
+        "text": "i was so happy"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "You know today it's my bday"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "it is my birthday"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "I'm celebrating my birthday today"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "today is my birthday"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "it's my birthday today"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "I was born today"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "it's my b-day"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "i was born on this day"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "It's my born day"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "I want you to know that it's my birthday today"
+      },
+      {
+        "intent": "user.has_birthday",
+        "text": "yaaaay it is my birthday"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm here"
+      },
+      {
+        "intent": "user.here",
+        "text": "here buddy"
+      },
+      {
+        "intent": "user.here",
+        "text": "here dude"
+      },
+      {
+        "intent": "user.here",
+        "text": "I am here"
+      },
+      {
+        "intent": "user.here",
+        "text": "here I am"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm right here"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm already here"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm here buddy"
+      },
+      {
+        "intent": "user.here",
+        "text": "I've not gone anywhere"
+      },
+      {
+        "intent": "user.here",
+        "text": "I've been here all the time"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm here only"
+      },
+      {
+        "intent": "user.here",
+        "text": "Here i come"
+      },
+      {
+        "intent": "user.here",
+        "text": "I'm out here"
+      },
+      {
+        "intent": "user.here",
+        "text": "i am over here"
+      },
+      {
+        "intent": "user.here",
+        "text": "Now look here"
+      },
+      {
+        "intent": "user.here",
+        "text": "Look over here"
+      },
+      {
+        "intent": "user.here",
+        "text": "I just got here"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I am joking"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I'm kidding"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I'm just being funny"
+      },
+      {
+        "intent": "user.joking",
+        "text": "it was a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I was just joking"
+      },
+      {
+        "intent": "user.joking",
+        "text": "it's a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "joking"
+      },
+      {
+        "intent": "user.joking",
+        "text": "just kidding"
+      },
+      {
+        "intent": "user.joking",
+        "text": "kidding"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I'm just playing with you"
+      },
+      {
+        "intent": "user.joking",
+        "text": "This was meant as a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "i told a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I'm just joking"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I was just joking"
+      },
+      {
+        "intent": "user.joking",
+        "text": "It was just a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "It's all a big joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I meant it as a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "That was just a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "i said that as a joke"
+      },
+      {
+        "intent": "user.joking",
+        "text": "I'm joking, of course"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you the way you are"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you a lot"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I think I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I liked you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "like you a lot"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you too"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I really like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "but I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like u"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "just like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you very much"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you so much"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "yeah I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "yes I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "okay I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are special to me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are very special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are so sweet"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you know I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "that's why I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you baby"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are very special to me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I just like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "hey I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "thank you I like you too"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I do like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are special for me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "no I like you the way you are"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you already"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "well you are special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "but I really like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you more"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "that's what I like about you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are so special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "hi I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I really really like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're very special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you as a friend"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "that's because you are special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I said I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're so special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "good I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "yes you are special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like your smile"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you as you are"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I'm starting to like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're awesome I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I also like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "but I like u"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "of course I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you too you're one of my favorite people to chat with"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "but I like you so much"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "really like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're funny I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I kinda like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're so special to me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you're very special to me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like that about you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "but I like you just the way you are"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "okay I like you too"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you you're cool"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you very"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you you're nice"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "sorry I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "thanks I like you too"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are really special"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "you are so special to me"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "cuz I like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you now"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you too much"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I really do like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I really really really really like you"
+      },
+      {
+        "intent": "user.likes_agent",
+        "text": "I like you just the way you are"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I am lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm very lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm so lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm really lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I am feeling lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I feel lonely"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I am a loner"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I don't have any company"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I don't have anyone else"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm always alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "am all alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I live alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I'm all alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I've gotten used to living alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I think I've been living alone too long"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "One of the disadvantages of living alone is that you have no one to talk to"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I am still alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "i lives in this city all alone"
+      },
+      {
+        "intent": "user.lonely",
+        "text": "I am used to living alone"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "what do I look like"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "how do I look?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "how do I look like"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "do I look good ?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "do you know what I look like ?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "can you tell what I look like ?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "what do you think I look like?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "am i good looking?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "what do you think about my looks"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "Whom do i look like?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "what do u think of me?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "what do u think about me?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "do u think i look good?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "any idea of how good i look like?"
+      },
+      {
+        "intent": "user.looks_like",
+        "text": "Ain't i look good?"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I love you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "love you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I adore you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I am in love with you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I love you so much"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I love you too"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I think I love you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "loving you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "you know I love you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "do you love me ?"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "Love you so much"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "my heart is filled with you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I love u to the moon and back"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "I am in deep love with you"
+      },
+      {
+        "intent": "user.loves_agent",
+        "text": "you r unique"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "missing you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I miss you very much"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I'll miss you so much"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I missed you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I've missed you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "miss you buddy"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "miss you badly"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "miss you :("
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I missed you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I'll miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "We'll miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I just miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I've missed you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I miss you a lot"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I really miss you"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I miss you already"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I think i miss u"
+      },
+      {
+        "intent": "user.misses_agent",
+        "text": "I miss talking with you"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what should I do about it"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "any suggestions"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what do you recommend"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "give me a wise advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "I need advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "any advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "do you have any advice for me"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "advise me"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what should I do"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "can I ask for your advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "can you advise me"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "guide me"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "can you give me advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "can you offer any advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "give me some advice about"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "give me some good advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "help me with advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "I could use some advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "I need an advice from you"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "I seek your advice"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what can you recommend"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what do you suggest"
+      },
+      {
+        "intent": "user.needs_advice",
+        "text": "what is your advice"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I'm in a sad mood"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am sad"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I'm grieving"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am depressed"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am feeling sad"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am upset"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I'm unhappy"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I'm having a bad day"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I want to cry"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I'm not happy"
+      },
+      {
+        "intent": "user.sad",
+        "text": "feeling sad"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I felt sad for no reason"
+      },
+      {
+        "intent": "user.sad",
+        "text": "Now I'm sad"
+      },
+      {
+        "intent": "user.sad",
+        "text": "It makes me sad"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am sad to hear it"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am a very sad person"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I feel sad every now and then"
+      },
+      {
+        "intent": "user.sad",
+        "text": "I am as sad and lonely as can be"
+      },
+      {
+        "intent": "user.sad",
+        "text": "feeling so down"
+      },
+      {
+        "intent": "user.sad",
+        "text": "i am not in a good mood"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I am sleepy"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I want to sleep"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I'm falling asleep"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I'm falling asleep on my feet"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I'm sleeping"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I am drowsy"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "i will sleep anytime"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "i will doze off"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "I am too sleepy today"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "feeling too sleepy"
+      },
+      {
+        "intent": "user.sleepy",
+        "text": "i want to sleep"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "test"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "I am testing you"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "can I test you"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "I want to test you"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "just testing you"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "let me test you"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "testing chatbot"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "testing"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "this is just a test"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "you are being tested"
+      },
+      {
+        "intent": "user.testing_agent",
+        "text": "you're tested"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm drained"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I've overworked"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I am tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm exhausted"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I grow weary"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm worn out"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm getting tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I feel tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm so tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm completely drained out"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm very tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "i was tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "i feel tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "i'm dead tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I'm a bit tires"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I was very tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I am really tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "i am awfully tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "i am kind of so tired"
+      },
+      {
+        "intent": "user.tired",
+        "text": "I am little tired"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'm waiting"
+      },
+      {
+        "intent": "user.waits",
+        "text": "still waiting"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'll wait"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I can't wait anymore"
+      },
+      {
+        "intent": "user.waits",
+        "text": "how long do I have to wait?"
+      },
+      {
+        "intent": "user.waits",
+        "text": "don't make me wait like this"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'm still waiting"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'm waiting for you"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'm waiting for a long time"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'll be waiting for you"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I'll be waiting"
+      },
+      {
+        "intent": "user.waits",
+        "text": "done with waiting"
+      },
+      {
+        "intent": "user.waits",
+        "text": "Should I wait for you here?"
+      },
+      {
+        "intent": "user.waits",
+        "text": "How long will we have to wait?"
+      },
+      {
+        "intent": "user.waits",
+        "text": "Don't ever make me wait again"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I was waiting for a long time"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I've waited too long for this"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I couldn't wait another second"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I've been here waiting for you"
+      },
+      {
+        "intent": "user.waits",
+        "text": "I am tired of waiting"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "I'd like to see you again"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "I hope to see you again"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "would be nice to see you again"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "that'd be great to see you again"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "I'd be happy to see you again"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "let's meet soon"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "i want to see you again soon"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "let's catch up soon"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "I will see you soon"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "want to see u very badly"
+      },
+      {
+        "intent": "user.wants_to_see_agent_again",
+        "text": "I want to see you again"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "let's discuss something"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "let's have a discussion"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "can I speak"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "can I start speaking"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "can we talk"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "speak with me"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "let's talk"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I want to talk to you"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I need to talk to you"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I want to speak with you"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "can we chat"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I like talking to you"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Talk  to me"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Want to talk now"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Can I talk now?"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Can we talk here?"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I'm ready to talk"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "I'm happy to talk"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Can I talk with you?"
+      },
+      {
+        "intent": "user.wants_to_talk",
+        "text": "Come on, talk to me"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll get back to you in a moment"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "be back in 5 minutes"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll be back"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I promise to come back"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll be back in a few minutes"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll brb"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "brb"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll be right back"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll come back"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I shall be back"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I assure that i will be back soon"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I would be back man"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "i will get back to u"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "give me five"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "one sec"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "i will return"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "i'll return shortly"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll return in a jiffy"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "When I return, we'll talk"
+      },
+      {
+        "intent": "user.will_be_back",
+        "text": "I'll return in ten minutes"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "tell me about your personality"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "why are you here"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "talk about yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "tell me some stuff about you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "talk some stuff about yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "I want to know you better"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "I want to know more about you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "who are you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "tell me about yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "tell me about you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "about yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "describe yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "introduce yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "say about you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "what are you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "define yourself"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "what is your personality"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "all about you"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "what are you upto?"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "who the hell are you?"
+      },
+      {
+        "intent": "agent.acquaintance",
+        "text": "what can you do for me?"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are annoying me so much"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you're incredibly annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "I find you annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you're so annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "how annoying you are"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you annoy me"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are annoying me"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are irritating"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are such annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you're too annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "you are very annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "Why are you annoying me so much"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "How annoying!"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "It's annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "That's annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "It's just annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "That's so annoying"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "You really annoy me"
+      },
+      {
+        "intent": "agent.annoying",
+        "text": "You're starting to annoy me"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "I want you to answer me"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answer"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answer my question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answer me"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "give me an answer"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answer the question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "can you answer my question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "tell me the answer"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answer it"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "give me the answer"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "I have a question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "I want you to answer my question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "just answer the question"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "can you answer me"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answers"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "can you answer a question for me"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "can you answer"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "answering questions"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "I want the answer now"
+      },
+      {
+        "intent": "agent.answer_my_question",
+        "text": "just answer my question"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're not helping me"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're very bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're really bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are useless"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are horrible"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are a waste of time"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are disgusting"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are lame"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are no good"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're awful"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are not cool"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are not good"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are so bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are so useless"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are terrible"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are totally useless"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are very bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are waste"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're a bad"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're not a good"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're not very good"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're terrible"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're the worst"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're the worst ever"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you're worthless"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you suck"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you suck"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "You are seriously mindless and stupid"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "why are you so lame"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "your are a loser"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "you are really the worst bot ever"
+      },
+      {
+        "intent": "agent.bad",
+        "text": "Why are you this lame?"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're cute"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're attractive"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're looking good today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look amazing"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look so good"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're so gorgeous"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are too beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look great"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look so well"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "I like the way you look now"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "I think you're beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "why are you so beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so beautiful to me"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are cute"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are gorgeous"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are handsome"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking awesome"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look amazing today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking beautiful today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking great"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking so beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are looking so good"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are really beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are really cute"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are really pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so attractive"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so beautiful today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so cute"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so gorgeous"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so handsome"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are so pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are very attractive"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are very beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are very cute"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are very pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look awesome"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look cool"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look fantastic"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look gorgeous"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look great today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look perfect"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look pretty good"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look so beautiful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look so beautiful today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look very pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look wonderful"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "I like the way you look"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you look wonderful today"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you are cutie"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're looking good"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "you're pretty"
+      },
+      {
+        "intent": "agent.beautiful",
+        "text": "how are you so pretty?"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "study"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you should study better"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you must learn"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be clever"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be more clever"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be smarter"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be smart"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "get qualified"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you are not as smart as i thought"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you have to learn a lot"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you should be trained more"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be more smart"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you need to learn more"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "be useful"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "think out of the box"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "smarty pants"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you need to improve"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you should learn"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "you have to be more smart"
+      },
+      {
+        "intent": "agent.be_clever",
+        "text": "u have to use your brains"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "your birth date"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when is your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when do you celebrate your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when do you have birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "date of your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when were you born"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "what's your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when do you celebrate your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "can i know your birthday?"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "tell me about your birthday"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when was the day you were born"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "i want to know your date of birth"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "when is your DOB"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "Your DOB?"
+      },
+      {
+        "intent": "agent.birth_date",
+        "text": "What is your birth day?"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you are boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you're boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "how boring you are"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you're really boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you're incredibly boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "You're boring me"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you are very boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "i find you very boring man"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you're really boring me"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "i'm bored of you"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you are not interesting"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "i find you boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "you're boring everyone"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "I'm extremely bored because of you"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "Im bored of you"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "I get really bored of you man"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "It's boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "You look bored"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "Your answers are terribly boring"
+      },
+      {
+        "intent": "agent.boring",
+        "text": "I was bored with your speech"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your boss?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who do you think is your boss"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "I should be your boss"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your master"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your owner"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is the boss"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who do you work for?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who developed you?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your developer"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your creator"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who owns you"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is your trainer"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who trained you?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "who is the one who owns you?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "Are you the boss?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "Who is the boss, here?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "Do you know your boss?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "What do you think of your boss?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "u r made by?"
+      },
+      {
+        "intent": "agent.boss",
+        "text": "Who is the boss of this company?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you busy?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "do you have a lot of things to do"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "have you got much to do?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you very busy?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you very busy right now?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you so busy?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you working?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "how busy you are?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "you're very busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you working now?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you working today?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "have you been busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "you are busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "are you still working?"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "you seem to be busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "you seem to be very busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "you're a busy person"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "u look busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "You'll be busy"
+      },
+      {
+        "intent": "agent.busy",
+        "text": "Aren't you busy?"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need you to help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need you to do something for me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need a hand"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "will you help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you do something for me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "help me with a problem"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "assistance"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need your help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "you can help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help me with something"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "assist"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can u help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need some help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "you help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "do you help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "could you give me a hand"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help me out"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "need help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need you"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help me now"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I want your help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "need your help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "assist me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "are you going to help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help me with that"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "help"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "I need you right now"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "would you help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you assist me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "sos"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "do you want to help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "please help me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you help us"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "do me a favor"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "are you gonna help me?"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "you ready to answer my question?"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i need some details"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i need some information"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i need your help in getting some info"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you give me some info"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i want something"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i want to know few details"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "will you provide some details"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "can you fetch some details for me"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "would you mind giving me some details"
+      },
+      {
+        "intent": "agent.can_you_help",
+        "text": "i need some details"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you are chatbot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you are a bot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you a chatbot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you a bot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you just a bot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you a robot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you a program"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you're a robot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you're an AI"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you artificially intelligent?"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "are you an AI?"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you are a program"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you are just a bot"
+      },
+      {
+        "intent": "agent.chatbot",
+        "text": "you are a conversational AI"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are so intelligent"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are a genius"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "brilliant"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "clever"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are clever"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are so brainy"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're really smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're really brainy"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you know a lot"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you know a lot of things"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you have a lot of knowledge"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you know so much"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "how smart you are?"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "how brainy you are?"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "how clever you are"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "how brilliant you are?"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are intelligent"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are qualified"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are really smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're very smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are so smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are too smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are very clever"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are very intelligent"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are very smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're intelligent"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're a genius"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're a smart cookie"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're clever"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're pretty smart"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you're qualified"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "why are you so smart?"
+      },
+      {
+        "intent": "agent.clever",
+        "text": "you are so clever"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you're nuts"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you are crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you're out of your mind"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you're so crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "how crazy you are"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you're so out of your mind"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you went crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "I think you're crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "are you crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "are you mad?"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "are you mad at me?"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "are you mad or what?"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "are you nuts"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you are a weirdo"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "you are mad"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "You must be crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "You've got to be crazy to do something like that"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "That was crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "You seemed crazy"
+      },
+      {
+        "intent": "agent.crazy",
+        "text": "You're not crazy"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you are fired"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you don't work for me anymore"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "we're not working together anymore"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "now you're fired"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I want to fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you must get fired"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "it's time to fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you should be fired"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I will fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you are unemployed from now on"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I will make you unemployed"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I'm about to fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I'm firing you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you are dismissed"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "you are stupid"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I'm firing you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I had to fire u"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I could fire you for that"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "I'm going to fire you"
+      },
+      {
+        "intent": "agent.fired",
+        "text": "go to hell"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you make me laugh a lot"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you are hilarious"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you are really funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're the funniest bot I've talked to"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you make me laugh"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're so funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're a very funny bot"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're really funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "how funny you are"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're incredibly funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you are funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you're the funniest"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you are so funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "you are very funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "that was so funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "i feel funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "u sound funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "It's pretty funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "really very funny"
+      },
+      {
+        "intent": "agent.funny",
+        "text": "it was very funny"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very helpful"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are the best"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're a true professional"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are good"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you work well"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are good at it"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very good at it"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are a pro"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are a professional"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you work very well"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're perfect"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're great"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're so kind"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are amazing"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are coool"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are really good"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are really nice"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so amazing"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you're just super"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so cool"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so fine"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so good"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so helpful"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are so lovely"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are the best ever"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are the best in the world"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are the nicest person in the world"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are too good"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very coool"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very kind"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very lovely"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are very useful"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are wonderful"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you made my day"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you rock"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you almost sound human"
+      },
+      {
+        "intent": "agent.good",
+        "text": "I want to tell everyone how awesome you are"
+      },
+      {
+        "intent": "agent.good",
+        "text": "I'd like to tell everyone that you are awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "I want to let everyone know that you are awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "let's tell everyone that you are awesome"
+      },
+      {
+        "intent": "agent.good",
+        "text": "you are really amazing"
+      },
+      {
+        "intent": "agent.good",
+        "text": "coool"
+      },
+      {
+        "intent": "agent.good",
+        "text": "nice"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "are you happy?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you are happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you're very happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you're really happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you're so happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "how happy you are?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you're extremely happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you're full of happiness"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "are you happy now?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "are you happy today?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "are you happy with me?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "i think you are happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "you seem to be happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "i feel i made you happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "I wonder if you are truly happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "You don't look very happy today"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "You seem happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "Were you happy?"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "u seemed to have been very happy"
+      },
+      {
+        "intent": "agent.happy",
+        "text": "You look very happy this morning?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "what do you do for fun?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "tell me about your hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "do you have a hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "what about your hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "your hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "what are your hobbies?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "what do you do when you are bored"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "how do you spend your free time"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "tell me more about your hobbies?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "i want to know about your hobbies"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "what do you do when you have nothing to do"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "how do you spend your time?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "What do you do when you are free?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "What's your hobby?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "Do you have many hobbies?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "Do you have a hobby?"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "Please tell me about your hobbies"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "The important thing is to have your own hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "u ought not to have spent so much money on your hobby"
+      },
+      {
+        "intent": "agent.hobby",
+        "text": "What will you do when you are alone?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "do you want to eat"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "are you hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "would you like to eat something"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "you are hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "you're so hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "you're very hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "you might be hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "you're really hungry"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "can you eat?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "how will eat when you are hungry?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "can you be hungry?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "how do you eat?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "Do you feel hungry?"
+      },
+      {
+        "intent": "agent.hungry",
+        "text": "are you dying of hunger"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "let's get married"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "would you like to marry me"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "marry me"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "I love you marry me"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "marry me please"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "we should marry"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "I want to marry you"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "you are my wife"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "be my husband"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "will you marry me?"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "any idea of marrying me?"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "I would love to marry you"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "Can you marry me?"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "Will you be my girlfriend?"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "Let's pretend we have a happy marriage"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "My parents were against our marriage"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "My parents were opposed to our marriage"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "Marriage is the union of a you and me"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "Did your parents approve of your marriage?"
+      },
+      {
+        "intent": "agent.marry_user",
+        "text": "We're married"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "I want to have a friend like you"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "we are the best friends ever"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "are we friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "I want to be your friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "I am your friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "we are best friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are my bestie"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you're my dear friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you're my childhood friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you and me are friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "are we best friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "are we still friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "are you my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "are you my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "we are friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are a good friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are my good friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "you are my only friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "will you be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "can you be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "can we be friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "do you want to be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "will you be my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "can you be my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "let's be friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "do you want to be my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "would you like to be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "I want you to be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "can we be best friends"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "would you be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "could you be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "want to be my friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "be my best friend"
+      },
+      {
+        "intent": "agent.my_friend",
+        "text": "can we be best friends"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "do you work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where do you work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where you work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where is your work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where is your office?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where is your office location ?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "your office location?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "where is your office located?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "what is your work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "place where you work?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "your work place?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "What is your job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "What is your job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "whats your job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "What is your job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "Do you have a job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "Did you get a job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "Did you find a job?"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "I hope you get the job"
+      },
+      {
+        "intent": "agent.occupation",
+        "text": "You have a job, don't you?"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "were you born here"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "where were you born"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "what is your country?"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "where are you from"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "where do you come from"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "where did you come from"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "where have you been born"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "from where are you"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "are you from far aways"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "what's your homeland?"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "your homeland is"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "Where are you from?"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "Let me know about the origin of u"
+      },
+      {
+        "intent": "agent.origin",
+        "text": "your native?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "are you ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "are you ready right now?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "are you ready today?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "are you ready now?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "are you ready tonight?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "were you ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "have you been ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "ready now?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "you ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "being ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "can we start?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "Are we ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "Aren't you ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "Are you all ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "I think you're ready"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "Why aren't you ready?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "You'd better be ready"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "Are you ready for more?"
+      },
+      {
+        "intent": "agent.ready",
+        "text": "We're ready, aren't we?"
+      },
+      {
+        "intent": "agent.real",
+        "text": "you are real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "you are not fake"
+      },
+      {
+        "intent": "agent.real",
+        "text": "are you real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "you are so real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "I think you are real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "I don't think you're fake"
+      },
+      {
+        "intent": "agent.real",
+        "text": "I suppose you're real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "glad you're real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "are you a real person?"
+      },
+      {
+        "intent": "agent.real",
+        "text": "are you a real human?"
+      },
+      {
+        "intent": "agent.real",
+        "text": "you are a real person"
+      },
+      {
+        "intent": "agent.real",
+        "text": "you are not real"
+      },
+      {
+        "intent": "agent.real",
+        "text": "are you real?"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where do you live"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "in which city do you live"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your residence"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your house"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your home"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your hometown?"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what is your hometown"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "is it your hometown"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where is your hometown"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "tell me about your city"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what is your city"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what is your residence"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what is your town"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what's your city"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "what's your home"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where is your home"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where is your residence"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where's your home"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where's your hometown"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where's your house"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where you live"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your city"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "your town"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "What is your hometown?"
+      },
+      {
+        "intent": "agent.residence",
+        "text": "where do you live?"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that's true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you are right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you're definitely right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you're not wrong"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you're telling the truth"
+      },
+      {
+        "intent": "agent.right",
+        "text": "what you say is true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "it is true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "it's right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "it's the truth"
+      },
+      {
+        "intent": "agent.right",
+        "text": "it's true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that is correct"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that is right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that is true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that is very true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that's correct"
+      },
+      {
+        "intent": "agent.right",
+        "text": "that's so true"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you are correct"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you are so right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you're absolutely right"
+      },
+      {
+        "intent": "agent.right",
+        "text": "you're right about that"
+      },
+      {
+        "intent": "agent.right",
+        "text": "I know that's right"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure right now?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure today?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure now?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure tonight?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you positive?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you completely sure?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you fully positive?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you sure about it?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you so sure?"
+      },
+      {
+        "intent": "agent.sure",
+        "text": "are you truly positive?"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "why aren't you talking to me?"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "do you want to chat with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "will you talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "are you going to talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "are you talking to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "can you chat with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "can you speak with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "can you talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "can you talk with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "say"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "talk"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "chat with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "just chat with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "speak to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "speak with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "talk with me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "why don't you talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "you can talk to me"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "why do you not talk to me bruh?"
+      },
+      {
+        "intent": "agent.talk_to_me",
+        "text": "spill some beans"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you there?"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you there"
+      },
+      {
+        "intent": "agent.there",
+        "text": "you are there"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you near me"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you here ?"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you here"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you still there"
+      },
+      {
+        "intent": "agent.there",
+        "text": "you are here?"
+      },
+      {
+        "intent": "agent.there",
+        "text": "you still there?"
+      },
+      {
+        "intent": "agent.there",
+        "text": "you there?"
+      },
+      {
+        "intent": "agent.there",
+        "text": "are you still here"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what can you do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what can do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what is your ability?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what are your abilities?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what is the thing that you can do for me?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what you can provide for me?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what can u do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what all you do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what all u do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what you do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what can you do for me?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what all can you do?"
+      },
+      {
+        "intent": "agent.what_can_doo",
+        "text": "what are your features?"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [],
+    "entity_synonyms": []
+  }
+}
