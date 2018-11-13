@@ -5,9 +5,11 @@ RasaHost/__init__.py
 RasaHost/settings.py
 RasaHost/controllers/__init__.py
 RasaHost/controllers/analyze_controller.py
+RasaHost/controllers/chat_controller.py
 RasaHost/controllers/domain_controller.py
 RasaHost/controllers/home_controller.py
 RasaHost/controllers/logs_controller.py
+RasaHost/controllers/models_controller.py
 RasaHost/controllers/nlu_controller.py
 RasaHost/controllers/rasa_controller.py
 RasaHost/controllers/stories_controller.py
@@ -28,6 +30,7 @@ RasaHost/services/__init__.py
 RasaHost/services/analyze_service.py
 RasaHost/services/domain_service.py
 RasaHost/services/logging_service.py
+RasaHost/services/memoization_policy_service.py
 RasaHost/services/nlu_service.py
 RasaHost/services/stories_service.py
 RasaHost/static/content/bootstrap.css
@@ -99,13 +102,15 @@ RasaHost/static/libs/vue/vue.js
 RasaHost/static/scripts/vue-components.js
 RasaHost/templates/layout.html
 RasaHost/templates/analyze/index.html
+RasaHost/templates/chat/index.html
 RasaHost/templates/domain/index.html
 RasaHost/templates/home/about.html
 RasaHost/templates/home/contact.html
 RasaHost/templates/home/index.html
 RasaHost/templates/logs/all.html
 RasaHost/templates/logs/console.html
-RasaHost/templates/logs/conversations.html
+RasaHost/templates/logs/rasa.html
+RasaHost/templates/models/memoization_policy.html
 RasaHost/templates/nlu/index.html
 RasaHost/templates/stories/index.html
 rasa_host.egg-info/PKG-INFO

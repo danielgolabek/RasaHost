@@ -62,7 +62,7 @@ def get_action_executor():
 from RasaHost import host
 host.set_data_path(os.path.join(current_dir, "sample"))
 host.enable_logging()
-host.agent = get_agent()
+#host.agent = get_agent()
 
 #train_core()
 #train_nlu()

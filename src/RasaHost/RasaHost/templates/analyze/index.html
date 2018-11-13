@@ -11,7 +11,7 @@
                     <ul>
                         <li v-for="(item, index) in model.intents_missing_in_domain">
                             {{item.name}} is missing in domain
-                            <a v-if="!item.isAddedToDomain" v-on:click.stop="addIntentToDomain(index, item)" href="#" class="icon text-muted ml-3">
+                            <a v-if="!item.isAddedToDomain" v-on:click.stop.prevent="addIntentToDomain(index, item)" href="#" class="icon text-muted ml-3">
                                 Add <div v-if="item.isAddingToDomain" class="loader"></div>
                             </a>
                             <span v-if="item.isAddedToDomain" class="text-muted">Added</span>
@@ -21,10 +21,13 @@
                     <ul>
                         <li v-for="(item, index) in model.intents_missing_in_stories">
                             {{item.name}} is missing in stories
-                            <a v-if="!item.isAddedStoryWithUtter" v-on:click.stop="addDefaultStoryWithUtter(index, item)" href="#" class="icon text-muted ml-3">
+                            <a v-if="!item.isAddedStoryWithUtter" v-on:click.stop.prevent="addDefaultStoryWithUtter(index, item)" href="#" class="icon text-muted ml-3">
                                 Add with utter <div v-if="item.isAddingStoryWithUtter" class="loader"></div>
                             </a>
-                            <span v-if="item.isAddedStoryWithUtter" class="text-muted">Added</span>
+                            <a v-if="!item.isAddedStoryWithAction" v-on:click.stop.prevent="addDefaultStoryWithAction(index, item)" href="#" class="icon text-muted ml-3">
+                                Add with action <div v-if="item.isAddingStoryWithAction" class="loader"></div>
+                            </a>
+                            <span v-if="item.isAddedStoryWithUtter || item.isAddedStoryWithAction" class="text-muted">Added</span>
                             <div v-if="item.isAddingStoryWithUtterError">{{item.isAddingStoryWithUtterError}}</div>
                         </li>
                     </ul>
@@ -96,6 +99,32 @@
                     .catch(error => {
                         item.isAddingStoryWithUtter = false;
                         item.isAddingStoryWithUtterError = "Error while connection to the server. " + error.message;
+                        this.$set(this.model.intents_missing_in_stories, index, item);
+                    });
+            },
+            addDefaultStoryWithAction: function (index, item) {
+                item.isAddingStoryWithAction = true;
+                item.isAddingStoryWithActionError = null;
+                this.$set(this.model.intents_missing_in_stories, index, item);
+                fetch(`/api/stories/intentWithAction`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json; charset=utf-8" },
+                    body: JSON.stringify({ name: item.name }),
+                })
+                    .then(res => res.json())
+                    .then(json => {
+                        item.isAddingStoryWithAction = false;
+                        if (json.error) {
+                            item.isAddingStoryWithActionError = json.error;
+                            this.$set(this.model.intents_missing_in_stories, index, item);
+                            return;
+                        }
+                        item.isAddedStoryWithAction = true;
+                        this.$set(this.model.intents_missing_in_stories, index, item);
+                    })
+                    .catch(error => {
+                        item.isAddingStoryWithAction = false;
+                        item.isAddingStoryWithActionError = "Error while connection to the server. " + error.message;
                         this.$set(this.model.intents_missing_in_stories, index, item);
                     });
             }

@@ -76,9 +76,10 @@ class DomainModel(object):
         if name in self.get_utters():
             return
         section_index = self.ensure_section("templates")
+        self.lines.insert(section_index + 1, {"text" : "", "type": None, "name": None})
+        self.lines.insert(section_index + 1, {"text" : "  " + "- text: \"" + name + "\"", "type": None, "name": None})
         self.lines.insert(section_index + 1, {"text" : "  " + name + ":", "type" : "utter", "name": name})
-        self.lines.insert(section_index + 2, {"text" : "  " + "- text: \"" + name + "\"", "type": None, "name": None})
-        self.lines.insert(section_index + 2, {"text" : "", "type": None, "name": None})
+        self.lines.insert(section_index + 1, {"text" : "", "type": None, "name": None})
 
     def ensure_section(self, name):
         section_index = None

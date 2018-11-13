@@ -35,6 +35,7 @@ class LogRepository:
                                 Log.module.like(like) | \
                                 Log.filename.like(like) | \
                                 Log.log_level.like(like) | \
+                                Log.message.like(like) | \
                                 Log.exception.like(like) | \
                                 Log.sender_id.like(like) | \
                                 Log.request_id.like(like)  \
@@ -42,7 +43,7 @@ class LogRepository:
                         .order_by(Log.created.desc()) \
                         .limit(pageCount).offset(offset)
   
-    def find_conversations(self, query, page, pageCount):
+    def find_rasa(self, query, page, pageCount):
         offset = (page - 1) * pageCount
         like = "%" + query + "%"
         requests_ids = self.session.query(Log.request_id) \
@@ -53,6 +54,7 @@ class LogRepository:
                                 Log.module.like(like) | \
                                 Log.filename.like(like) | \
                                 Log.log_level.like(like) | \
+                                Log.message.like(like) | \
                                 Log.exception.like(like) | \
                                 Log.sender_id.like(like) | \
                                 Log.request_id.like(like)  \
@@ -62,7 +64,8 @@ class LogRepository:
                         .limit(pageCount).offset(offset)
 
         return self.session.query(Log) \
-            .filter(Log.request_id.in_(requests_ids))
+            .filter(Log.request_id.in_(requests_ids)) \
+            .order_by(Log.created.desc())
 
     def save(self, log):
         self.session.add(log)

@@ -5,6 +5,7 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, redirect, request, jsonify
 import json
+import os;
 
 from RasaHost import host
 app = host.flask
@@ -24,7 +25,7 @@ def api_nlu_list():
     return jsonify(intents)
 
 @app.route('/api/nlu/file/<path>', methods=['GET'])
-def api_nlu_get(name):
+def api_nlu_get(path):
     intent = NluService().get_by_path(path)
     return jsonify(intent)
 
@@ -32,13 +33,13 @@ def api_nlu_get(name):
 def api_nlu_post(path):
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
+    
+    newPath = os.path.join(os.path.dirname(path), request.json['name']  + ".md")
+    if path.lower() != newPath.lower() and os.path.exists(newPath):
+        return jsonify({'error': 'File with the name already exists'})
 
-    #newPath = os.path.join(os.path.dirname(path), request.json["name"]  + ".md")
-    #if newPath != path and NluService().get_by_path(newPath):
-    #    return jsonify({'error': 'File with the name already exits.'})
-
-    NluService().update(path, request.json)
-    return jsonify({'result': request.json})
+    updated_file = NluService().update(path, request.json)
+    return jsonify({'result': updated_file})
 
 @app.route('/api/nlu/file/', methods=['PUT'])
 def api_nlu_put():
@@ -48,8 +49,8 @@ def api_nlu_put():
     if NluService().get_by_name(request.json["name"]):
         return jsonify({'error': 'File with the name already exits.'})
 
-    NluService().create(request.json)
-    return jsonify({'result': request.json})
+    created_file = NluService().create(request.json)
+    return jsonify({'result': created_file})
 
 @app.route('/api/nlu/file/<path>', methods=['DELETE'])
 def api_nlu_delete(path):

@@ -1,4 +1,6 @@
 intents:
+  - test2
+  - test
   - what_time
   - greet
   - goodbye
@@ -8,6 +10,8 @@ intents:
   - mood_unhappy
 
 actions:
+  - action_test2
+  - utter_test
 - action_what_time
 - utter_greet
 - utter_cheer_up
@@ -16,6 +20,10 @@ actions:
 - utter_goodbye
 
 templates:
+
+  utter_test:
+  - text: "utter_test"
+
   utter_greet:
   - text: "Hey! How are you?"
     buttons:

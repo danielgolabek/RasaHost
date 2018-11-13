@@ -9,7 +9,7 @@
         <div class="col-md-3">
             <div class="sticky-top-2">
                 <div class="sidebar-sticky-2">
-                    <intents-search url="/api/nlu" ref="intentsSearch" v-on:select-item="selectItem($event.item, $event.index)"></intents-search>
+                    <files-list module="nlu" v-on:selected-item="selectItem($event.item)"></files-list>
                 </div>
             </div>
         </div>
@@ -17,29 +17,29 @@
             <div class="sticky-top-2 bg-white pb-3">
                 <div class="d-flex">
                     <div v-if="selectedItem">
-                        <a v-on:click.stop="cancelItem()" href="#" class="icon text-muted">
+                        <a v-on:click.stop.prevent="cancelItem()" href="#" class="icon text-muted">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Cancel
                         </a>
                     </div>
                     <div v-if="selectedItem">
-                        <a v-on:click.stop="saveItem()" href="#" class="icon text-muted ml-3">
+                        <a v-on:click.stop.prevent="saveItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
                             Save
                             <div v-if="isSaving" class="loader"></div>
                         </a>
                     </div>
                     <div v-if="selectedItem && selectedItem.name" class="ml-auto">
-                        <a v-on:click.stop="deleteItem()" href="#" class="icon text-muted ml-3">
+                        <a v-on:click.stop.prevent="deleteItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
                             Delete
                             <div v-if="isDeleting" class="loader"></div>
                         </a>
                     </div>
                     <div>
-                        <a v-on:click.stop="newItem()" href="#" class="icon text-muted ml-4">
+                        <a v-on:click.stop.prevent="newItem()" href="#" class="icon text-muted ml-4">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path> <polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg>
-                            New intent
+                            New NLU
                         </a>
                     </div>
                 </div>
@@ -51,6 +51,10 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input v-model="selectedItem.name_editing" class="form-control form-control-console" autofocus>
+                    <a href="#" v-on:click.stop.prevent="moreItem()" class="float-right">more</a>
+                </div>
+                <div v-if="isMore && selectedItem" class="form-group">
+                    {{selectedItem.path}}
                 </div>
                 <div class="form-group">
                     <label for="text">Text</label>
@@ -63,88 +67,127 @@
 
 
 <script>
-
     const app = new Vue({
         el: '#app',
-        components: {
-            'intents-search': ListWithSearchComponent
-        },
         data: {
             error: '',
             selectedItem: null,
-            selectedItemIndex: null,
             isDeleting: false,
-            isSaving: false
+            isSaving: false,
+            isMore: false
         },
         created: function () {
+            var path = this.$getQueryString("path")
+            if (path) {
+                this.loadItem(path);
+            }
+        },
+        watch: {
+            selectedItem: function (newSelectedItem, oldSelectedItem) {
+                this.isMore = false;
+                if (newSelectedItem) {
+                    this.$setQueryString("path", newSelectedItem.path);
+                }
+                else {
+                    this.$setQueryString("path", null);
+                }
+            }
         },
         methods: {
             newItem: function () {
                 this.selectedItem = {
                     path: null,
                     name: null,
+                    text: "## intent:",
                     name_editing: null,
-                    text: null,
-                    text_editing: null,
+                    text_editing:  "## intent:"
                 }
-                this.selectedItemIndex = null;
             },
-            selectItem: function (item, index) {
-                this.selectedItem = item;
-                this.selectedItem.text_editing = this.selectedItem.text;
-                this.selectedItem.name_editing = this.selectedItem.name;
-                this.selectedItemIndex = index;
+            selectItem: function (item) {
+                this.loadItem(item.path);
             },
             cancelItem: function () {
                 this.selectedItem = null;
-                this.selectedItemIndex = null;
             },
             saveItem: function () {
+                this.error = null;
                 item = this.selectedItem;
-                index = this.selectedItemIndex;
                 this.isSaving = true;
                 fetch(`/api/nlu/file/${encodeURIComponent(item.path || '')}`, {
                     method: item.path ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ path: item.path, name: item.name_editing, text: item.text_editing }),
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
+                        if (json.error)
+                            throw Error(json.error);
                         this.isSaving = false;
-                        if (json.error) {
-                            this.error = json.error;
-                            return;
-                        }
-                        item.name = json.result.name;
-                        item.text = json.result.text;
-                        this.error = null;
+                        Object.assign(item, json.result);
+                        this.$setQueryString("path", item.path);
                     })
                     .catch(error => {
                         this.isSaving = false;
-                        this.error = "Error while connection to the server. " + error.message;
+                        this.error = "Error: " + error.message;
                     });
             },
             deleteItem: function () {
+                this.error = null;
+                this.isDeleting = true;
                 item = this.selectedItem;
-                index = this.selectedItemIndex;
                 if (!confirm("Do you want to delete: " + item.name))
                     return;
-                this.isDeleting = true;
                 fetch(`/api/nlu/file/${encodeURIComponent(item.path)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
+                        if (json.error)
+                            throw Error(json.error);
                         this.isDeleting = false;
-                        this.$refs.intentsSearch.delete(index, item);
                         this.selectedItem = null;
-                        this.selectedItemIndex = null;
                     })
                     .catch(error => {
                         this.isDeleting = false;
-                        this.error = "Error while connection to the server. " + error.message;
+                        this.error = "Error: " + error.message;
                     });
+            },
+            loadItem: function (path) {
+                this.error = null;
+                this.isLoading = true;
+                fetch(`/api/nlu/file/${encodeURIComponent(path)}`, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json; charset=utf-8" },
+                })
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
+                    .then(json => {
+                        if (json.error)
+                            throw Error(json.error);
+                        this.isLoading = false;
+                        this.selectedItem = json;
+                        this.selectedItem.text_editing = this.selectedItem.text;
+                        this.selectedItem.name_editing = this.selectedItem.name;
+                    })
+                    .catch(error => {
+                        this.isLoading = false;
+                        this.error = "Error: " + error.message;
+                    });
+            },
+            moreItem: function () {
+                this.isMore = !this.isMore;
             }
         }
     });

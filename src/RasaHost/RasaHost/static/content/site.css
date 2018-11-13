@@ -1,11 +1,13 @@
 body {
     font-size: .875rem;
     width: 100%;
+    padding-top: 30px;
 }
 
-html, body {
+/*dont do it*/
+/*html, body {
     height: 100%;
-}
+}*/
 
 .feather {
     width: 16px;
@@ -16,25 +18,41 @@ html, body {
 /*
  * Sidebar
  */
-
+.navbar-toggler {
+    padding: 0px;
+}
 .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100; /* Behind the navbar */
-    padding: 0;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    width: 180px;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 220px; /* 180 + 40 */
+    }
+}
+
+@media (min-width: 992px) {
+    .fixed-bottom {
+        margin-left: 180px;
+        margin-right: 20px;
+    }
 }
 
 .sidebar-sticky {
+    top: 32px;
     position: -webkit-sticky;
     position: sticky;
-    top: 30px; /* Height of navbar */
-    height: calc(100vh - 48px);
-    padding-top: .5rem;
+    height: calc(100vh - 32px);
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar-fixed {
+    display: block !important;
+    position: fixed !important;
+    top: 32px !important;
+    z-index: 101;
 }
 
 .sidebar .nav-link {
@@ -196,6 +214,10 @@ input, textarea {
 
 .table th {
     font-size: 12px;
+}
+
+tr.border-top-0 td{
+    border-top: 0px none
 }
 
 .inline-block {

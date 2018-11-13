@@ -20,12 +20,17 @@ class LoggingSenderIdFilter(logging.Filter):
         return flask.g.request_id
 
     def filter(self, record):
-        if has_request_context():
-            record.sender_id = request.view_args['sender_id'] if request.view_args and 'sender_id' in request.view_args else None
-            if not record.sender_id:
-                record.sender_id = request.json['sender_id'] if request.json  and 'sender_id' in request.json else None
-            record.request_id = self.request_id()
-        else:
-            record.sender_id = next(iter(re.findall("/conversations/(.*)/[a-zA-Z]", record.getMessage())), None)
+        try:
+            record.sender_id = None
             record.request_id = None
+            if has_request_context():
+                record.sender_id = request.view_args['sender_id'] if request and request.view_args and 'sender_id' in request.view_args else None
+                if not record.sender_id:
+                    record.sender_id = request.json['sender_id'] if request and request.json  and 'sender_id' in request.json else None
+                record.request_id = self.request_id()
+            else:
+                record.sender_id = next(iter(re.findall("/conversations/(.*)/[a-zA-Z]", record.getMessage())), None)
+                record.request_id = None
+        except:
+            return True
         return True

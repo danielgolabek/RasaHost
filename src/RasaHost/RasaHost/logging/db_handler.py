@@ -21,7 +21,7 @@ class LoggingDbHandler(StreamHandler):
             line_no = record.lineno,
             log_level = record.levelname,
             message = record.getMessage(),
-            exception = traceback.print_exception(*record.exc_info) if record.exc_info else None,
+            exception = "".join(traceback.format_exception(*record.exc_info)) if record.exc_info else None,
             created = datetime.datetime.fromtimestamp(record.created),
             sender_id = record.sender_id,
             request_id = record.request_id

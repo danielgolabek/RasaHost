@@ -5,6 +5,7 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, redirect, request, jsonify
 import json
+import os;
 
 from RasaHost import host
 app = host.flask
@@ -23,42 +24,52 @@ def api_stories_list():
     stories = StoriesService().find_all(q)
     return jsonify(stories)
 
-@app.route('/api/stories/file/<name>', methods=['GET'])
-def api_stories_get(name):
-    story = StoriesService().get_by_name(name)
+@app.route('/api/stories/file/<path>', methods=['GET'])
+def api_stories_get(path):
+    story = StoriesService().get_by_path(path)
     return jsonify(story)
 
-@app.route('/api/stories/file/<name>', methods=['POST'])
-def api_stories_post(name):
-    updated_story = request.json
-    if name.lower() != updated_story['name'].lower():
-        existing_story = StoriesService().get_by_name(updated_story['name'].lower())
-        if existing_story:
-            return jsonify({'error': 'Story with the name already exits.'})
+@app.route('/api/stories/file/<path>', methods=['POST'])
+def api_stories_post(path):
+    if not request.json["name"]:
+        return jsonify({'error': 'Name is required'})
     
-    StoriesService().update(name, updated_story)
-    return jsonify({'result': updated_story})
+    newPath = os.path.join(os.path.dirname(path), request.json['name']  + ".md")
+    if path.lower() != newPath.lower() and os.path.exists(newPath):
+        return jsonify({'error': 'File with the name already exists'})
 
-@app.route('/api/stories/file/<name>', methods=['PUT'])
-def api_stories_put(name):
-    existing_story = StoriesService().get_by_name(name)
-    if existing_story:
-        return jsonify({'error': 'Story with the name already exits.'})
+    updated_file = StoriesService().update(path, request.json)
+    return jsonify({'result': updated_file})
 
-    new_story = request.json
-    StoriesService().update(name, new_story)
-    return jsonify({'result': new_story})
+@app.route('/api/stories/file/', methods=['PUT'])
+def api_stories_put():
+    if not request.json["name"]:
+        return jsonify({'error': 'Name is required'})
 
-@app.route('/api/stories/file/<name>', methods=['DELETE'])
-def api_stories_delete(name):
-    StoriesService().delete(name)
+    if NluService().get_by_name(request.json["name"]):
+        return jsonify({'error': 'File with the name already exits.'})
+
+    created_file = StoriesService().create(request.json)
+    return jsonify({'result': created_file})
+
+@app.route('/api/stories/file/<path>', methods=['DELETE'])
+def api_stories_delete(path):
+    NluService().delete(path)
     return jsonify({'result': 'ok'})
 
 @app.route('/api/stories/intentWithUtter', methods=['PUT'])
-def api_nlu_add_intent_to_domain():
+def api_nlu_add_intent_with_utter_to_domain():
     intent = request.json['name']
     utter = "utter_" + intent
     StoriesService().add_story(intent, utter)
     DomainService().add_utter(utter)
     DomainService().add_action(utter)
+    return jsonify({'result': 'ok'})
+
+@app.route('/api/stories/intentWithAction', methods=['PUT'])
+def api_nlu_add_intent_with_action_to_domain():
+    intent = request.json['name']
+    action = "action_" + intent
+    StoriesService().add_story(intent, action)
+    DomainService().add_action(action)
     return jsonify({'result': 'ok'})

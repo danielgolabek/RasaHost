@@ -4,24 +4,38 @@
 
 {% raw %}
 <div id="app" v-cloak>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1">
+        <h1 class="h4">Chat</h1>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="list-group">
-                <div v-for="message in messages" class="my-1">
+            <form>
+                <div class="form-group">
+                    <label for="name">Url</label>
+                    <input v-model="conversations_url" class="form-control">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12  pb-5">
+            <div id="messages" class="list-group pb-5">
+                <div v-for="(message,index) in messages" class="my-1">
                     <div class="list-group-item list-group-item-ligh inline-block" v-bind:class="{ 'text-right': message.isMy }">
-                        {{ message.text }}
+                        <span v-html="message.text"></span>
                         <div v-if="message.error" class="invalid">{{message.error}}</div>
                         <div v-if="message.isSending" class="text-mutted small">Sending...</div>
+                        <span v-if="index == messages.length-1" v-html="updateScroll"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row fixed-bottom bg-white">
+        <div class="col-md-12 pt-4">
             <form v-on:submit.prevent="onSend">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" v-model="text" placeholder="Message..." aria-label="Message..." aria-describedby="basic-addon2">
+                <div class="input-group mb-2">
+                    <input id="text" type="text" class="form-control" v-model="text" placeholder="Message..." autocomplete="off">
                     <div class="input-group-append">
                         <input name="send" class="btn btn-outline-secondary" type="submit" value="Send" />
                     </div>
@@ -29,7 +43,7 @@
             </form>
         </div>
     </div>
- </div>
+</div>
 {% endraw %}
 <script>
     const app = new Vue({
@@ -37,19 +51,39 @@
         data: {
             error: null,
             messages: [],
-            text:''
+            text: '',
+            conversations_url: null,
+            conversations_url_default: '{{request.host_url + "conversations/default/respond"}}',
+            updateScroll: "&#x3C;script&#x3E;window.scrollTo(0, document.body.scrollHeight);&#x3C;/script&#x3E;",
         },
         created: function () {
+            var conversations_url = localStorage.getItem("conversations_url");
+            if (conversations_url)
+                this.conversations_url = conversations_url;
+            else
+                this.conversations_url = this.conversations_url_default;
+        },
+        watch: {
+            conversations_url: function (new_conversations_url, old_conversations_url) {
+                localStorage.setItem("conversations_url", new_conversations_url);
+            }
+        },
+        mounted: function () {
+            document.getElementById("text").focus();
         },
         methods: {
             onSend: function (event) {
                 var message = { 'text': this.text, 'isSending': true, 'isMy': true };
                 this.messages.push(message);
-                fetch(`/conversations/default/respond?q=${encodeURIComponent(this.text || '')}`, {
+                fetch(`${this.conversations_url || ''}?q=${encodeURIComponent(this.text || '')}`, {
                     method: "GET",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
                         message.isSending = false;
                         for (var i = 0; i < json.length; i++) {
@@ -58,9 +92,10 @@
                     })
                     .catch(error => {
                         message.isSending = false;
-                        message.error = "Error while connection to the server. " + error.message;
+                        message.error = "Error: " + error.message;
                     });
                 this.text = '';
+                document.getElementById("text").focus();
             }
         }
     });

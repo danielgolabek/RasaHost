@@ -14,8 +14,7 @@ class NluService(object):
     def get_all(self):
         model = []
         recursivePath = os.path.join(self.nlu_path, '**/**/*.md')
-        for filePath in glob.iglob(recursivePath, recursive=True):
-        #for fileName in os.listdir(self.nlu_path):
+        for filePath in list(set(glob.iglob(recursivePath, recursive=True))):
             fileName = os.path.basename(filePath)
             with open(filePath, "r") as f:
                 text = f.read()
@@ -44,12 +43,13 @@ class NluService(object):
             f.write(model['text'] or '')
         newPath = os.path.join(os.path.dirname(path), model['name']  + ".md")
         os.rename(path, newPath)
-        return
+        return self.get_by_path(newPath)
 
     def create(self, model):
         path = os.path.join(self.nlu_path, model['name']  + ".md")
         with open(path, "w") as f:
             f.write(model['text'] or '')
+        return self.get_by_path(path)
 
     def delete(self, path):
         os.remove(path)

@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% raw %}
+<div id="app" v-cloak>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1">
+        <h1 class="h4">Logs - rasa</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="input-group">
+                <input v-model="query" v-on:keyup.enter="search" type="text" class="form-control form-control-sm" placeholder="Search...">
+                <div class="input-group-append">
+                    <button v-on:click="search" class="btn btn-sm btn-outline-secondar" type="button">Search <div v-if="isLoading" class="loader"></div></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div v-if="isLoading">
+            <i>Loading...</i>
+        </div>
+        <div v-if="error">
+            {{error}}
+        </div>
+        <div v-if="!results">
+            No found.
+        </div>
+        <table v-if="results" class="table table-condensed table-sm table-console">
+            <thead>
+                <tr>
+                    <th class="border-top-0 border-bottom-0">
+                        <div>Created</div>
+                        <div>LogLevel</div>
+                    </th>
+                    <th class="border-top-0 border-bottom-0  px-3">Message</th>
+                    <th class="border-top-0 border-bottom-0">
+                        <div>SenderId</div>
+                        <div>RequestId</div>
+                    </th>
+                    <th class="border-top-0 border-bottom-0">
+                        <div>Module</div>
+                        <div>File</div>
+                    </th>
+                    <th class="border-top-0 border-bottom-0"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <template v-for="(group, groupIndex) in results">
+                    <tr v-for="(entry, entryIndex) in group" v-bind:class="{'border-top-0': entryIndex > 0}">
+                        <td class="font-black">
+                            <div class="text-nowrap small">{{entry.created}}</div>
+                            <div class="text-nowrap small">{{entry.log_level}}</div>
+                        </td>
+                        <td class="font-black px-3">
+                            <div class="text-break-word">{{entry.message}}</div>
+                            <div class="text-break-word">{{entry.exception}}</div>
+                        </td>
+                        <td class="font-black">
+                            <div v-bind:title="entry.sender_id" class="text-nowrap small w-max-100">{{entry.sender_id}}</div>
+                            <div v-bind:title="entry.request_id" class="text-nowrap small w-max-100">{{entry.request_id}}</div>
+                        </td>
+                        <td class="font-black">
+                            <div v-bind:title="entry.name" class="text-nowrap small w-max-100">{{entry.name}}</div>
+                            <div v-bind:title="entry.filename + ':' + entry.line_no" class="text-nowrap small w-max-100">{{entry.filename}}:{{entry.line_no}}</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" v-bind:class="{ disabled: page == 1 }">
+                    <a v-on:click.stop.prevent="previous()" class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item" v-bind:class="{ disabled: results == null }">
+                    <a v-on:click.stop.prevent="next()" class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endraw %}
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            query: '',
+            page: 1,
+            results: null,
+            isLoading: false,
+            error: ''
+        },
+        created: function () {
+            this.query = this.$getQueryString("q") || '';
+            this.page = this.$getQueryString("p") || 1;
+            this.loadData();
+        },
+        methods: {
+            loadData: function () {
+                this.isLoading = true;
+                this.error = '';
+                fetch(`/api/logs/rasa?q=${encodeURIComponent(this.query)}&p=${encodeURIComponent(this.page)}`)
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
+                    .then(json => {
+                        if (json.error)
+                            throw Error(json.error);
+                        this.isLoading = false;
+                        this.results = json.results.length > 0 ? json.results : null;
+                    })
+                    .catch(error => {
+                        this.isLoading = false;
+                        this.error = "Error: " + error.message;
+                    });
+            },
+            search: function () {
+                this.page = 1;
+                this.$setQueryString("q", this.query);
+                this.$setQueryString("p", this.page);
+                this.loadData();
+            },
+            next: function () {
+                this.page = this.page + 1;
+                this.$setQueryString("p", this.page);
+                this.loadData();
+            },
+            previous: function () {
+                if (this.page > 0)
+                    this.page = this.page - 1;
+                this.$setQueryString("p", this.page);
+                this.loadData();
+            }
+        }
+    });
+</script>
+
+
+{% endblock %}

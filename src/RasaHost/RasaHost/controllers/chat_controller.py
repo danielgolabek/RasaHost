@@ -14,5 +14,5 @@ from RasaHost.services import *
 def chat():
     return render_template(
         'chat/index.html',
-        title='Chat',
+        title='Chat'
     )

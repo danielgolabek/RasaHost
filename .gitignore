@@ -281,3 +281,4 @@ src/RasaHost/env2
 src/RasaHost/rasa_core_logs.txt
 src/RasaHost/rasa-host.sqlite
 src/RasaHost/rasa-host.sqlite
+src/RasaHost/rasa-host.sqlite
