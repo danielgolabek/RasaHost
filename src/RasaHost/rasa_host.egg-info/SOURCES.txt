@@ -35,6 +35,7 @@ RasaHost/services/domain_service.py
 RasaHost/services/logging_service.py
 RasaHost/services/memoization_policy_service.py
 RasaHost/services/nlu_service.py
+RasaHost/services/query_parser.py
 RasaHost/services/stories_service.py
 RasaHost/static/content/bootstrap.css
 RasaHost/static/content/bootstrap.min.css

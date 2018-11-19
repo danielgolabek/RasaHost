@@ -18,10 +18,11 @@ class ConversationsService:
     def find(self, query):
         return DbContext().conversations.find(query)
 
-    def save(self, sender_id, request, response):
+    def save(self, sender_id, request, response, response_raw):
         conversation = Conversation()
         conversation.request = request
         conversation.response = response
+        conversation.response_raw = response_raw
         conversation.sender_id = sender_id
         conversation.request_id = get_request_id()
         conversation.created = datetime.datetime.utcnow()

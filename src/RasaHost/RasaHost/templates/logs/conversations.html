@@ -31,32 +31,39 @@
                     <tr>
                         <th class="border-top-0 border-bottom-0">
                             <div>Created</div>
-                        </th>
-                        <th class="border-top-0 border-bottom-0  px-3">User</th>
-                        <th class="border-top-0 border-bottom-0  px-3">Rasa</th>
-                        <th class="border-top-0 border-bottom-0">
                             <div>SenderId</div>
                             <div>RequestId</div>
                         </th>
-                        <th class="border-top-0 border-bottom-0"></th>
+                        <th class="border-top-0 border-bottom-0  px-3">Messages</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(entry, index) in results">
                         <td class="font-black">
                             <div class="text-nowrap small">{{entry.created}}</div>
+                            <div class="text-nowrap small"><a v-bind:href="'/logs/rasa?q=sender:'+entry.sender_id">{{entry.sender_id}}</a></div>
+                            <div class="text-nowrap small"><a v-bind:href="'/logs/rasa?q=request:'+entry.request_id">{{entry.request_id}}</a></div>
                         </td>
                         <td class="font-black px-3">
-                            <div class="text-break-word">{{entry.request}}</div>
+                            <div class="list-group">
+                                <div class="list-group-item list-group-item-ligh inline-block p-1 bg-light">
+                                    {{entry.request}}
+                                </div>
+                            </div>
+                            <div>
+                                <div v-if="entry.response_json && entry.response_json.length && entry.response_json.length > 0" v-for="item in entry.response_json" class="list-group mt-1">
+                                    <div class="list-group-item list-group-item-ligh inline-block p-1">
+                                        {{item.text}}
+                                    </div>
+                                </div>
+                                <div v-else-if="entry.response_json && entry.response_json.error" class="text-error small">
+                                    {{entry.response_json.error}}
+                                </div>
+                                <div v-if="!entry.response_json">
+                                    {{entry.response}}
+                                </div>
+                            </div>
                         </td>
-                        <td class="font-black px-3">
-                            <div class="text-break-word">{{entry.response}}</div>
-                        </td>
-                        <td class="font-black">
-                            <div v-bind:title="entry.sender_id" class="text-nowrap small w-max-100">{{entry.sender_id}}</div>
-                            <div v-bind:title="entry.request_id" class="text-nowrap small w-max-100">{{entry.request_id}}</div>
-                        </td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>

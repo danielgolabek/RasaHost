@@ -31,7 +31,8 @@
                             <div v-if="isSaving" class="loader"></div>
                         </a>
                     </div>
-                    <div v-if="selectedItem && selectedItem.name" class="ml-auto">
+                    <div v-if="selectedItem" class="ml-auto"></div>
+                    <div v-if="selectedItem && selectedItem.name">
                         <a v-on:click.stop.prevent="deleteItem()" href="#" class="icon text-muted ml-3">
                             <svg width="10" height="11" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline> <polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline> <rect x="8" y="7" width="1" height="9"></rect> <rect x="11" y="7" width="1" height="9"></rect> <rect x="2" y="3" width="16" height="1"></rect></svg>
                             Delete
@@ -44,6 +45,9 @@
                             New Stories
                         </a>
                     </div>
+                </div>
+                <div v-if="isLoading">
+                    Loading...
                 </div>
                 <div v-if="error" class="text-error">
                     {{error}}

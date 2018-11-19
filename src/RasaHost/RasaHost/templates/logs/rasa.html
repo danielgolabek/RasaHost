@@ -46,7 +46,7 @@
             </thead>
             <tbody>
                 <template v-for="(group, groupIndex) in results">
-                    <tr v-for="(entry, entryIndex) in group" v-bind:class="{'border-top-0': entryIndex > 0}">
+                    <tr v-for="(entry, entryIndex) in group" v-bind:class="{'border-top-0': entryIndex > 0, 'bg-grayish': groupIndex % 2 === 0 }">
                         <td class="font-black">
                             <div class="text-nowrap small">{{entry.created}}</div>
                             <div class="text-nowrap small">{{entry.log_level}}</div>
@@ -87,6 +87,7 @@
         el: '#app',
         data: {
             query: '',
+            request_id: '',
             page: 1,
             results: null,
             isLoading: false,

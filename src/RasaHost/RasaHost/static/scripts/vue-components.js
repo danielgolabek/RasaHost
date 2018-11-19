@@ -69,6 +69,7 @@ Vue.component('text-editor', {
         });
         this.textEditor.setValue(this.value ? this.value : '');
         this.textEditor.setSize("100%", "100%");
+        viewportMargin: Infinity
     },
     template: '<textarea id="text_editor"></textarea>'
 });

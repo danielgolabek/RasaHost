@@ -12,9 +12,11 @@ class Conversation(Base):
     id = Column(Integer, primary_key=True)
     request = Column(String)
     response = Column(String)
+    response_raw = Column(String)
     created = Column(DateTime)
     sender_id = Column(String)
     request_id = Column(String)
+    
     
 class ConversationRepository:
     def __init__(self, session):

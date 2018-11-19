@@ -30,6 +30,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RasaHost.Tests\services\analyze_service_tests.py" />
+    <Compile Include="RasaHost.Tests\services\query_parser_tests.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RasaHost.Tests\services\stories_service_tests.py" />
     <Compile Include="RasaHost.Tests\services\nlu_service_tests.py" />
     <Compile Include="RasaHost\controllers\models_controller.py" />
@@ -79,6 +82,7 @@
     <Compile Include="RasaHost\services\memoization_policy_service.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\services\query_parser.py" />
     <Compile Include="RasaHost\services\stories_service.py" />
     <Compile Include="RasaHost\services\nlu_service.py" />
     <Compile Include="RasaHost\services\__init__.py" />

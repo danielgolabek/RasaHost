@@ -64,10 +64,11 @@ def api_logs_all():
 @app.route('/api/logs/rasa', methods=['GET'])
 def api_logs_rasa():
     query = request.args.get('q')
+    request_id = request.args.get('request_id')
     page = int(request.args.get('p'))
     pageCount = 100
     
-    logs_list = DbContext().logs.find_rasa(query, page, pageCount)
+    logs_list = DbContext().logs.find_rasa(QueryParser().parse(query), page, pageCount)
     logs_grouped = {}
     for log in logs_list:
         if not log.request_id in logs_grouped:
@@ -103,6 +104,7 @@ def api_logs_conversations():
         'request_id': x.request_id, 
         'request': x.request,
         'response': x.response,
+        'response_json': json.loads(x.response_raw) if x.response_raw else None,
         } for x in conversations]
 
     return jsonify({'results': results})

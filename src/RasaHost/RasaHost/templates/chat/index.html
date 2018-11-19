@@ -25,7 +25,7 @@
         <div class="col-md-12  pb-5">
             <div id="messages" class="list-group pb-5">
                 <div v-for="(message,index) in messages" class="my-1">
-                    <div class="list-group-item list-group-item-ligh inline-block p-1">
+                    <div class="list-group-item list-group-item-ligh inline-block p-1" v-bind:class="{ 'bg-light': message.isMy }">
                         <span v-html="message.text"></span>
                         <div v-if="message.error" class="text-error small">{{message.error}}</div>
                         <div v-if="message.isSending" class="text-mutted small">Sending...</div>

@@ -44,28 +44,48 @@ class LogRepository:
                         .limit(pageCount).offset(offset)
   
     def find_rasa(self, query, page, pageCount):
-        offset = (page - 1) * pageCount
-        like = "%" + query + "%"
+        filters = []
+        for part in query:
+             if isinstance(part, dict):
+                 key = next(iter(part.keys()))
+                 value = part[key]
+                 filters.append(self.like(key, value))
+             else:
+                 filters.append(self.like(None, first.value))
+        
         requests_ids = self.session.query(Log.request_id) \
-                        .filter(Log.sender_id.isnot(None)) \
-                        .filter(
-                            Log.name.like(like) | \
-                                Log.name.like(like) | \
-                                Log.module.like(like) | \
-                                Log.filename.like(like) | \
-                                Log.log_level.like(like) | \
-                                Log.message.like(like) | \
-                                Log.exception.like(like) | \
-                                Log.sender_id.like(like) | \
-                                Log.request_id.like(like)  \
-                            ) \
-                        .group_by(Log.request_id) \
-                        .order_by(Log.created.desc()) \
-                        .limit(pageCount).offset(offset)
+                        .filter(Log.sender_id.isnot(None))
+        for filter in filters:
+            requests_ids = requests_ids.filter(filter)
+
+        requests_ids.group_by(Log.request_id) \
+            .order_by(Log.created.desc()) \
+            .limit(pageCount).offset((page - 1) * pageCount)
 
         return self.session.query(Log) \
             .filter(Log.request_id.in_(requests_ids)) \
             .order_by(Log.created.desc())
+
+    def like(self, name, value):
+        like = "%" + value + "%"
+        if name == "message":
+            return Log.message.like(like) | Log.exception.like(like)
+        if name == "module":
+            return Log.module.like(like)
+        if name == "sender":
+            return Log.sender_id.like(like)
+        if name == "request":
+            return Log.request_id.like(like)
+        return Log.name.like(like) | \
+            Log.name.like(like) | \
+            Log.module.like(like) | \
+            Log.filename.like(like) | \
+            Log.log_level.like(like) | \
+            Log.message.like(like) | \
+            Log.exception.like(like) | \
+            Log.sender_id.like(like) | \
+            Log.request_id.like(like)  \
+    
 
     def save(self, log):
         self.session.add(log)

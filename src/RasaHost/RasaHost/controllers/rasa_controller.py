@@ -8,6 +8,7 @@ import json
 import logging
 import sys
 import traceback
+import json
 from RasaHost import host
 app = host.flask
 from RasaHost.services import *
@@ -24,16 +25,18 @@ def rasa_respond(sender_id):
         elif 'q' in request.args:
             message = request.args.get('q')
         
-        output = host.agent.handle_message(message, sender_id=sender_id)
+        output = host.agent.handle_text(message, sender_id=sender_id)
+        
+        text = json.dumps([(x["text"] if "text" in x else None) for x in output])
+        raw = json.dumps([{"text":x.get("text")} for x in output])
+        ConversationsService().save(sender_id = sender_id, request = message, response = text, response_raw = raw)
+
         response = jsonify(output)
-        #text = "\n".join([(x["text"] if "text" in x else None) for x in response])
-        text = ""
-        ConversationsService().save(sender_id = sender_id, request = message, response = text)
         return response
     except:
         e = "\n". join(traceback.format_exception(*sys.exc_info()))
         logger.error(e)
-        ConversationsService().save(sender_id=sender_id, request=message, response=e)
+        ConversationsService().save(sender_id=sender_id, request=message, response=e, response_raw=json.dumps({"error": e}))
         response = jsonify({"error": e})
         response.status_code = 400
         return response

@@ -18,21 +18,23 @@
 <body>
     <nav class="navbar navbar-dark bg-dark fixed-top flex-md-nowrap p-0">
         <div class="col-12 col-sm-12 col-md-12 mr-0">
-            <button class="navbar-toggler d-md-none" type="button" onclick="$('.sidebar').toggleClass('sidebar-fixed')">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="20"
-                     height="20"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-            </button>
+            <div class="inline-block" style="width:20px; margin-left:-8px;">
+                <button class="navbar-toggler d-md-none border-0" type="button" onclick="$('.sidebar').toggleClass('sidebar-fixed')">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="20"
+                         height="20"
+                         viewBox="0 0 20 20"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <line x1="3" y1="13" x2="21" y2="13" />
+                        <line x1="3" y1="7" x2="21" y2="7" />
+                        <line x1="3" y1="19" x2="21" y2="19" />
+                    </svg>
+                </button>
+            </div>
             <a href="/" class="navbar-brand border-0 py-1">Rasa-Host</a>
         </div>
     </nav>
@@ -41,9 +43,9 @@
             <nav class="d-none d-lg-block bg-light sidebar">
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                     <a href="/" class="text-secondary">Dashboard</a>
-                    <a class="d-flex align-items-center text-muted" asp-controller="Items" asp-action="Create">
+                    <!--<a class="d-flex align-items-center text-muted" asp-controller="Items" asp-action="Create">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle" color="#384047"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    </a>
+                    </a>-->
                 </h6>
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -98,10 +100,10 @@
                     </li>
                 </ul>
 
-                <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted">
+                <h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted d-none">
                     <span class="text-secondary">Model</span>
                 </h6>
-                <ul class="nav flex-column">
+                <ul class="nav flex-column d-none">
                     <li class="nav-item">
                         <a href="/models/MemoizationPolicy" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" color="#384047"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Memoization Policy

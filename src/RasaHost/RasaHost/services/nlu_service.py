@@ -15,14 +15,7 @@ class NluService(object):
         model = []
         recursivePath = os.path.join(self.nlu_path, '**/**/*.md')
         for filePath in list(set(glob.iglob(recursivePath, recursive=True))):
-            fileName = os.path.basename(filePath)
-            with open(filePath, "r") as f:
-                text = f.read()
-                model.append({
-                    'name': os.path.splitext(fileName)[0],
-                    'path': filePath,
-                    'text': text
-                })
+            model.append(self.get_by_path(filePath))
         return model;
 
     def find_all(self, q):
@@ -35,8 +28,14 @@ class NluService(object):
         return next(iter([x for x in intents if x['name'].lower() == name.lower()]), None)
 
     def get_by_path(selft, path):
-        intents = selft.get_all()
-        return next(iter([x for x in intents if x['path'].lower() == path.lower()]), None)
+        fileName = os.path.basename(path)
+        with open(path, "r") as f:
+                text = f.read()
+                return {
+                    'name': os.path.splitext(fileName)[0],
+                    'path': path,
+                    'text': text
+                }
 
     def update(self, path, model):
         with open(path, "w") as f:
