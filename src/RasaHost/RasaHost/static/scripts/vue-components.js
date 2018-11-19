@@ -37,6 +37,18 @@ Vue.prototype.$getQueryString = function (name) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
 
+Vue.prototype.$fetch = function (url = ``, parameters = {}) {
+    return fetch(url, parameters)
+        .then(r => r.json().then(json => ({ ok: r.ok, status: r.status, statusText: r.statusText, json: json })))
+        .then(response => {
+            if (response.json && response.json.error)
+                throw Error(response.json.error);
+            if (!response.ok)
+                throw Error(response.status + ': ' + response.statusText);
+            return response.json;
+        })
+};
+
 Vue.component('text-editor', {
     props: ['value'],
     watch: {

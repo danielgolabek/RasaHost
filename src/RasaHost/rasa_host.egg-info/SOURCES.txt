@@ -14,11 +14,13 @@ RasaHost/controllers/nlu_controller.py
 RasaHost/controllers/rasa_controller.py
 RasaHost/controllers/stories_controller.py
 RasaHost/database/__init__.py
+RasaHost/database/conversations.py
 RasaHost/database/db_context.py
 RasaHost/database/logs.py
 RasaHost/database/metadata.py
 RasaHost/logging/__init__.py
 RasaHost/logging/db_handler.py
+RasaHost/logging/request_id.py
 RasaHost/logging/senderid_filter.py
 RasaHost/logging/socketio_handler.py
 RasaHost/models/__init__.py
@@ -28,6 +30,7 @@ RasaHost/models/memory.py
 RasaHost/models/mongodb.py
 RasaHost/services/__init__.py
 RasaHost/services/analyze_service.py
+RasaHost/services/conversations_service.py
 RasaHost/services/domain_service.py
 RasaHost/services/logging_service.py
 RasaHost/services/memoization_policy_service.py
@@ -109,6 +112,7 @@ RasaHost/templates/home/contact.html
 RasaHost/templates/home/index.html
 RasaHost/templates/logs/all.html
 RasaHost/templates/logs/console.html
+RasaHost/templates/logs/conversations.html
 RasaHost/templates/logs/rasa.html
 RasaHost/templates/models/memoization_policy.html
 RasaHost/templates/nlu/index.html

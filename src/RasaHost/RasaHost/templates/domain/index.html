@@ -15,7 +15,7 @@
                     </a>
                 </div>
             </div>
-            <div>
+            <div class="text-error">
                 {{error}}
             </div>
         </div>
@@ -42,22 +42,17 @@
             save: function (event) {
                 app.isSaving = true;
                 app.error = '';
-                fetch(`/api/domain`, {
+                this.$fetch(`/api/domain`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify(this.model),
                 })
-                    .then(res => res.json())
                     .then(json => {
                         app.isSaving = false;
-                        if (json.error) {
-                            app.error = json.error;
-                            return;
-                        }
                     })
                     .catch(error => {
                         app.isSaving = false;
-                        app.error = "Error while connection to the server. " + error.message;
+                        app.error = "Error: " + error.message;
                     });
             }
         }

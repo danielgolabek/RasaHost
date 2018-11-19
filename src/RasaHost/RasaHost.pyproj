@@ -45,6 +45,7 @@
     <Compile Include="RasaHost\database\db_context.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\database\conversations.py" />
     <Compile Include="RasaHost\database\logs.py">
       <SubType>Code</SubType>
     </Compile>
@@ -57,6 +58,9 @@
     <Compile Include="RasaHost\logging\db_handler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\logging\request_id.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RasaHost\logging\senderid_filter.py">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +71,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RasaHost\services\domain_service.py" />
+    <Compile Include="RasaHost\services\conversations_service.py" />
     <Compile Include="RasaHost\services\logging_service.py">
       <SubType>Code</SubType>
     </Compile>
@@ -170,6 +175,7 @@
     <Content Include="RasaHost\static\libs\vue\vue.js" />
     <Content Include="RasaHost\templates\analyze\index.html" />
     <Content Include="RasaHost\templates\chat\index.html" />
+    <Content Include="RasaHost\templates\logs\conversations.html" />
     <Content Include="RasaHost\templates\logs\rasa.html" />
     <Content Include="RasaHost\templates\models\memoization_policy.html" />
     <Content Include="README.md" />

@@ -30,29 +30,31 @@ body {
         padding-right: 40px;
         padding-left: 220px; /* 180 + 40 */
     }
-}
 
-@media (min-width: 992px) {
+    .sidebar {
+        display: block !important;
+        position: fixed !important;
+        top: 32px !important;
+        z-index: 101;
+        height: calc(100vh - 32px);
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+
     .fixed-bottom {
         margin-left: 180px;
         margin-right: 20px;
     }
 }
 
-.sidebar-sticky {
-    top: 32px;
-    position: -webkit-sticky;
-    position: sticky;
-    height: calc(100vh - 32px);
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
-
 .sidebar-fixed {
     display: block !important;
     position: fixed !important;
     top: 32px !important;
-    z-index: 101;
+    z-index: 1050;
+    height: calc(100vh - 32px);
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
 .sidebar .nav-link {
@@ -116,7 +118,7 @@ body {
         /*
  * Navbar
  */
-        .navbar-brand {
+.navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
@@ -192,6 +194,10 @@ input, textarea {
     color: black !important;
 }
 
+.text-error {
+    color: #dc3545;
+}
+
 .loader {
     border: 2px solid #f3f3f3; /* Light grey */
     border-top: 2px solid #3498db; /* Blue */
@@ -199,7 +205,7 @@ input, textarea {
     width: 16px;
     height: 16px;
     animation: spin 2s linear infinite;
-    display:inline-block;
+    display: inline-block;
 }
 
 @keyframes spin {

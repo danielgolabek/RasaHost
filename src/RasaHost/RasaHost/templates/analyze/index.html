@@ -15,7 +15,7 @@
                                 Add <div v-if="item.isAddingToDomain" class="loader"></div>
                             </a>
                             <span v-if="item.isAddedToDomain" class="text-muted">Added</span>
-                            <div v-if="item.isAddingToDomainError">{{item.isAddingToDomainError}}</div>
+                            <div v-if="item.isAddingToDomainError" class="text-error">{{item.isAddingToDomainError}}</div>
                         </li>
                     </ul>
                     <ul>
@@ -28,7 +28,7 @@
                                 Add with action <div v-if="item.isAddingStoryWithAction" class="loader"></div>
                             </a>
                             <span v-if="item.isAddedStoryWithUtter || item.isAddedStoryWithAction" class="text-muted">Added</span>
-                            <div v-if="item.isAddingStoryWithUtterError">{{item.isAddingStoryWithUtterError}}</div>
+                            <div v-if="item.isAddingStoryWithUtterError || item.isAddingStoryWithActionError" class="text-error">{{item.isAddingStoryWithUtterError}} {{item.isAddingStoryWithActionError}}</div>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +59,11 @@
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ name: item.name }),
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
                         item.isAddingToDomain = false;
                         if (json.error) {
@@ -72,7 +76,7 @@
                     })
                     .catch(error => {
                         item.isAddingToDomain = false;
-                        item.isAddingToDomainError = "Error while connection to the server. " + error.message;
+                        item.isAddingToDomainError = "Error: " + error.message;
                         this.$set(this.model.intents_missing_in_domain, index, item);
                     });
             },
@@ -85,7 +89,11 @@
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ name: item.name }),
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
                         item.isAddingStoryWithUtter = false;
                         if (json.error) {
@@ -98,7 +106,7 @@
                     })
                     .catch(error => {
                         item.isAddingStoryWithUtter = false;
-                        item.isAddingStoryWithUtterError = "Error while connection to the server. " + error.message;
+                        item.isAddingStoryWithUtterError = "Error: " + error.message;
                         this.$set(this.model.intents_missing_in_stories, index, item);
                     });
             },
@@ -111,7 +119,11 @@
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ name: item.name }),
                 })
-                    .then(res => res.json())
+                    .then(function (response) {
+                        if (!response.ok)
+                            throw Error(response.status + ': ' + response.statusText);
+                        return response.json();
+                    })
                     .then(json => {
                         item.isAddingStoryWithAction = false;
                         if (json.error) {
@@ -124,7 +136,7 @@
                     })
                     .catch(error => {
                         item.isAddingStoryWithAction = false;
-                        item.isAddingStoryWithActionError = "Error while connection to the server. " + error.message;
+                        item.isAddingStoryWithActionError = "Error: " + error.message;
                         this.$set(this.model.intents_missing_in_stories, index, item);
                     });
             }

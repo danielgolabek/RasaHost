@@ -5,33 +5,67 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, redirect, request, jsonify
 import json
+import logging
+import sys
+import traceback
 from RasaHost import host
 app = host.flask
 from RasaHost.services import *
 from RasaHost.database import *
 
+logger = logging.getLogger(__name__)
+
 @app.route("/conversations/<sender_id>/respond")
 def rasa_respond(sender_id):
-    if 'query' in request.args:
-        message = request.args.get('query')
-    elif 'q' in request.args:
-        message = request.args.get('q')
+    message = None
+    try:
+        if 'query' in request.args:
+            message = request.args.get('query')
+        elif 'q' in request.args:
+            message = request.args.get('q')
+        
+        output = host.agent.handle_message(message, sender_id=sender_id)
+        response = jsonify(output)
+        #text = "\n".join([(x["text"] if "text" in x else None) for x in response])
+        text = ""
+        ConversationsService().save(sender_id = sender_id, request = message, response = text)
+        return response
+    except:
+        e = "\n". join(traceback.format_exception(*sys.exc_info()))
+        logger.error(e)
+        ConversationsService().save(sender_id=sender_id, request=message, response=e)
+        response = jsonify({"error": e})
+        response.status_code = 400
+        return response
 
-    output = host.agent.handle_message(message, sender_id=sender_id)
-    return jsonify(output)
 
 @app.route("/conversations/<sender_id>/parse")
 def rasa_parse(sender_id):
-    if 'query' in request.args:
-        message = request.args.get('query')
-    elif 'q' in request.args:
-        message = request.args.get('q')
+    try:
+        if 'query' in request.args:
+            message = request.args.get('query')
+        elif 'q' in request.args:
+            message = request.args.get('q')
 
-    output = host.agent.start_message_handling(message, sender_id=sender_id)
-    return jsonify(output)
+        output = host.agent.start_message_handling(message, sender_id=sender_id)
+        return jsonify(output)
+    except:
+        e = "\n". join(traceback.format_exception(*sys.exc_info()))
+        logger.error(e)
+        response = jsonify({"error": e})
+        return response
 
 @app.route("/actions", methods = ['GET', 'POST'])
 def actions():
     action_call = request.json
-    response = host.actionExecutor.run(action_call)
-    return jsonify(response)
+    try:
+        response = host.actionExecutor.run(action_call)
+        return jsonify(response)
+    except:
+        e = "\n". join(traceback.format_exception(*sys.exc_info()))
+        logger.error(e)
+        response = jsonify({"error": e, "action_name": action_call})
+        response.status_code = 400
+        return response
+
+    

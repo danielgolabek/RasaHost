@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 #Base = declarative_base()
 from RasaHost.database.logs import Log, LogRepository
+from RasaHost.database.conversations import Conversation, ConversationRepository
 from RasaHost.database.metadata import Base
 
 class DbContext(object):
@@ -16,6 +17,7 @@ class DbContext(object):
     def __init__(self):
         self.session = self.dbSessionFactory()
         self.logs = LogRepository(self.session)
+        self.conversations = ConversationRepository(self.session)
 
     def commit(self):
         self.session.commit()

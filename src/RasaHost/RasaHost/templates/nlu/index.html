@@ -43,7 +43,7 @@
                         </a>
                     </div>
                 </div>
-                <div v-if="error">
+                <div v-if="error" class="text-error">
                     {{error}}
                 </div>
             </div>
@@ -113,19 +113,12 @@
                 this.error = null;
                 item = this.selectedItem;
                 this.isSaving = true;
-                fetch(`/api/nlu/file/${encodeURIComponent(item.path || '')}`, {
+                this.$fetch(`/api/nlu/file/${encodeURIComponent(item.path || '')}`, {
                     method: item.path ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ path: item.path, name: item.name_editing, text: item.text_editing }),
                 })
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
                     .then(json => {
-                        if (json.error)
-                            throw Error(json.error);
                         this.isSaving = false;
                         Object.assign(item, json.result);
                         this.$setQueryString("path", item.path);
@@ -141,18 +134,11 @@
                 item = this.selectedItem;
                 if (!confirm("Do you want to delete: " + item.name))
                     return;
-                fetch(`/api/nlu/file/${encodeURIComponent(item.path)}`, {
+                this.$fetch(`/api/nlu/file/${encodeURIComponent(item.path)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
                     .then(json => {
-                        if (json.error)
-                            throw Error(json.error);
                         this.isDeleting = false;
                         this.selectedItem = null;
                     })
@@ -164,18 +150,11 @@
             loadItem: function (path) {
                 this.error = null;
                 this.isLoading = true;
-                fetch(`/api/nlu/file/${encodeURIComponent(path)}`, {
+                this.$fetch(`/api/nlu/file/${encodeURIComponent(path)}`, {
                     method: "GET",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                 })
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
                     .then(json => {
-                        if (json.error)
-                            throw Error(json.error);
                         this.isLoading = false;
                         this.selectedItem = json;
                         this.selectedItem.text_editing = this.selectedItem.text;

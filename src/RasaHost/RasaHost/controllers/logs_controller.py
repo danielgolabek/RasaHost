@@ -19,10 +19,17 @@ def logs_all():
     )
 
 @app.route('/logs/rasa')
-def logs_conversations():
+def logs_rasa():
     return render_template(
         'logs/rasa.html',
         title='Logs - rasa',
+    )
+
+@app.route('/logs/conversations')
+def logs_conversations():
+    return render_template(
+        'logs/conversations.html',
+        title='Logs - conversations',
     )
 
 @app.route('/logs/console')
@@ -83,3 +90,19 @@ def api_logs_rasa():
     
     return jsonify({'results': logs_grouped_list})
 
+@app.route('/api/logs/conversations', methods=['GET'])
+def api_logs_conversations():
+    query = request.args.get('q')
+    page = int(request.args.get('p'))
+    pageCount = 200
+    conversations = DbContext().conversations.find(query, page, pageCount)
+    results = [
+        {
+        'created': f"{x.created:%Y-%m-%d %H:%M:%S}" if x.created else "",
+        'sender_id': x.sender_id, 
+        'request_id': x.request_id, 
+        'request': x.request,
+        'response': x.response,
+        } for x in conversations]
+
+    return jsonify({'results': results})

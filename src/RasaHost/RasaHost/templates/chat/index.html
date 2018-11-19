@@ -6,13 +6,17 @@
 <div id="app" v-cloak>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-1">
         <h1 class="h4">Chat</h1>
+        <a href="#" v-on:click.stop.prevent="isSettings = !isSettings" class="float-right">settings</a>
     </div>
-    <div class="row">
+    <div class="row" v-if="isSettings">
         <div class="col-md-12">
             <form>
-                <div class="form-group">
-                    <label for="name">Url</label>
-                    <input v-model="conversations_url" class="form-control">
+                <div class="form-group row">
+                    <label for="name" class="col-xs-2 col-sm-1 col-form-label">Url</label>
+                    <div class="col-sx-10 col-sm-9">
+                        <input v-model="conversations_url" class="form-control form-control-sm">
+                        <small class="text-mutted">Send triggers GET {{conversations_url}}?q=<span v-pre>{{message}}</span></small><a href="#" v-on:click.stop.prevent="conversations_url = conversations_url_default" class="float-right">reset</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -21,11 +25,11 @@
         <div class="col-md-12  pb-5">
             <div id="messages" class="list-group pb-5">
                 <div v-for="(message,index) in messages" class="my-1">
-                    <div class="list-group-item list-group-item-ligh inline-block" v-bind:class="{ 'text-right': message.isMy }">
+                    <div class="list-group-item list-group-item-ligh inline-block p-1">
                         <span v-html="message.text"></span>
-                        <div v-if="message.error" class="invalid">{{message.error}}</div>
+                        <div v-if="message.error" class="text-error small">{{message.error}}</div>
                         <div v-if="message.isSending" class="text-mutted small">Sending...</div>
-                        <span v-if="index == messages.length-1" v-html="updateScroll"></span>
+                        <span v-if="index == messages.length-1"></span>
                     </div>
                 </div>
             </div>
@@ -54,7 +58,7 @@
             text: '',
             conversations_url: null,
             conversations_url_default: '{{request.host_url + "conversations/default/respond"}}',
-            updateScroll: "&#x3C;script&#x3E;window.scrollTo(0, document.body.scrollHeight);&#x3C;/script&#x3E;",
+            isSettings: false,
         },
         created: function () {
             var conversations_url = localStorage.getItem("conversations_url");
@@ -75,24 +79,28 @@
             onSend: function (event) {
                 var message = { 'text': this.text, 'isSending': true, 'isMy': true };
                 this.messages.push(message);
-                fetch(`${this.conversations_url || ''}?q=${encodeURIComponent(this.text || '')}`, {
+                this.$nextTick(function () {
+                    window.scrollTo(0, document.body.scrollHeight);
+                });
+                this.$fetch(`${this.conversations_url || ''}?q=${encodeURIComponent(this.text || '')}`, {
                     method: "GET",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
                     .then(json => {
                         message.isSending = false;
                         for (var i = 0; i < json.length; i++) {
-                            this.messages.push(json[0]);
+                            this.messages.push(json[i]);
                         }
+                        this.$nextTick(function () {
+                            window.scrollTo(0, document.body.scrollHeight);
+                        });
                     })
                     .catch(error => {
                         message.isSending = false;
                         message.error = "Error: " + error.message;
+                        this.$nextTick(function () {
+                            window.scrollTo(0, document.body.scrollHeight);
+                        });
                     });
                 this.text = '';
                 document.getElementById("text").focus();

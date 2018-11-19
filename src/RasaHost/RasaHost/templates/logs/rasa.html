@@ -19,7 +19,7 @@
         <div v-if="isLoading">
             <i>Loading...</i>
         </div>
-        <div v-if="error">
+        <div v-if="error" class="text-error">
             {{error}}
         </div>
         <div v-if="!results">
@@ -101,15 +101,8 @@
             loadData: function () {
                 this.isLoading = true;
                 this.error = '';
-                fetch(`/api/logs/rasa?q=${encodeURIComponent(this.query)}&p=${encodeURIComponent(this.page)}`)
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
+                this.$fetch(`/api/logs/rasa?q=${encodeURIComponent(this.query)}&p=${encodeURIComponent(this.page)}`)
                     .then(json => {
-                        if (json.error)
-                            throw Error(json.error);
                         this.isLoading = false;
                         this.results = json.results.length > 0 ? json.results : null;
                     })

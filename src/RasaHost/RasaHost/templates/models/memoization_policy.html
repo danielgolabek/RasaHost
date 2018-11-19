@@ -71,19 +71,12 @@
         methods: {
             decode: function () {
                 this.isDecoding = true;
-                fetch(`/api/models/MemoizationPolicy/lookups/decode`, {
+                this.$fetch(`/api/models/MemoizationPolicy/lookups/decode`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({}),
                 })
-                    .then(function (response) {
-                        if (!response.ok)
-                            throw Error(response.status + ': ' + response.statusText);
-                        return response.json();
-                    })
                     .then(json => {
-                        if (json.error)
-                            throw Error(json.error);
                         this.isDecoding = false;
                     })
                     .catch(error => {

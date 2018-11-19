@@ -9,11 +9,12 @@ import coloredlogs
 import re
 import uuid
 
-__all__ = ['LoggingDbHandler', 'LoggingSenderIdFilter', 'LoggingSocketioHandler']
+__all__ = ['LoggingDbHandler', 'LoggingSenderIdFilter', 'LoggingSocketioHandler', 'get_request_id']
 
 from RasaHost.logging.db_handler import LoggingDbHandler
 from RasaHost.logging.senderid_filter import LoggingSenderIdFilter
 from RasaHost.logging.socketio_handler import LoggingSocketioHandler
+from RasaHost.logging.request_id import get_request_id
 
 log_level = 'DEBUG'
 
