@@ -24,13 +24,15 @@ def api_nlu_list():
     intents = NluService().find_all(q)
     return jsonify(intents)
 
-@app.route('/api/nlu/file/<path>', methods=['GET'])
-def api_nlu_get(path):
+@app.route('/api/nlu/file', methods=['GET'])
+def api_nlu_get():
+    path = request.args.get('path')
     intent = NluService().get_by_path(path)
     return jsonify(intent)
 
-@app.route('/api/nlu/file/<path>', methods=['POST'])
-def api_nlu_post(path):
+@app.route('/api/nlu/file', methods=['POST'])
+def api_nlu_post():
+    path = request.args.get('path')
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
     
@@ -41,7 +43,7 @@ def api_nlu_post(path):
     updated_file = NluService().update(path, request.json)
     return jsonify({'result': updated_file})
 
-@app.route('/api/nlu/file/', methods=['PUT'])
+@app.route('/api/nlu/file', methods=['PUT'])
 def api_nlu_put():
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
@@ -52,8 +54,9 @@ def api_nlu_put():
     created_file = NluService().create(request.json)
     return jsonify({'result': created_file})
 
-@app.route('/api/nlu/file/<path>', methods=['DELETE'])
-def api_nlu_delete(path):
+@app.route('/api/nlu/file', methods=['DELETE'])
+def api_nlu_delete():
+    path = request.args.get('path')
     NluService().delete(path)
     return jsonify({'result': 'ok'})
 

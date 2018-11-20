@@ -23,18 +23,34 @@ class ConversationRepository:
         self.session = session
 
     def find(self, query, page, pageCount):
-        offset = (page - 1) * pageCount
-        like = "%" + query + "%"
-        return self.session.query(Conversation) \
-                        .filter(
-                                Conversation.request.like(like) | \
-                                Conversation.response.like(like) | \
-                                Conversation.sender_id.like(like) | \
-                                Conversation.request_id.like(like)  \
-                            ) \
-                        .order_by(Conversation.created.desc()) \
-                        .limit(pageCount).offset(offset)
+        
+        findConvers  = self.session.query(Conversation) 
+        
+        for part in query:
+            if isinstance(part, dict):
+                key = next(iter(part.keys()))
+                value = part[key]
+                findConvers = findConvers.filter(self.like(key, value))
+            else:
+                findConvers = findConvers.filter(self.like(None, str(part)))
+
+        return findConvers \
+                .order_by(Conversation.created.desc()) \
+                .limit(pageCount).offset((page - 1) * pageCount)
   
+    def like(self, name, value):
+        like = "%" + value + "%"
+        if name == "message":
+            return Conversation.request.like(like) | Conversation.response.like(like)
+        if name == "sender":
+            return Conversation.sender_id.like(like)
+        if name == "request":
+            return Conversation.request_id.like(like)
+        return Conversation.request.like(like) | \
+            Conversation.response.like(like) | \
+            Conversation.sender_id.like(like) | \
+            Conversation.request_id.like(like)  \
+
     def save(self, conversation):
         self.session.add(conversation)
         pass

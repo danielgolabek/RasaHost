@@ -39,7 +39,18 @@ Vue.prototype.$getQueryString = function (name) {
 
 Vue.prototype.$fetch = function (url = ``, parameters = {}) {
     return fetch(url, parameters)
-        .then(r => r.json().then(json => ({ ok: r.ok, status: r.status, statusText: r.statusText, json: json })))
+        .then(r => r.text().then(text => ({ ok: r.ok, status: r.status, statusText: r.statusText, text: text })))
+        .then(r => {
+            if (r.text) {
+                try {
+                    r.json = JSON.parse(r.text) 
+                } catch (e) {
+                    console.log("Response from server the server: " + r.text)
+                }
+                return r;
+            }
+            return r;
+         })
         .then(response => {
             if (response.json && response.json.error)
                 throw Error(response.json.error);

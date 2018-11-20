@@ -57,7 +57,7 @@ def api_logs_all():
         'log_level': l.log_level,
         'message': l.message,
         'exception': l.exception
-        } for l in DbContext().logs.find(query, page, pageCount)]
+        } for l in DbContext().logs.find(QueryParser().parse(query), page, pageCount)]
 
     return jsonify({'results': logs})
 
@@ -67,7 +67,6 @@ def api_logs_rasa():
     request_id = request.args.get('request_id')
     page = int(request.args.get('p'))
     pageCount = 100
-    
     logs_list = DbContext().logs.find_rasa(QueryParser().parse(query), page, pageCount)
     logs_grouped = {}
     for log in logs_list:
@@ -96,7 +95,7 @@ def api_logs_conversations():
     query = request.args.get('q')
     page = int(request.args.get('p'))
     pageCount = 200
-    conversations = DbContext().conversations.find(query, page, pageCount)
+    conversations = DbContext().conversations.find(QueryParser().parse(query), page, pageCount)
     results = [
         {
         'created': f"{x.created:%Y-%m-%d %H:%M:%S}" if x.created else "",

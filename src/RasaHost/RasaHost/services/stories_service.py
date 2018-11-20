@@ -67,9 +67,9 @@ class StoriesService(object):
             f.write(text or '')
         return
 
-    def delete(self, name):
-        if os.path.exists(os.path.join(self.stories_path, name  + ".md")):
-            os.remove(os.path.join(self.stories_path, name  + ".md"))
+    def delete(self, path):
+        if os.path.exists(path):
+            os.remove(path)
 
     def save_model(self, model):
         if isinstance(model, StoriesFileModel):

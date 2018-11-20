@@ -10,10 +10,10 @@ from RasaHost.logging import enable
 
 class RasaHost:
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    nlu_path = os.path.join(current_dir, "data/intents/")
+    nlu_path = os.path.join(current_dir, "data/nlu/")
     stories_path = os.path.join(current_dir, "data/stories/")
     domain_path = os.path.join(current_dir, "data/domain.yml")
-    host = environ.get('SERVER_HOST', 'localhost')
+    host = environ.get('SERVER_HOST', '0.0.0.0')
     port = 5555
     agent = None
     actionExecutor = None

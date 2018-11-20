@@ -31,10 +31,10 @@
                     <tr>
                         <th class="border-top-0 border-bottom-0">
                             <div>Created</div>
-                            <div>SenderId</div>
-                            <div>RequestId</div>
+                            <div>Sender</div>
+                            <div>Request</div>
                         </th>
-                        <th class="border-top-0 border-bottom-0  px-3">Messages</th>
+                        <th class="border-top-0 border-bottom-0  px-3">Message</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,7 @@
                             <div>
                                 <div v-if="entry.response_json && entry.response_json.length && entry.response_json.length > 0" v-for="item in entry.response_json" class="list-group mt-1">
                                     <div class="list-group-item list-group-item-ligh inline-block p-1">
-                                        {{item.text}}
+                                        <span v-html="item.text"></span>
                                     </div>
                                 </div>
                                 <div v-else-if="entry.response_json && entry.response_json.error" class="text-error small">

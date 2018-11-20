@@ -117,7 +117,7 @@
                 this.error = null;
                 item = this.selectedItem;
                 this.isSaving = true;
-                this.$fetch(`/api/nlu/file/${encodeURIComponent(item.path || '')}`, {
+                this.$fetch(`/api/nlu/file?path=${encodeURIComponent(item.path || '')}`, {
                     method: item.path ? "POST" : "PUT",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                     body: JSON.stringify({ path: item.path, name: item.name_editing, text: item.text_editing }),
@@ -138,7 +138,7 @@
                 item = this.selectedItem;
                 if (!confirm("Do you want to delete: " + item.name))
                     return;
-                this.$fetch(`/api/nlu/file/${encodeURIComponent(item.path)}`, {
+                this.$fetch(`/api/nlu/file?path=${encodeURIComponent(item.path)}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json; charset=utf-8" }
                 })
@@ -154,7 +154,7 @@
             loadItem: function (path) {
                 this.error = null;
                 this.isLoading = true;
-                this.$fetch(`/api/nlu/file/${encodeURIComponent(path)}`, {
+                this.$fetch(`/api/nlu/file?path=${encodeURIComponent(path)}`, {
                     method: "GET",
                     headers: { "Content-Type": "application/json; charset=utf-8" },
                 })

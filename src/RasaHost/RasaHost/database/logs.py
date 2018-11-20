@@ -26,39 +26,34 @@ class LogRepository:
         self.session = session
 
     def find(self, query, page, pageCount):
-        offset = (page - 1) * pageCount
-        like = "%" + query + "%"
-        return self.session.query(Log) \
-                        .filter(
-                            Log.name.like(like) | \
-                                Log.name.like(like) | \
-                                Log.module.like(like) | \
-                                Log.filename.like(like) | \
-                                Log.log_level.like(like) | \
-                                Log.message.like(like) | \
-                                Log.exception.like(like) | \
-                                Log.sender_id.like(like) | \
-                                Log.request_id.like(like)  \
-                            ) \
-                        .order_by(Log.created.desc()) \
-                        .limit(pageCount).offset(offset)
+        
+        findLogs = self.session.query(Log)
+
+        for part in query:
+            if isinstance(part, dict):
+                key = next(iter(part.keys()))
+                value = part[key]
+                findLogs = findLogs.filter(self.like(key, value))
+            else:
+                findLogs = findLogs.filter(self.like(None, str(part)))
+
+        return findLogs \
+            .order_by(Log.created.desc()) \
+            .limit(pageCount).offset((page - 1) * pageCount)
   
     def find_rasa(self, query, page, pageCount):
-        filters = []
+
+        requests_ids = self.session.query(Log.request_id).filter(Log.sender_id.isnot(None))
+
         for part in query:
              if isinstance(part, dict):
                  key = next(iter(part.keys()))
                  value = part[key]
-                 filters.append(self.like(key, value))
+                 requests_ids = requests_ids.filter(self.like(key, value))
              else:
-                 filters.append(self.like(None, first.value))
-        
-        requests_ids = self.session.query(Log.request_id) \
-                        .filter(Log.sender_id.isnot(None))
-        for filter in filters:
-            requests_ids = requests_ids.filter(filter)
+                 requests_ids = requests_ids.filter(self.like(None, str(part)))
 
-        requests_ids.group_by(Log.request_id) \
+        requests_ids = requests_ids.group_by(Log.request_id) \
             .order_by(Log.created.desc()) \
             .limit(pageCount).offset((page - 1) * pageCount)
 

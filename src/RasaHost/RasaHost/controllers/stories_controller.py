@@ -24,13 +24,15 @@ def api_stories_list():
     stories = StoriesService().find_all(q)
     return jsonify(stories)
 
-@app.route('/api/stories/file/<path>', methods=['GET'])
-def api_stories_get(path):
+@app.route('/api/stories/file', methods=['GET'])
+def api_stories_get():
+    path = request.args.get('path')
     story = StoriesService().get_by_path(path)
     return jsonify(story)
 
-@app.route('/api/stories/file/<path>', methods=['POST'])
-def api_stories_post(path):
+@app.route('/api/stories/file', methods=['POST'])
+def api_stories_post():
+    path = request.args.get('path')
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
     
@@ -41,20 +43,21 @@ def api_stories_post(path):
     updated_file = StoriesService().update(path, request.json)
     return jsonify({'result': updated_file})
 
-@app.route('/api/stories/file/', methods=['PUT'])
+@app.route('/api/stories/file', methods=['PUT'])
 def api_stories_put():
     if not request.json["name"]:
         return jsonify({'error': 'Name is required'})
 
-    if NluService().get_by_name(request.json["name"]):
+    if StoriesService().get_by_name(request.json["name"]):
         return jsonify({'error': 'File with the name already exits.'})
 
     created_file = StoriesService().create(request.json)
     return jsonify({'result': created_file})
 
-@app.route('/api/stories/file/<path>', methods=['DELETE'])
-def api_stories_delete(path):
-    NluService().delete(path)
+@app.route('/api/stories/file', methods=['DELETE'])
+def api_stories_delete():
+    path = request.args.get('path')
+    StoriesService().delete(path)
     return jsonify({'result': 'ok'})
 
 @app.route('/api/stories/intentWithUtter', methods=['PUT'])
