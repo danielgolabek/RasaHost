@@ -1,5 +1,6 @@
 # RasaHost
 
+ui and host for Rasa Nlu and Rasa Core
 
 ```python
 #  #rasa-host.endpoints.yml
