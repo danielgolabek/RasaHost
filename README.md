@@ -3,6 +3,10 @@
 ui and host for Rasa Nlu and Rasa Core
 
 ```python
+from rasa_core.interpreter import RasaNLUInterpreter
+from rasa_core.agent import Agent
+from rasa_core import utils, server
+from rasa_core_sdk.executor import ActionExecutor
 #  #rasa-host.endpoints.yml
 #  action_endpoint:
 #  url: "http://localhost:5005/actions"
