@@ -24,6 +24,9 @@ host.actionExecutor = actionExecutor
 if __name__ == '__main__':    
     host.run()
     # werkzeug  -  * Running on http://0.0.0.0:5005/ (Press CTRL+C to quit)
+    
+    # GET http://localhost:5005/conversations/daniel/respond?q={{message}}
+    # POST http://localhost:5005/actions
 ```
 
 
