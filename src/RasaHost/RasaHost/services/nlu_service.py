@@ -40,12 +40,12 @@ class NluService(object):
     def update(self, path, model):
         with open(path, "w") as f:
             f.write(model['text'] or '')
-        newPath = os.path.join(os.path.dirname(path), model['name']  + ".md")
+        newPath = os.path.normpath(os.path.join(os.path.dirname(path), model['name']  + ".md"))
         os.rename(path, newPath)
         return self.get_by_path(newPath)
 
     def create(self, model):
-        path = os.path.join(self.nlu_path, model['name']  + ".md")
+        path = os.path.normpath(os.path.join(self.nlu_path, model['name']  + ".md"))
         with open(path, "w") as f:
             f.write(model['text'] or '')
         return self.get_by_path(path)

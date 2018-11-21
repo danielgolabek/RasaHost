@@ -77,10 +77,14 @@ Vue.component('text-editor', {
         this.textEditor.on('change', function (cm) {
             scope.textEditor.save();
             scope.$emit('input', cm.getValue())
+            //var info = this.textEditor.getScrollInfo();
+            //document.getElementsByClassName("CodeMirror")[0].style.minWidth = info.width + "px";
         });
         this.textEditor.setValue(this.value ? this.value : '');
         this.textEditor.setSize("100%", "100%");
-        viewportMargin: Infinity
+
+        //var info = this.textEditor.getScrollInfo();
+        //document.getElementsByClassName("CodeMirror")[0].style.minWidth = info.width + "px";
     },
     template: '<textarea id="text_editor"></textarea>'
 });

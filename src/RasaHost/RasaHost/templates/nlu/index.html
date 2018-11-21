@@ -99,6 +99,7 @@
         },
         methods: {
             newItem: function () {
+                this.error = null;
                 this.selectedItem = {
                     path: null,
                     name: null,
@@ -111,6 +112,7 @@
                 this.loadItem(item.path);
             },
             cancelItem: function () {
+                this.error = null;
                 this.selectedItem = null;
             },
             saveItem: function () {
