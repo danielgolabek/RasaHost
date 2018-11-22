@@ -2,6 +2,10 @@
 
 ui and host for Rasa Nlu and Rasa Core
 
+### Installation
+pip install rasa-host
+
+### Running
 ```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
@@ -29,6 +33,7 @@ if __name__ == '__main__':
     # POST http://localhost:5005/actions
 ```
 
+### Screens
 
 ![Rasa Chat](doc/chat.PNG "Rasa Chat")
 
