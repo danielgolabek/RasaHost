@@ -22,12 +22,13 @@ if __name__ == '__main__':
     # GET http://localhost:5005/conversations/daniel/respond?q={{message}}
 ```
 
-### Screens
 
-![Rasa Chat](doc/chat.PNG "Rasa Chat")
 
 ### NLU - Editing md files
 ![Rasa Nlu Editor](doc/data-nlu.PNG "Rasa Nlu Editor")
+
+### Core - Chat - for testing
+![Rasa Chat](doc/chat.PNG "Rasa Chat")
 
 ### Core - Stories - Editing md files
 ![Rasa Core Stories Editor](doc/data-stories.PNG "Rasa Core Stories Editor")
