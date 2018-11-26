@@ -1,6 +1,20 @@
 # RasaHost
 
-ui and host for Rasa Nlu and Rasa Core
+ui and host for Rasa Nlu and Rasa Core.
+
+The app has two functions. One is  editor for md files (intents, sotries, domain) in Rasa format,
+that simplify looknig inside the files
+and editing them.
+* Getting started is beyond easy, you just have to specify the path to your files. 
+* No migration is needed. The tool uses standard Rasa format.
+* Does not have dependency on Rasa version. In fact does not have Rasa packages dependency.
+
+Second function is logging. All conversations are saved in SQLite.
+* To get started, you just have to create agent and bind it to the host.
+* Conversations with details logs are saved in SQLite database. The app has interface to browser them.
+* The logging can be mixed with standar logging to files and console, like Rasa does by default.
+* Does not have dependency on Rasa version. In fact does not have Rasa packages dependency.
+
 
 ### Installation
 pip install rasa-host
