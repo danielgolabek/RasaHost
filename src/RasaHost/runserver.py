@@ -66,6 +66,12 @@ host.set_data_path(os.path.join(current_dir, "sample"))
 #train_core()
 #train_nlu()
 
+
+from rasa_core.channels.botframework import BotFrameworkInput
+input_channel = BotFrameworkInput(
+        app_id="",
+        app_password="")
+host.channels = [input_channel]
 if __name__ == '__main__':    
     host.run()
 

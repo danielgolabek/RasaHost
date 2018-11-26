@@ -9,12 +9,13 @@ import coloredlogs
 import re
 import uuid
 
-__all__ = ['LoggingDbHandler', 'LoggingSenderIdFilter', 'LoggingSocketioHandler', 'get_request_id']
+__all__ = ['LoggingDbHandler', 'LoggingFilter', 'LoggingSocketioHandler', 'get_request_id', 'get_sender_id', 'set_sender_id']
 
 from RasaHost.logging.db_handler import LoggingDbHandler
-from RasaHost.logging.senderid_filter import LoggingSenderIdFilter
+from RasaHost.logging.filter import LoggingFilter
 from RasaHost.logging.socketio_handler import LoggingSocketioHandler
 from RasaHost.logging.request_id import get_request_id
+from RasaHost.logging.sender_id import get_sender_id, set_sender_id
 
 log_level = 'DEBUG'
 
@@ -43,7 +44,7 @@ def enable():
 
     for handler in logging.getLogger().handlers:
         handler.setLevel(log_level)
-        handler.addFilter(LoggingSenderIdFilter())
+        handler.addFilter(LoggingFilter())
         #handler.setFormatter(logging.Formatter("[%(sender_id)s] [%(asctime)s] [%(name)s] %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
 
     import requests.api

@@ -61,10 +61,11 @@
     <Compile Include="RasaHost\logging\db_handler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RasaHost\logging\sender_id.py" />
     <Compile Include="RasaHost\logging\request_id.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RasaHost\logging\senderid_filter.py">
+    <Compile Include="RasaHost\logging\filter.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RasaHost\logging\socketio_handler.py">

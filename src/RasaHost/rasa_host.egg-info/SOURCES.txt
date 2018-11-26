@@ -20,8 +20,9 @@ RasaHost/database/logs.py
 RasaHost/database/metadata.py
 RasaHost/logging/__init__.py
 RasaHost/logging/db_handler.py
+RasaHost/logging/filter.py
 RasaHost/logging/request_id.py
-RasaHost/logging/senderid_filter.py
+RasaHost/logging/sender_id.py
 RasaHost/logging/socketio_handler.py
 RasaHost/models/__init__.py
 RasaHost/models/azuretablestorage.py

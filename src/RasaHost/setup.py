@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="rasa-host",
-    version="0.0.2",
+    version="0.3.0",
     author="Daniel Golabek",
     author_email="daniel.golabek@gmail.com",
     description="UI for Rasa",

@@ -23,8 +23,8 @@ class LoggingDbHandler(StreamHandler):
             message = record.getMessage(),
             exception = "".join(traceback.format_exception(*record.exc_info)) if record.exc_info else None,
             created = datetime.datetime.fromtimestamp(record.created),
-            sender_id = record.sender_id,
-            request_id = record.request_id
+            sender_id = record.sender_id if record.sender_id else None,
+            request_id = record.request_id if record.request_id else None
             )
         domainContext = DbContext()
         domainContext.logs.save(log)
