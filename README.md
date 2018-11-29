@@ -54,7 +54,7 @@ if __name__ == '__main__':
 ![Core - conversations](doc/core-conversations.PNG "Core - conversations")
 
 ### Core - logs
-![Core - logs](doc/logs-rasa.PNG "Core - logs")
+![Core - logs](doc/core-logs.PNG "Core - logs")
 
 ### Core - analyze
 ![Core - analyze](doc/core-analyze.PNG "Core - analyze")
