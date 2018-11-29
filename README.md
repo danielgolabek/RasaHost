@@ -1,25 +1,32 @@
 # RasaHost
 
-ui and host for Rasa Nlu and Rasa Core.
+User interface for Rasa NLU and Rasa Core, that simplify bot development.
 
-The app has two functions. One is  editor for md files (intents, sotries, domain) in Rasa format,
-that simplify looknig inside the files
-and editing them.
-* Getting started is beyond easy, you just have to specify the path to your files. 
-* No migration is needed. The tool uses standard Rasa format.
-* Does not have dependency on Rasa version. In fact does not have Rasa packages dependency.
+### Features
+- Editor for md files (intents, sotries, domain) in Rasa format
+  - Getting started is beyond easy, you just have to specify paths to your md files. 
+  - No migration is needed. The tool uses standard Rasa format.
+  - Does not have dependency on Rasa version.
+- Logs conversations
+  - All logs and conversations are saved in SQLite.
+  - You just have to create and agent and bind it to the host.
+  - The logging can be mixed with standar logging to files and console, like Rasa does by default.
+  - Does not have dependency on Rasa version.
 
-Second function is logging. All conversations are saved in SQLite.
-* To get started, you just have to create agent and bind it to the host.
-* Conversations with details logs are saved in SQLite database. The app has interface to browser them.
-* The logging can be mixed with standar logging to files and console, like Rasa does by default.
-* Does not have dependency on Rasa version. In fact does not have Rasa packages dependency.
-
+### Tech
+- python
+- flask
+- vuejs
 
 ### Installation
+[https://pypi.org/project/rasa-host](https://pypi.org/project/rasa-host/)
+```python
 pip install rasa-host
+```
+
 
 ### Running
+Rasa-Hot does not have dependency on Rasa(in fact does not have Rasa packages dependency) and will work with all version.
 ```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
@@ -27,7 +34,9 @@ interpreter = RasaNLUInterpreter('models/current/nlu')
 agent = Agent.load("models/current/dialogue", interpreter=interpreter)
 
 from RasaHost import host
-host.set_data_path("path_to_directory_with_data")
+host.nlu_path = os.path.join(current_dir, "data/nlu/")
+host.stories_path = os.path.join(current_dir, "data/stories/")
+host.domain_path = os.path.join(current_dir, "data/domain.yml")
 host.agent = agent
 if __name__ == '__main__':    
     host.run()
@@ -66,6 +75,7 @@ if __name__ == '__main__':
 ![Core - domain file](doc/core-domain_file.PNG "Core - domain file")
 
 ## Core - chat
+Chat interface for testing Rasa. By default, does GET http://{{host}}/conversations/{{sender_id}}/respond?q={{message}}
 ```python
 from RasaHost import host
 host.agent = agent
@@ -75,12 +85,27 @@ if __name__ == '__main__':
 ![Core - chat](doc/core-chat.PNG "Core - chat")
 
 ## Core - conversations
+Conversations are saved in SQLite.
+```python
+from RasaHost import host
+host.agent = agent
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - conversations](doc/core-conversations.PNG "Core - conversations")
 
 ## Core - logs
+Logs are saved in SQLite.
+```python
+from RasaHost import host
+host.agent = agent
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - logs](doc/core-logs.PNG "Core - logs")
 
 ## Core - analyze
+Analyze intents, stories and domain. Shows warnings and suggestions.
 ```python
 from RasaHost import host
 host.nlu_path = os.path.join(current_dir, "data/nlu/")
@@ -92,6 +117,7 @@ if __name__ == '__main__':
 ![Core - analyze](doc/core-analyze.PNG "Core - analyze")
 
 ## Core - memoization policy
+Decode memoization policy data.
 ```python
 from RasaHost import host
 host.memoization_policy_path = os.path.join(current_dir, "models\current\dialogue\policy_1_MemoizationPolicy")
@@ -116,6 +142,7 @@ if __name__ == '__main__':
 ```
 
 ## Agent with actions
+Example of running the app with angent and custom actions.
 ```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
