@@ -39,23 +39,25 @@ if __name__ == '__main__':
 
 
 ### NLU - md files
-![NLU - md files](doc/nlu - md files.PNG "NLU - md files")
+![NLU - md files](doc/nlu-md_files.PNG "NLU - md files")
 
-### Core - Chat - for testing
-![Rasa Chat](doc/chat.PNG "Rasa Chat")
+### Core - stories files
+![Core - md stories](doc/core-stories_files.PNG "Core - stories files")
 
-### Core - Stories - Editing md files
-![Rasa Core Stories Editor](doc/data-stories.PNG "Rasa Core Stories Editor")
+### Core - domain file
+![Core - domain file](doc/data-domain.PNG "Core - domain file")
 
-### Core - Domain - Editing the file
-![Rasa Domain Editor](doc/data-domain.PNG "Rasa Domain Editor")
+### Core - chat
+![Core - chat](doc/core-chat.PNG "Core - chat")
 
-### Core - Conversations logs
-![Rasa Conversations](doc/logs-conversations.PNG "Rasa Conversations")
+### Core - conversations
+![Core - conversations](doc/core-conversations.PNG "Core - conversations")
 
-### Core - Conversations details logs
-![Rasa Logs](doc/logs-rasa.PNG "Rasa Logs")
+### Core - logs
+![Core - logs](doc/logs-rasa.PNG "Core - logs")
 
+### Core - analyze
+![Core - analyze](doc/core-analyze.PNG "Core - analyze")
 
 ### Actions
 You can also host actions, with or without agent.
