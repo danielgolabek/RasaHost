@@ -39,15 +39,39 @@ if __name__ == '__main__':
 
 
 ### NLU - md files
+```python
+from RasaHost import host
+host.nlu_path = os.path.join(current_dir, "data/nlu/")
+if __name__ == '__main__':    
+    host.run()
+```
 ![NLU - md files](doc/nlu-md_files.PNG "NLU - md files")
 
 ### Core - stories files
+```python
+from RasaHost import host
+host.stories_path = os.path.join(current_dir, "data/stories/")
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - md stories](doc/core-stories_files.PNG "Core - stories files")
 
 ### Core - domain file
+```python
+from RasaHost import host
+host.domain_path = os.path.join(current_dir, "data/domain.yml")
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - domain file](doc/core-domain_file.PNG "Core - domain file")
 
 ### Core - chat
+```python
+from RasaHost import host
+host.agent = agent
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - chat](doc/core-chat.PNG "Core - chat")
 
 ### Core - conversations
@@ -57,7 +81,24 @@ if __name__ == '__main__':
 ![Core - logs](doc/core-logs.PNG "Core - logs")
 
 ### Core - analyze
+```python
+from RasaHost import host
+host.nlu_path = os.path.join(current_dir, "data/nlu/")
+host.stories_path = os.path.join(current_dir, "data/stories/")
+host.domain_path = os.path.join(current_dir, "data/domain.yml")
+if __name__ == '__main__':    
+    host.run()
+```
 ![Core - analyze](doc/core-analyze.PNG "Core - analyze")
+
+### Core - memoization policy
+```python
+from RasaHost import host
+host.memoization_policy_path = os.path.join(current_dir, "models\current\dialogue\policy_1_MemoizationPolicy")
+if __name__ == '__main__':    
+    host.run()
+```
+![Core - memoization policy](doc/core-memoization_policy.PNG "Core - memoization policy")
 
 ### Actions
 You can also host actions, with or without agent.
