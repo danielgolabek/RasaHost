@@ -14,6 +14,7 @@ from RasaHost.services import *
 
 @app.route('/models/MemoizationPolicy')
 def models_memoization_policy():
+    MemoizationPolicyService(host.memoization_policy_path).decode()
     return render_template(
         'models/memoization_policy.html',
         title='MemoizationPolicy',
@@ -21,7 +22,7 @@ def models_memoization_policy():
 
 @app.route('/api/models/MemoizationPolicy/lookups/decode', methods=['POST'])
 def api_models_memoization_policy_lookups_decode():
-    MemoizationPolicyService('C:\\Projects\\GSA\\Investec.Bot\\Investec.Bot\\models\\current\\dialogue\\policy_1_MemoizationPolicy').decode()
+    MemoizationPolicyService(host.memoization_policy_path).decode()
     return jsonify({"result":"ok"})
 
 
@@ -29,5 +30,5 @@ def api_models_memoization_policy_lookups_decode():
 def api_models_memoization_policy_lookups():
     query = request.args.get('q')
     last_index = int(request.args.get('i', 0))
-    result = MemoizationPolicyService('C:\\Projects\\GSA\\Investec.Bot\\Investec.Bot\\models\\current\\dialogue\\policy_1_MemoizationPolicy').find(query, last_index)
+    result = MemoizationPolicyService(host.memoization_policy_path).find(query, last_index)
     return jsonify({"result": result})

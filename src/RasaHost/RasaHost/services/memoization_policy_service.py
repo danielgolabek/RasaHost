@@ -11,12 +11,16 @@ class MemoizationPolicyService(object):
 
     def __init__(self, path = None, *args, **kwargs):
         self.path = path
+        self.memorized_turns_path = os.path.join(self.path, 'memorized_turns.json')
+        self.memorized_turns_lookups_path = os.path.join(self.path, 'memorized_turns_lookups.txt')
         pass
 
     def decode(self):
-        with open(os.path.join(self.path, 'memorized_turns.json')) as f_encoded:
+        if not os.path.exists(self.memorized_turns_path):
+            return
+        with open(self.memorized_turns_path) as f_encoded:
             memorized_turns = json.load(f_encoded)
-        with open(os.path.join(self.path, 'memorized_turns_lookups.txt'), 'a+') as f_decoded:
+        with open(self.memorized_turns_lookups_path, 'a+') as f_decoded:
             for lookup in memorized_turns["lookup"]:
                 b64decoded = base64.b64decode(lookup)
                 decompressed = zlib.decompress(bytes(b64decoded))
@@ -24,9 +28,11 @@ class MemoizationPolicyService(object):
                 f_decoded.write(text + "\n")
 
     def find(self, query, last_index):
+        if not os.path.exists(self.memorized_turns_lookups_path):
+            return []
         lookups = []
         current_last_index = 0
-        with open(os.path.join(self.path, 'memorized_turns_lookups.txt'), 'r') as f_decoded:
+        with open(self.memorized_turns_lookups_path, 'r') as f_decoded:
             for index, line in enumerate(f_decoded):
                 current_last_index = index
                 if current_last_index > last_index:
@@ -44,7 +50,7 @@ class MemoizationPolicyService(object):
 
     def parse(self):
         lookups = []
-        with open(os.path.join(self.path, 'memorized_turns.json')) as f_encoded:
+        with open(self.memorized_turns_path) as f_encoded:
             memorized_turns = json.load(f_encoded)
             with Pool() as p:
                 lookups = p.map(parse_lookup, memorized_turns["lookup"])

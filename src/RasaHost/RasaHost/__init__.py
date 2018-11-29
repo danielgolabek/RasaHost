@@ -17,6 +17,7 @@ class RasaHost:
     nlu_path = os.path.join(current_dir, "data/nlu/")
     stories_path = os.path.join(current_dir, "data/stories/")
     domain_path = os.path.join(current_dir, "data/domain.yml")
+    memoization_policy_path = os.path.join(current_dir, "models/current/dialogue/policy_1_MemoizationPolicy")
     host = environ.get('SERVER_HOST', '0.0.0.0')
     port = 5555
     agent = None
