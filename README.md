@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
 
 
-### NLU - md files
+## NLU - md files
 ```python
 from RasaHost import host
 host.nlu_path = os.path.join(current_dir, "data/nlu/")
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 ```
 ![NLU - md files](doc/nlu-md_files.PNG "NLU - md files")
 
-### Core - stories files
+## Core - stories files
 ```python
 from RasaHost import host
 host.stories_path = os.path.join(current_dir, "data/stories/")
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 ```
 ![Core - md stories](doc/core-stories_files.PNG "Core - stories files")
 
-### Core - domain file
+## Core - domain file
 ```python
 from RasaHost import host
 host.domain_path = os.path.join(current_dir, "data/domain.yml")
@@ -65,7 +65,7 @@ if __name__ == '__main__':
 ```
 ![Core - domain file](doc/core-domain_file.PNG "Core - domain file")
 
-### Core - chat
+## Core - chat
 ```python
 from RasaHost import host
 host.agent = agent
@@ -74,13 +74,13 @@ if __name__ == '__main__':
 ```
 ![Core - chat](doc/core-chat.PNG "Core - chat")
 
-### Core - conversations
+## Core - conversations
 ![Core - conversations](doc/core-conversations.PNG "Core - conversations")
 
-### Core - logs
+## Core - logs
 ![Core - logs](doc/core-logs.PNG "Core - logs")
 
-### Core - analyze
+## Core - analyze
 ```python
 from RasaHost import host
 host.nlu_path = os.path.join(current_dir, "data/nlu/")
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 ```
 ![Core - analyze](doc/core-analyze.PNG "Core - analyze")
 
-### Core - memoization policy
+## Core - memoization policy
 ```python
 from RasaHost import host
 host.memoization_policy_path = os.path.join(current_dir, "models\current\dialogue\policy_1_MemoizationPolicy")
@@ -100,7 +100,7 @@ if __name__ == '__main__':
 ```
 ![Core - memoization policy](doc/core-memoization_policy.PNG "Core - memoization policy")
 
-### Actions
+## Actions
 You can also host actions, with or without agent.
 ```python
 from rasa_core_sdk.executor import ActionExecutor
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     # POST http://localhost:5005/actions
 ```
 
-### Agent with actions
+## Agent with actions
 ```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     # POST http://localhost:5005/actions
 ```
 
-### Channels
+## Channels
 Supports channels. All the conversations will be logged.
 ```python
 from rasa_core.channels.botframework import BotFrameworkInput
