@@ -45,7 +45,7 @@ if __name__ == '__main__':
 ![Core - md stories](doc/core-stories_files.PNG "Core - stories files")
 
 ### Core - domain file
-![Core - domain file](doc/data-domain.PNG "Core - domain file")
+![Core - domain file](doc/core-domain_file.PNG "Core - domain file")
 
 ### Core - chat
 ![Core - chat](doc/core-chat.PNG "Core - chat")
