@@ -162,7 +162,9 @@ actionExecutor = ActionExecutor()
 actionExecutor.register_package('actions')
 
 from RasaHost import host
-host.set_data_path("path_to_directory_with_data")
+host.nlu_path = os.path.join(current_dir, "data/nlu/")
+host.stories_path = os.path.join(current_dir, "data/stories/")
+host.domain_path = os.path.join(current_dir, "data/domain.yml")
 host.agent = agent
 host.actionExecutor = actionExecutor
 if __name__ == '__main__':    
