@@ -12,6 +12,9 @@ User interface for Rasa NLU and Rasa Core, that simplify bot development.
   - You just have to create and agent and bind it to the host.
   - The logging can be mixed with standar logging to files and console, like Rasa does by default.
   - Does not have dependency on Rasa version.
+- Testing
+  - Chat control
+  - Memoization Policy visualization
 
 ### Tech
 - python
