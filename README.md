@@ -38,8 +38,8 @@ if __name__ == '__main__':
 
 
 
-### NLU - Editing md files
-![Rasa Nlu Editor](doc/data-nlu.PNG "Rasa Nlu Editor")
+### NLU - md files
+![NLU - md files](doc/nlu - md files.PNG "NLU - md files")
 
 ### Core - Chat - for testing
 ![Rasa Chat](doc/chat.PNG "Rasa Chat")
