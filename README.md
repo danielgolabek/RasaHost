@@ -29,7 +29,8 @@ pip install rasa-host
 
 
 ### Running
-Rasa-Host does not have a dependency on Rasa(in fact does not have Rasa packages dependency) and will work with all versions.```python
+Rasa-Host does not have a dependency on Rasa(in fact does not have Rasa packages dependency) and will work with all versions.
+```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
 interpreter = RasaNLUInterpreter('models/current/nlu')
