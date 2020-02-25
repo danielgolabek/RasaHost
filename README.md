@@ -1,17 +1,17 @@
 # RasaHost
 
-User interface for Rasa NLU and Rasa Core, that simplify bot development.
+A user interfaces for Rasa NLU and Rasa Core, that simplify bot development.
 
 ### Features
-- Editor for md files (intents, sotries, domain) in Rasa format
-  - Getting started is beyond easy, you just have to specify paths to your md files. 
+- Editor for MD files (intents, stories, domain) in Rasa format
+  - Getting started is beyond easy, you just have to specify paths to your MD files. 
   - No migration is needed. The tool uses standard Rasa format.
-  - Does not have dependency on Rasa version.
+  - It does not have a dependency on the Rasa version.
 - Logs conversations
   - All logs and conversations are saved in SQLite.
-  - You just have to create and agent and bind it to the host.
-  - The logging can be mixed with standar logging to files and console, like Rasa does by default.
-  - Does not have dependency on Rasa version.
+  - You just have to create an agent and bind it to the host.
+  - The logging can be mixed with standard logging to files and console-like Rasa does by default.
+  - It does not have a dependency on the Rasa version.
 - Testing
   - Chat control
   - Memoization Policy visualization
@@ -29,8 +29,7 @@ pip install rasa-host
 
 
 ### Running
-Rasa-Hot does not have dependency on Rasa(in fact does not have Rasa packages dependency) and will work with all version.
-```python
+Rasa-Host does not have a dependency on Rasa(in fact does not have Rasa packages dependency) and will work with all versions.```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
 interpreter = RasaNLUInterpreter('models/current/nlu')
@@ -108,7 +107,7 @@ if __name__ == '__main__':
 ![Core - logs](doc/core-logs.PNG "Core - logs")
 
 ## Core - analyze
-Analyze intents, stories and domain. Shows warnings and suggestions.
+Analyze intents, stories, and domains. Shows warnings and suggestions.
 ```python
 from RasaHost import host
 host.nlu_path = os.path.join(current_dir, "data/nlu/")
@@ -130,7 +129,7 @@ if __name__ == '__main__':
 ![Core - memoization policy](doc/core-memoization_policy.PNG "Core - memoization policy")
 
 ## Actions
-You can also host actions, with or without agent.
+You can also host actions, with or without the agent.
 ```python
 from rasa_core_sdk.executor import ActionExecutor
 actionExecutor = ActionExecutor()
@@ -145,7 +144,7 @@ if __name__ == '__main__':
 ```
 
 ## Agent with actions
-Example of running the app with angent and custom actions.
+Example of running the app with agent and custom actions.
 ```python
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.agent import Agent
