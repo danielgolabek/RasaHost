@@ -3,4 +3,4 @@ Flask-SocketIO==3.0.2
 SQLAlchemy==1.2.12
 coloredlogs==10.0
 urllib3==1.23
-setuptools==39.1.0
+setuptools==65.5.1
